@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.8)  14 NOV 2016 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2015.10.8)  14 NOV 2016 14:01
 entering extended mode
 **college1.tex
 (college1.tex
@@ -597,26 +597,37 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 7.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [1
 
-{C:/Users/s153576/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-This exam contains 1 questions with 0 parts, 0 subparts, and 0 subsubparts.
+{C:/Users/s153576/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 23.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 23.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 23.
+ [2]
+This exam contains 2 questions with 2 parts, 0 subparts, and 0 subsubparts.
 \Changes@OutFile=\write3
 (college1.aux) ) 
 Here is how much of TeX's memory you used:
- 6786 strings out of 493691
- 92944 string characters out of 3144018
- 188564 words of memory out of 3000000
- 9941 multiletter control sequences out of 15000+200000
- 25964 words of font info for 40 fonts, out of 3000000 for 9000
+ 6832 strings out of 493691
+ 93469 string characters out of 3144018
+ 190612 words of memory out of 3000000
+ 9975 multiletter control sequences out of 15000+200000
+ 36159 words of font info for 60 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 41i,10n,41p,800b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/P
-rogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr17.p
-fb>
-Output written on college1.pdf (2 pages, 93365 bytes).
+ 41i,10n,41p,800b,296s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathsy.enc}{
+C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/
+MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmmi1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/lm/lmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+lm/lmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on college1.pdf (2 pages, 113404 bytes).
 PDF statistics:
- 26 PDF objects out of 1000 (max. 8388607)
+ 40 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
