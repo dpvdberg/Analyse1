@@ -56,7 +56,7 @@
 \RequirePackage[deletedmarkup=xout]{changes}
 
 \footer{}{}{}
-\title{\textbf{Introduction Numerical Analysis}\\Homework task \hw@week}
+\title{\textbf{Analyse 1 uitwerkingen}\\College \hw@week}
 \author{Sophie van den Eerenbeemt\\Dennis van den Berg}
 \date{\today}
 
