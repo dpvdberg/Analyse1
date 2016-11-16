@@ -1,4 +1,4 @@
-% !TeX spellcheck = en_EN
+% !TeX spellcheck = nl_NL
 \documentclass[week=1]{homework}
 
 \date{\today}
@@ -16,7 +16,7 @@
         \firstquestion
         
         Zijn de volgende deelverzamelingen van $\reals$ begrensd naar boven / beneden?
-        Bepaal supremum, inmum, maximum en minimum (voorzover die bestaan).
+        Bepaal supremum, inmum, maximum en minimum (voor zover die bestaan).
         
         \begin{align*}
         	A &= \{ x \in \reals \mid \exists_{n \in \naturals} \colon 2n-1 < x < 2n \} \\
@@ -32,7 +32,7 @@
         % QUESTION 2
         %%%%%%%%%%%%
         \question
-        Zij $A \subset \reals$ neit leeg en begrensd, $\epsilon > 0$. Laat zien: Er is een $x \in A$ zodanig dat $x > \sup A - \epsilon$ en er is een $y \in A$ zodanig dat $y < \inf A + \epsilon$.
+        Zij $A \subset \reals$ niet leeg en begrensd, $\epsilon > 0$. Laat zien: Er is een $x \in A$ zodanig dat $x > \sup A - \epsilon$ en er is een $y \in A$ zodanig dat $y < \inf A + \epsilon$.
         
         (\textbf{Hint:} Geef een bewijs uit het ongerijmde!)
         
@@ -59,14 +59,124 @@
 	        		\inf (A-B) &= \inf A - \sup B
 	        	\end{align*}
 	        	
-	        	% INSERT Q3a
+	        	\begin{toprove}
+	        		$\sup (-A) = - \inf A$.
+	        	\end{toprove}
+	        	\begin{proof}
+	        		$A$ is begrensd en niet leeg, dus $-A$ ook niet begrensd (per definitie van de verzameling $-A$) en niet leeg. Dus $\sup(-A)$ bestaat.
+	        		
+	        		Per definitie van $\inf A$ weten we dat $\inf A$ de grootste ondergrens is waarvoor geldt
+	        		\[
+		        		\forall_{x \in A}: x \geq \inf A \,,
+		        	\]
+		        	maar dan ook
+	        		\[
+		        		\forall_{x \in A}: -x \leq -\inf A \,.
+	        		\]
+	        		
+	        		Hieruit volgt dat $-\inf A$ een bovengrens is voor $-A$, ofwel $-\inf A \geq \sup(-A)$. Het rest nog om aan te tonen dat $-\inf A$ de kleinste bovengrens is, dus
+	        		\[
+		        		\forall_{\epsilon > 0}\exists_{x \in -A}: x > -\inf A - \epsilon.
+	        		\]
+	        		
+	        		Maar we weten dat $\inf A$ de grootste bovengrens is voor $A$, dus
+	        		\[
+		        		\forall_{\epsilon > 0}\exists_{x \in A}: x < \inf A + \epsilon\,,
+	        		\]
+	        		Waar---door beide kanten met $-1$ te vermenigvuldigen---gebruikmakend het feit dat voor $x\in A$ geldt $-x \in -A$ de bewering direct uit volgt, dus
+	        		\[
+		        		\sup (-A) = - \inf A.
+	        		\]
+	        	\end{proof}
 	        	
+	        	\begin{toprove}
+	        		$\sup (A+B) = \sup A + \sup B$
+	        	\end{toprove}
+	        	\begin{proof}
+	        		$A$ en $B$ zijn begrensd en niet leeg, dus $A+B$ ook niet begrensd (per definitie van de verzameling $A+B$) en niet leeg. Dus $\sup(A+B)$ bestaat.
+	        		
+	        		Voor $\sup A$ en $\sup B$ weten we dat geldt
+	        		\begin{align*}
+	        			\forall_{x \in A}: x &\leq \sup A \\
+	        			\forall_{y \in B}: y &\leq \sup B\,. \\
+	        		\end{align*}
+	        		
+	        		Maar dan ook $\forall_{x\in A}\forall_{y \in B}: x + y \leq \sup A + \sup B$, dus $\sup A + \sup B$ bovengrens voor $A+B$ en $\sup A + \sup B \geq \sup(A+B)$. 
+	        		
+	        		We moeten enkel nog aantonen dat $\sup A + \sup B$ de kleinste bovengrens is voor $A+B$, dus
+	        		\[
+		        		\forall_{\epsilon > 0}\exists_{z \in A+B}: z > \sup A + \sup B - \epsilon\,.
+	        		\]
+	        		
+	        		Zij $\epsilon > 0$, we weten
+	        		\begin{align*}
+	        			\forall_{\epsilon_1 > 0}\exists_{\hat x \in A}: \hat x &> \sup A - \epsilon_1 \\
+	        			\forall_{\epsilon_2 > 0}\exists_{\hat y \in B}: \hat y &> \sup B - \epsilon_2 \,. \\
+	        		\end{align*}
+	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x + \hat y \in A+B$--- weten we
+			        \begin{align*}
+			        	\exists_{z \in A+B}: z &= \hat x + \hat y > \sup A + \sup B - \epsilon_1 - \epsilon_2 \\
+			        	\Leftrightarrow z &> \sup A + \sup B - \epsilon.
+			        \end{align*}
+			        
+			        Dus $\sup (A+B) = \sup A + \sup B$.
+	        	\end{proof}
+        	
+	        	\begin{toprove}
+	        		$\inf (A-B) = \inf A - \sup B$
+	        	\end{toprove}
+	        	\begin{proof}
+	        		$A$ en $B$ zijn begrensd en niet leeg, dus $A-B$ ook niet begrensd (per definitie van de verzameling $A-B$) en niet leeg. Dus $\inf(A-B)$ bestaat.
+	        		
+	        		Voor $\inf A$ en $\sup B$ weten we dat geldt
+	        		\begin{align*}
+	        		\forall_{x \in A}: x &\geq \inf A \\
+	        		\forall_{y \in B}: y &\leq \sup B \\
+	        		\Leftrightarrow -y &\geq -\sup B\,.
+	        		\end{align*}
+	        		
+	        		Maar dan ook $\forall_{x\in A}\forall_{y \in B}: x - y \geq \inf A - \sup B$, dus $\inf A - \sup B$ ondergrens voor $A-B$ en $\inf A - \sup B \leq \inf(A-B)$. 
+	        		
+	        		We moeten enkel nog aantonen dat $\inf A - \sup B$ de grootste ondergrens is voor $A-B$, dus
+	        		\[
+		        		\forall_{\epsilon > 0}\exists_{z \in A-B}: z < \inf A - \sup B + \epsilon\,.
+	        		\]
+	        		
+	        		Zij $\epsilon > 0$, we weten
+	        		\begin{align*}
+		        		\forall_{\epsilon_1 > 0}\exists_{\hat x \in A}: \hat x &< \inf A + \epsilon_1 \\
+		        		\forall_{\epsilon_2 > 0}\exists_{\hat y \in B}: \hat y &> \sup B - \epsilon_2 \\
+		        		\Leftrightarrow -\hat y &< -\sup B + \epsilon_2\,.
+	        		\end{align*}
+	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x - \hat y \in A-B$--- weten we
+	        		\begin{align*}
+		        		\exists_{z \in A-B}: z &= \hat x - \hat y < \inf A - \sup B + \epsilon_1 + \epsilon_2 \\
+		        		\Leftrightarrow z &< \inf A - \sup B + \epsilon\,.
+	        		\end{align*}
+	        		
+	        		Dus $\inf (A-B) = \inf A - \sup B$.
+	        	\end{proof}
 	        \part 
-		        \[
-		        (\forall a \in A \forall b \in B: a < b) \rightarrow \sup A \le inf B
-		        \]
-		        
-		        % INSERT Q3b
+		        \begin{toprove}
+		        	$(\forall_{a \in A} \forall_{b \in B}: a < b) \implies \sup A \le \inf B$
+		        \end{toprove}
+		        \begin{proof}
+		        	We bewijzen uit het ongerijmde en nemen aan $\forall_{a \in A} \forall_{b \in B}: a < b$.
+		        	
+		        	$A$ en $B$ zijn begrensd en niet leeg dus hebben beide infima en suprema. Er moet dus gelden $\sup A \le \inf B$ of $\sup A > \inf B$. we nemen aan $\sup A > \inf B$ en zien dat dit tot een tegenspraak leidt.
+		        	
+		        	We weten $\forall_{a\in A}: a \leq \sup A$ en $\forall_{b\in B}: b \geq \inf B$. Aangezien $\sup A > \inf B$ is er een $\epsilon_1 > 0$ zodat $\sup A - \epsilon_1 = \inf B$, maar dan
+		        	\[
+			        	\exists_{\hat a \in A}: \hat a > \sup A - \epsilon_1 = \inf B\,.
+		        	\]
+		        	We vinden $\inf B < \hat a$. Nu is er een $\epsilon_2 > 0$ zodat $\inf B + \epsilon_2 = \hat a$, dus
+		        	\[
+			        	\exists_{\hat b \in B}: \hat b < \inf B + \epsilon_2 = \hat a\,,
+		        	\]
+		        	waaruit volgt $\hat b < \hat a$, wat in tegenspraak is met $a < b$ voor alle $a \in A$ en $b \in B$.
+		        	
+		        	Dus $(\forall_{a \in A} \forall_{b \in B}: a < b) \implies \sup A \le \inf B$.
+		        \end{proof}
         \end{parts}
      \end{questions}
 \end{document}
