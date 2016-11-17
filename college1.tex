@@ -178,7 +178,7 @@
 		        		\forall_{x \in A}: -x \leq -\inf A \,.
 	        		\]
 	        		
-	        		Hieruit volgt dat $-\inf A$ een bovengrens is voor $-A$, ofwel $-\inf A \geq \sup(-A)$. Het rest nog om aan te tonen dat $-\inf A$ de kleinste bovengrens is, dus
+	        		Hieruit volgt dat $-\inf A$ een bovengrens is voor $-A$, ofwel $-\inf A \geq \sup(-A)$. Het rest nog om aan te tonen dat $-\inf A$ de kleinste bovengrens is, ofwel
 	        		\[
 		        		\forall_{\epsilon > 0}\exists_{x \in -A}: x > -\inf A - \epsilon.
 	        		\]
@@ -207,7 +207,7 @@
 	        		
 	        		Maar dan ook $\forall_{x\in A}\forall_{y \in B}: x + y \leq \sup A + \sup B$, dus $\sup A + \sup B$ bovengrens voor $A+B$ en $\sup A + \sup B \geq \sup(A+B)$. 
 	        		
-	        		We moeten enkel nog aantonen dat $\sup A + \sup B$ de kleinste bovengrens is voor $A+B$, dus
+	        		We moeten enkel nog aantonen dat $\sup A + \sup B$ de kleinste bovengrens is voor $A+B$, ofwel
 	        		\[
 		        		\forall_{\epsilon > 0}\exists_{z \in A+B}: z > \sup A + \sup B - \epsilon\,.
 	        		\]
@@ -217,7 +217,7 @@
 	        			\forall_{\epsilon_1 > 0}\exists_{\hat x \in A}: \hat x &> \sup A - \epsilon_1 \\
 	        			\forall_{\epsilon_2 > 0}\exists_{\hat y \in B}: \hat y &> \sup B - \epsilon_2 \,. \\
 	        		\end{align*}
-	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x + \hat y \in A+B$--- weten we
+	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x + \hat y \in A+B$---weten we
 			        \begin{align*}
 			        	\exists_{z \in A+B}: z &= \hat x + \hat y > \sup A + \sup B - \epsilon_1 - \epsilon_2 \\
 			        	\Leftrightarrow z &> \sup A + \sup B - \epsilon.
@@ -241,7 +241,7 @@
 	        		
 	        		Maar dan ook $\forall_{x\in A}\forall_{y \in B}: x - y \geq \inf A - \sup B$, dus $\inf A - \sup B$ ondergrens voor $A-B$ en $\inf A - \sup B \leq \inf(A-B)$. 
 	        		
-	        		We moeten enkel nog aantonen dat $\inf A - \sup B$ de grootste ondergrens is voor $A-B$, dus
+	        		We moeten enkel nog aantonen dat $\inf A - \sup B$ de grootste ondergrens is voor $A-B$, ofwel
 	        		\[
 		        		\forall_{\epsilon > 0}\exists_{z \in A-B}: z < \inf A - \sup B + \epsilon\,.
 	        		\]
@@ -252,7 +252,7 @@
 		        		\forall_{\epsilon_2 > 0}\exists_{\hat y \in B}: \hat y &> \sup B - \epsilon_2 \\
 		        		\Leftrightarrow -\hat y &< -\sup B + \epsilon_2\,.
 	        		\end{align*}
-	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x - \hat y \in A-B$--- weten we
+	        		Kies $\epsilon_1 = \epsilon_2 = \frac{\epsilon}{2}$, dan---aangezien $\hat x - \hat y \in A-B$---weten we
 	        		\begin{align*}
 		        		\exists_{z \in A-B}: z &= \hat x - \hat y < \inf A - \sup B + \epsilon_1 + \epsilon_2 \\
 		        		\Leftrightarrow z &< \inf A - \sup B + \epsilon\,.
@@ -267,7 +267,7 @@
 		        \begin{proof}
 		        	We bewijzen uit het ongerijmde en nemen aan $\forall_{a \in A} \forall_{b \in B}: a < b$.
 		        	
-		        	$A$ en $B$ zijn begrensd en niet leeg dus hebben beide infima en suprema. Er moet dus gelden $\sup A \le \inf B$ of $\sup A > \inf B$. we nemen aan $\sup A > \inf B$ en zien dat dit tot een tegenspraak leidt.
+		        	$A$ en $B$ zijn begrensd en niet leeg dus hebben beide infima en suprema. Er moet dus gelden $\sup A \le \inf B$ of $\sup A > \inf B$. We nemen aan $\sup A > \inf B$ en zien dat dit tot een tegenspraak leidt.
 		        	
 		        	We weten $\forall_{a\in A}: a \leq \sup A$ en $\forall_{b\in B}: b \geq \inf B$. Aangezien $\sup A > \inf B$ is er een $\epsilon_1 > 0$ zodat $\sup A - \epsilon_1 = \inf B$, maar dan
 		        	\[
