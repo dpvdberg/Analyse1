@@ -71,7 +71,7 @@
 
 % Te bewijzen environment
 \theoremstyle{definition}
-\newtheorem*{toprove}{To be proven}
+\newtheorem*{toprove}{Te bewijzen}
 
 % Interior
 \DeclareMathOperator{\intr}{int}
@@ -241,7 +241,7 @@
 % Inline to prove env. To be used when `toprove' is the first content in a question. Then normally the text would end up on a new line, which is ugly. In these cases, use this environment instead.
 \makeatletter
 \newenvironment{inlinetoprove}
-{\enskip\textbf{To be proven.\space}}% \begin{inlinetoprove}
+{\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
 {\enskip}% \end{inlinetoprove}
 \makeatother
 
