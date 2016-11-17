@@ -112,32 +112,35 @@
         
         (\textbf{Hint:} Geef een bewijs uit het ongerijmde!)
         
-        \toprove $\exists x \in A: x > \sup A - \epsilon$
+        \begin{toprove}
+        	$\exists x \in A: x > \sup A - \epsilon$
+        \end{toprove}
                
-        \proof 
-        Stel dat de bewering niet waar is. Dan:
-        \begin{align*}
+        \begin{proof}
+        	Stel dat de bewering niet waar is. Dan:
+        	\begin{align*}
         	\neg(&\exists x \in A: x > \sup A - \epsilon) \\
         	&\forall x \in A: x \le \sup A - \epsilon 
-        \end{align*}
-        Maar dan is $\sup A - \epsilon$ een kleinere bovengrens van $A$ dan $\sup A$, want $\epsilon > 0$, dus is $\sup A$ niet het supremum van $A$. $\lightning$
+        	\end{align*}
+        	Maar dan is $\sup A - \epsilon$ een kleinere bovengrens van $A$ dan $\sup A$, want $\epsilon > 0$, dus is $\sup A$ niet het supremum van $A$. $\lightning$
+        	
+        	Dan moet dus gelden dat: $\exists x \in A: x > \sup A - \epsilon$
+        \end{proof}        
         
-        Dan moet dus gelden dat: $\exists x \in A: x > \sup A - \epsilon$
-        \qed
+        \begin{toprove}
+        	$\exists y \in A: y < \inf A + \epsilon$
+        \end{toprove} 
         
-        \toprove $\exists y \in A: y < \inf A + \epsilon$
-        
-        \proof 
-        Stel dat de bewering niet waar is. Dan: 
-        \begin{align*}
+        \begin{proof}
+        	Stel dat de bewering niet waar is. Dan: 
+        	\begin{align*}
         	\neg(&\exists x \in A: y < \inf A + \epsilon) \\
         	&\forall x \in A: y \ge \inf A + \epsilon
-        \end{align*}
-        Maar dan is $\inf A + \epsilon$ een grotere ondergrens van $A$ dan $\inf A$, want $\epsilon > 0$, dus is $\inf A$ niet het infimum van A. $\lightning$
-        
-        Dan moet dus gelden dat: $\exists y \in A: y < \inf A + \epsilon$
-        
-        \qed
+        	\end{align*}
+        	Maar dan is $\inf A + \epsilon$ een grotere ondergrens van $A$ dan $\inf A$, want $\epsilon > 0$, dus is $\inf A$ niet het infimum van A. $\lightning$
+        	
+        	Dan moet dus gelden dat: $\exists y \in A: y < \inf A + \epsilon$
+        \end{proof}
         
         %%%%%%%%%%%%
         % QUESTION 3
