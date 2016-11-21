@@ -50,7 +50,38 @@
 	    	$a_n \to a^* \iff |a_n - a^*| \to 0$.
 	    \end{inlinetoprove}
 	    \begin{proof}
-	    	% INSERT Q2
+	    	We prove both ways of the iff statement.
+	    	\begin{itemize}
+	    		\item $\implies$
+	    		
+	    		We have $a_n \to a^*$, hence
+	    		\begin{equation} \label{Q2:1:given} \tag{$\star$}
+		    		\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: |a_n - a^*| < \epsilon\,.
+	    		\end{equation}
+	    		
+	    		Now we need to show
+	    		\begin{equation} \label{Q2:1:toprove} \tag{Q}
+		    		\forall_{\epsilon > 0}\exists_{\bar n \in \naturals}\forall_{\bar n \geq n^*}: ||a_n - a^*|-0| < \epsilon\,.
+	    		\end{equation}
+	    		
+	    		Now since $|a_n - a^*| = ||a_n - a^*|| = ||a_n - a^*|-0|$ for all $n$, expression \ref{Q2:1:toprove} follows directly from \ref{Q2:1:given} using $\bar n = n^*$.
+	    		
+	    		\item $\impliedby$
+	    		
+	    		This proof is very similar to the other case.
+	    		
+	    		We have $|a_n-a^*| \to 0$, hence
+	    		\begin{equation} \label{Q2:2:given} \tag{$\star$}
+	    		\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: ||a_n - a^*|-0| < \epsilon\,.
+	    		\end{equation}
+	    		
+	    		Now we need to show
+	    		\begin{equation} \label{Q2:2:toprove} \tag{Q}
+	    		\forall_{\epsilon > 0}\exists_{\bar n \in \naturals}\forall_{\bar n \geq n^*}: |a_n - a^*| < \epsilon\,.
+	    		\end{equation}
+	    		
+	    		Now since $||a_n - a^*|-0| = ||a_n - a^*|| = |a_n - a^*|$ for all $n$, expression \ref{Q2:2:toprove} follows directly from \ref{Q2:2:given} using $\bar n = n^*$.
+	    	\end{itemize}
 	    \end{proof}
     
 	    \question
