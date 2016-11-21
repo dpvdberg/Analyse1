@@ -56,7 +56,7 @@
 \RequirePackage[deletedmarkup=xout]{changes}
 
 \footer{}{}{}
-\title{\textbf{Analyse 1 uitwerkingen}\\College \hw@week}
+\title{\textbf{Analysis 1 elaborations}\\College \hw@week}
 \author{Sophie van den Eerenbeemt\\Dennis van den Berg}
 \date{\today}
 
@@ -71,7 +71,7 @@
 
 % Te bewijzen environment
 \theoremstyle{definition}
-\newtheorem*{toprove}{Te bewijzen}
+\newtheorem*{toprove}{To prove}
 
 % Interior
 \DeclareMathOperator{\intr}{int}
@@ -241,7 +241,7 @@
 % Inline to prove env. To be used when `toprove' is the first content in a question. Then normally the text would end up on a new line, which is ugly. In these cases, use this environment instead.
 \makeatletter
 \newenvironment{inlinetoprove}
-{\enskip\textbf{Te bewijzen.\space}}% \begin{inlinetoprove}
+{\enskip\textbf{To prove.\space}}% \begin{inlinetoprove}
 {\enskip}% \end{inlinetoprove}
 \makeatother
 
