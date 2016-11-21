@@ -60,7 +60,11 @@
 		    \forall_{n \in \naturals}: a_n < b_n \implies a^* < b^*
 	    \]
 	    
-	    % INSERT Q3
+	    We contradict the statement using a counter example. Suppose $a_n := -\frac{1}{n}$ and $b_n := \frac{1}{n}$, then
+	    \[
+		    \lim_{n\to\infty} a_n = \lim_{n\to\infty} b_n = 0\,,
+	    \]
+	    hence $a^* = b^*$, but $a_n < b_n$ for all $n \in \naturals$. $\lightning$
 	    
 	    \question
 	    Let $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ be sequences defined by
