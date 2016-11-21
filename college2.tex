@@ -1,0 +1,83 @@
+% !TeX spellcheck = en_US
+\documentclass[week=1]{homework}
+
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        %%%%%%%%%%%%
+        % QUESTION 1
+        %%%%%%%%%%%%
+        \firstquestion
+        Assuming $a,b,c \in \reals$ arbitrary, prove the following statements;
+        \begin{parts}
+        	\part \label{1:a}
+        	\begin{inlinetoprove}
+        		$|a+b| \le |a| + |b|$.
+        	\end{inlinetoprove}
+	        \begin{proof}
+	        	% INSERT Q1a
+	        \end{proof}
+        
+	        \part \label{1:b}
+	        \begin{inlinetoprove}
+	        	$|a-b| \le |a-c| + |b-c|$.
+	        \end{inlinetoprove}
+	        \begin{proof}
+	        	% INSERT Q1b\textsl{}
+	        	% NOTE: reference to other questions using \ref{...}
+	        	% EXAMPLE: \ref{1:a}
+	        \end{proof}
+        
+	        \part \label{1:c}
+	        \begin{inlinetoprove}
+	        	$||a| - |b|| \le |a-b|$.
+	        \end{inlinetoprove}
+	        \begin{proof}
+	        	% INSERT Q1c
+	        \end{proof}
+        \end{parts}
+    
+	    \question
+	    Let $\{a_n\}$ be a sequence, $a^* \in \reals$.
+	    
+	    \begin{inlinetoprove}
+	    	$a_n \to a^* \iff |a_n - a^*| \to 0$.
+	    \end{inlinetoprove}
+	    \begin{proof}
+	    	% INSERT Q2
+	    \end{proof}
+    
+	    \question
+	    Let $\{a_n\}$ and $\{b_n\}$ be sequences with limits $a_n \to a^*$, $b_n \to b^*$.
+	    Proof or contradict the following statement;
+	    \[
+		    \forall_{n \in \naturals}: a_n < b_n \implies a^* < b^*
+	    \]
+	    
+	    % INSERT Q3
+	    
+	    \question
+	    Let $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ be sequences defined by
+	    \[
+		    a_n = \frac{n+3}{n^2-3}\,,\qquad b_n = \frac{n^5}{3^n}\,,\qquad c_n = \frac{7n+4}{n+5}\,.
+	    \]
+	    
+	    Find the limits of these sequences and prove the convergence of these sequences (without applying limit theorems).
+	    \begin{parts}
+	    	\part
+	    	% INSERT Q4a
+	    	
+	    	\part 
+	    	% INSERT Q4b
+	    	
+	    	\part
+	    	% INSERT Q4c
+	    \end{parts}
+     \end{questions}
+\end{document}
