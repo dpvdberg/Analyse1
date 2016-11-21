@@ -23,7 +23,6 @@
 
 \LoadClass[a4paper]{exam}
 
-\RequirePackage[dutch]{babel}
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=hw,prefix=hw@}
 \DeclareStringOption{week}
