@@ -21,7 +21,18 @@
         		$|a+b| \le |a| + |b|$.
         	\end{inlinetoprove}
 	        \begin{proof}
-	        	% INSERT Q1a
+	        	For all $x \in \reals$, we can define $|a| = \max\{x, -x\}$. It follows that $\pm x \le |x|$.
+	        	
+	        	For $|a+b|$, we distinguish the two cases
+	        	\begin{align*}
+	        		|a+b| &= a + b \le |a| + b \le |a| + |b|\,, \text{or}\\
+	        		|a+b| &= - (a + b) = - a - b \le |a| - b \le |a| + |b|\,.
+	        	\end{align*}
+	        	
+	        	In any case we find
+	        	\[
+		        	|a+b| \le |a| + |b|\,.
+	        	\]
 	        \end{proof}
         
 	        \part \label{1:b}
@@ -29,9 +40,10 @@
 	        	$|a-b| \le |a-c| + |b-c|$.
 	        \end{inlinetoprove}
 	        \begin{proof}
-	        	% INSERT Q1b\textsl{}
-	        	% NOTE: reference to other questions using \ref{...}
-	        	% EXAMPLE: \ref{1:a}
+	        	Using \ref{1:a}, we find $|x+y| \le |x| + |y|$ for all $x,y \in \reals$. Let $x = a-c$ and $y = c-b$, then
+	        	\[
+		        	|x+y| = |a-b| = |a-c+c-b| \le |a-c| + |b-c|\,.
+	        	\]
 	        \end{proof}
         
 	        \part \label{1:c}
@@ -39,7 +51,19 @@
 	        	$||a| - |b|| \le |a-b|$.
 	        \end{inlinetoprove}
 	        \begin{proof}
-	        	% INSERT Q1c
+	        	Using \ref{1:a} we find
+	        	\begin{align*}
+		        	|b| = |b-a+a| &\le |b-a| + |a| \\
+		        	\therefore |b| - |a| &\le |b-a|\,,
+		        	\intertext{Using similar reasoning we find}
+		        	|a| - |b| &\le |a-b|\,,
+	        	\end{align*}
+	        	But $|a-b| = |-(a-b)| = |b-a|$, hence $|a-b| \ge |a| - |b|$ and $|a-b| \ge |b| - |a|$.
+	        	
+	        	Let $q = |a|-|b|$, then since $|a-b| \ge q$, $|a-b| \ge -q$ and $|q| = \max\{ q, -q\}$, we have
+	        	\[
+		        	|a-b| \ge |q| = ||a|-|b||\,.
+	        	\]
 	        \end{proof}
         \end{parts}
     
