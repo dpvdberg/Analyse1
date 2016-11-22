@@ -71,13 +71,61 @@
 	    Find the limits of these sequences and prove the convergence of these sequences (without applying limit theorems).
 	    \begin{parts}
 	    	\part
-	    	% INSERT Q4a
-	    	
+	    	\begin{inlinetoprove}
+	    		$c_n \xrightarrow{n\to\infty}0$, i.e. $\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: \left|\frac{n+3}{n^2-3}\right| < \epsilon\,.$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $\epsilon > 0$ be given and let $n^* = \ceil{\frac{1}{\epsilon}}+3$, then for $n \geq n^*$ we have $|a_n| = a_n$ (as $n > 3$), hence
+	    		\begin{align*}
+	    		|a_n| = \frac{n+3}{n^2-3} &< \frac{n+3}{n^2-9} \\
+	    		&= \frac{n+3}{(n+3)(n-3)} \\
+	    		&= \frac{1}{n-3} \\
+	    		&< \frac{1}{n^*-3} = \frac{1}{\ceil{1/\epsilon}} < \frac{1}{1/\epsilon} = \epsilon\,.
+	    		\end{align*}
+	    	\end{proof}
+    	
 	    	\part 
-	    	% INSERT Q4b
+	    	\begin{inlinetoprove}
+	    		$b_n \xrightarrow{n\to\infty}0$, i.e. $\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: \left|\frac{n^5}{3^n}\right| < \epsilon\,.$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $\epsilon > 0$ be arbitrary. For all $n \in \naturals$ we find
+	    		\[
+		    		b_n = \frac{1}{n}\cdot\frac{n^6}{3^n}\,.
+	    		\]
+	    		
+	    		Define $p_n := \frac{n^6}{3^n}$ and let us examine the growth ratio our newly created sequence. This yields
+	    		\[
+		    		\frac{p_{n+1}}{p_n} = \frac{(n+1)^6\cdot 3^n}{3^{n+1}\cdot n^6} = \frac{(n+1)^6}{3\cdot n^6} = \frac{1}{3}\left(1 + \frac{1}{n}\right)^6 \xrightarrow{n \to \infty} \frac{1}{3} < 1\,.
+	    		\]
+	    		
+	    		We find $p_{n+1} < p_n$ for $n$ large enough, in fact; $n \geq 5$. We have $p_n > 0$ for all $n \in \naturals$ as both the numerator and denominator are positive for all $n$. This means $p_5$ is a bound for $p_n$ and
+	    		\[
+		    		\forall_{n > 5}: |p_n| < p_5\,.
+	    		\]
+	    		
+	    		Now choose $n^* = \max\{6, \ceil{\frac{p_5}{\epsilon}}\}$, then for $n \geq n^*$ we have
+	    		\begin{align*}
+		    		|b_n| &= |\frac{1}{n}\cdot\frac{n^6}{3^n}| \\
+		    		&= \frac{1}{n}|p_n| \\
+		    		&< \frac{1}{n}p_5 \\
+		    		&< \frac{p_5}{n^*} < \frac{p_5}{p_5/\epsilon}= \epsilon\,.
+	    		\end{align*}
+	    	\end{proof}
 	    	
 	    	\part
-	    	% INSERT Q4c
+	    	\begin{inlinetoprove}
+	    		$c_n \xrightarrow{n\to\infty}7$, i.e. $\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: \left|\frac{7n+4}{n+5}-7\right| < \epsilon\,.$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $\epsilon > 0$ be arbitrary, then for $n \geq n^* = \ceil{\frac{31}{\epsilon}}$ we have
+	    		\begin{align*}
+		    		|c_n-7| &= \left|\frac{7n+4}{n+5}-7\right| \\
+		    		&= \left|\frac{31}{n+5}\right| \\
+		    		&= \frac{31}{n+5} \\
+		    		&< \frac{31}{n} < \frac{31}{n^*} < \frac{31}{31/\epsilon} = \epsilon\,.
+	    		\end{align*}
+	    	\end{proof}
 	    \end{parts}
      \end{questions}
 \end{document}
