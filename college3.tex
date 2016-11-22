@@ -65,18 +65,18 @@
 	    
 	    For any sequences $\{a_n\}$ and $\{b_n\}$ constrained by the implication, we can use the following theorems:	    
 	    \begin{alignat}{3}
-		    \label{th:lim:a+b:finite} \tag{$\lim_f\colon a_n+b_n$}		a_n &\to a^* \,, \quad b_n \to b^* \qquad &&\implies \qquad &&a_n + b_n \to a^* + b^*\,, \\
-	    	\label{th:lim:a*b:finite} \tag{$\lim_f\colon a_nb_n$}	a_n &\to a^* \,, \quad b_n \to b^* \qquad &&\implies \qquad &&a_nb_n \to a^*b^*\,, \\
-	    	\label{th:lim:a/b:finite} \tag{$\lim_f\colon a_n/b_n$}		a_n &\to a^* \,, \quad b_n \to b^* \,, \quad b^* \neq 0 \qquad &&\implies \qquad &&\frac{a_n}{b_n} \to \frac{a^*}{b^*} \,, \\
-	    	\label{th:lim:a^p:finite} \tag{$\lim_f\colon (a_n)^p$}		a_n &\to a^* \,, \quad p \in \naturals \qquad &&\implies \qquad &&(a_n)^p \to (a^*)^p \,, \\
-	    	\label{th:lim:k root a:finite} \tag{$\lim_f\colon \sqrt[k]{a_n}$}	a_n &\to a^* \,, \quad \forall_{n\in\naturals}\colon a_n \geq 0\,, \quad k \in \naturals \quad &&\implies \qquad &&\sqrt[k]{a_n} \to \sqrt[k]{a^*} \,, \\
+		    \label{th:lim:a+b:finite} \tag{$\lim_f\colon a_n+b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_n + b_n \to a^* + b^*\,, \\
+	    	\label{th:lim:a*b:finite} \tag{$\lim_f\colon a_nb_n$}	a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_nb_n \to a^*b^*\,, \\
+	    	\label{th:lim:a/b:finite} \tag{$\lim_f\colon a_n/b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \,, \enskip b^* \neq 0\,, \enskip b_n \neq 0 &&\implies \qquad &&\frac{a_n}{b_n} \to \frac{a^*}{b^*} \,, \\
+	    	\label{th:lim:a^p:finite} \tag{$\lim_f\colon (a_n)^p$}		a_n &\to a^* \,, \enskip p \in \naturals \qquad &&\implies \qquad &&(a_n)^p \to (a^*)^p \,, \\
+	    	\label{th:lim:k root a:finite} \tag{$\lim_f\colon \sqrt[k]{a_n}$}	a_n &\to a^* \,, \enskip a_n \geq 0\,, \enskip k \in \naturals \quad &&\implies \qquad &&\sqrt[k]{a_n} \to \sqrt[k]{a^*} \,, \\
 	    	\nonumber\\
-	    	\label{th:lim:a+b:infinite} \tag{$\lim_\infty\colon a_n + b_n$}	a_n &\to \pm\infty \,, \quad \forall_{n\in\naturals}\colon |b_n| < K \in \reals \quad &&\implies \qquad &&a_n + b_n \to \pm\infty\,, \\
-	    	\label{th:lim:a*b:infinite=} \tag{$\lim_{+\infty}\colon a_nb_n$}	a_n &\to \infty \,, \quad \forall_{n\in\naturals}\colon b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to \infty \enskip (-\infty)\,, \\
-	    	\label{th:lim:a*b:infinite-} \tag{$\lim_{-\infty}\colon a_nb_n$}	a_n &\to -\infty \,, \enskip \forall_{n\in\naturals}\colon b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to -\infty \enskip (\infty)\,, \\
-	    	\label{th:lim:1/a:infinite} \tag{$\lim_\infty\colon 1/a_n$}	a_n &\to \pm\infty \,, \quad \forall_{n\in\naturals}\colon a_n \neq 0 \quad &&\implies \qquad &&\frac{1}{a_n} \to 0\,, \\
-	    	\label{th:lim:c+*a:infinite} \tag{$\lim_\infty\colon c_+ \cdot a_n$}	a_n &\to \pm\infty \,, \quad c \in \reals\,, \quad c > 0 \quad &&\implies \qquad &&ca_n \to \pm\infty\,, \\
-	    	\label{th:lim:c-*a:infinite} \tag{$\lim_\infty\colon c_- \cdot a_n$}	a_n &\to \pm\infty \,, \quad c \in \reals\,, \quad c < 0 \quad &&\implies \qquad &&ca_n \to \mp\infty\,.
+	    	\label{th:lim:a+b:infinite} \tag{$\lim_\infty\colon a_n + b_n$}	a_n &\to \pm\infty \,, \enskip |b_n| < K \in \reals \quad &&\implies \qquad &&a_n + b_n \to \pm\infty\,, \\
+	    	\label{th:lim:a*b:infinite=} \tag{$\lim_{+\infty}\colon a_nb_n$}	a_n &\to \infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to \infty \enskip (-\infty)\,, \\
+	    	\label{th:lim:a*b:infinite-} \tag{$\lim_{-\infty}\colon a_nb_n$}	a_n &\to -\infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to -\infty \enskip (\infty)\,, \\
+	    	\label{th:lim:1/a:infinite} \tag{$\lim_\infty\colon 1/a_n$}	a_n &\to \pm\infty \,, \enskip a_n \neq 0 \quad &&\implies \qquad &&\frac{1}{a_n} \to 0\,, \\
+	    	\label{th:lim:c+*a:infinite} \tag{$\lim_\infty\colon c_+ \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c > 0 \quad &&\implies \qquad &&ca_n \to \pm\infty\,, \\
+	    	\label{th:lim:c-*a:infinite} \tag{$\lim_\infty\colon c_- \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c < 0 \quad &&\implies \qquad &&ca_n \to \mp\infty\,.
 	    \end{alignat}
 	    \begin{parts}
 	    	\part
