@@ -21,7 +21,7 @@
         		$|a+b| \le |a| + |b|$.
         	\end{inlinetoprove}
 	        \begin{proof}
-	        	For all $x \in \reals$, we can define $|a| = \max\{x, -x\}$. It follows that $\pm x \le |x|$.
+	        	For all $x \in \reals$, we can define $|x| = \max\{x, -x\}$. It follows that $\pm x \le |x|$.
 	        	
 	        	For $|a+b|$, we distinguish the two cases
 	        	\begin{align*}
@@ -58,11 +58,19 @@
 		        	\intertext{Using similar reasoning we find}
 		        	|a| - |b| &\le |a-b|\,.
 	        	\end{align*}
-	        	But $|a-b| = |-(a-b)| = |b-a|$, hence $|a-b| \ge |a| - |b|$ and $|a-b| \ge |b| - |a|$.
+	        	But $|a-b| = |-(a-b)| = |b-a|$, hence:
+	        	\begin{align}
+	        	|a-b| \ge |a| - |b| \text{ and } |a-b| \ge |b| - |a|	        	
+	        	\end{align}
 	        	
-	        	Let $q = |a|-|b|$, then since $|a-b| \ge q$, $|a-b| \ge -q$ and $|q| = \max\{ q, -q\}$, we have
+	        	Now remember that:
+		        \begin{align}
+	        	 ||a| - |b|| = \max \{|a| - |b|, - (|a| - |b|) \} = \max \{|a| - |b|, - |a| + |b| \}		        	
+		        \end{align}
+		        
+	        	Using (1) and (2), we can now conclude:
 	        	\[
-		        	|a-b| \ge |q| = ||a|-|b||\,.
+		        	|a-b| \ge ||a|-|b||\,.
 	        	\]
 	        \end{proof}
         \end{parts}
