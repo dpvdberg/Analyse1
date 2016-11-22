@@ -59,16 +59,19 @@
 		        	|a| - |b| &\le |a-b|\,.
 	        	\end{align*}
 	        	But $|a-b| = |-(a-b)| = |b-a|$, hence:
-	        	\begin{align}
-	        	|a-b| \ge |a| - |b| \text{ and } |a-b| \ge |b| - |a|	        	
-	        	\end{align}
+	        	\begin{equation} \label{Q1:1}
+	        	\begin{split}
+		        	|a-b| &\ge |a| - |b|\,, \text{ and} \\
+		        	|a-b| &\ge |b| - |a|	
+	        	\end{split}
+	        	\end{equation}
 	        	
 	        	Now remember that:
-		        \begin{align}
-	        	 ||a| - |b|| = \max \{|a| - |b|, - (|a| - |b|) \} = \max \{|a| - |b|, - |a| + |b| \}		        	
-		        \end{align}
+		        \begin{equation} \label{Q1:2}
+		        	||a| - |b|| = \max \{|a| - |b|, - (|a| - |b|) \} = \max \{|a| - |b|, - |a| + |b| \}		        	
+		        \end{equation}
 		        
-	        	Using (1) and (2), we can now conclude:
+	        	Using\ref{Q1:1} and \ref{Q1:2}, we can now conclude:
 	        	\[
 		        	|a-b| \ge ||a|-|b||\,.
 	        	\]
