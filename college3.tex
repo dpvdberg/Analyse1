@@ -1,0 +1,84 @@
+% !TeX spellcheck = en_US
+\documentclass[week=3]{homework}
+
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Let $\{a_n\}$, $\{b_n\}$ be sequences with limits $a_n \to a^*$ and $b_n \to b^*$, where $a^*,b^* \in \reals$. Let $c\in\reals$ be arbitrary.
+        
+        Prove the following statements:
+        \begin{parts}
+        	\part
+        	\begin{inlinetoprove}
+        		$ca_n \to ca^*$
+        	\end{inlinetoprove}
+	        \begin{proof}
+	        	% INSERT Q1a
+	        \end{proof}
+	        
+	        \part
+	        \begin{inlinetoprove}
+	        	$a_n + b_n \to a^* + b^*$
+	        \end{inlinetoprove}
+	        \begin{proof}
+	        	% INSERT Q1b
+	        \end{proof}
+        \end{parts}
+    
+	    \question
+	    Let $\{a_n\}$ be a sequence with improper limit $a_n \to \pm\infty$ and $a_n \neq 0$ for all $n$. Let $\{b_n\}$ be a bounded sequence.
+	    
+	    Show the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$a_n + b_n \to \pm \infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		% INSERT Q2a
+	    	\end{proof}
+    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$\frac{b_n}{a_n} \to 0$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		% INSERT Q2a
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Determine if the following sequences converge en find their (possibly improper) limits if such a limit exists. Show what rules and theorems are used.
+	    
+	    \begin{alignat*}{3}
+	    a_n &:= \frac{1}{n^2} - \sqrt n\,,  \qquad &&b_n := \frac{1}{\sqrt n } + (-1)^nn\,,\qquad &&c_n := \left(-\frac{3}{n}\right)^n\,, \\
+	    d_n &:= \frac{(1.01)^n}{n^{2007}}\,, \qquad &&e_n := \frac{n^2-5n+4}{n^3+8n^2+2}\,, \qquad &&f_n := \sqrt[n]{n^3}\,, \\
+	    g_n &:= \frac{3^n - n^3}{2^n + n^2 + 7}\,, \qquad &&h_n := \frac{\sqrt n - \frac{1}{2n}}{\sqrt[3]{n} + \frac{1}{n^2}}\,, \qquad &&k_n := \frac{n^8 + n^5}{4n^8 + 5n^6 + 3}\,.
+	    \end{alignat*}
+	    \begin{parts}
+	    	\part
+	    	% INSERT Q3a
+	    	
+	    	\part
+	    	% INSERT Q3b
+	    	
+	    	% ETC..
+	    \end{parts}
+    
+	    \question Let the sequence $\{a_n\}$ be given by
+	    \[
+		    a_0 = 1\,, \qquad a_{n+1} = a_n + \frac{1}{a_n}\,, \qquad n = 0,1,2,\ldots
+	    \]
+	    
+	    Determine whether $\{a_n\}$ converges and find its limit if it exists.
+	    
+	    % INSERT Q4
+     \end{questions}
+\end{document}
