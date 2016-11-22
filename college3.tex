@@ -62,9 +62,37 @@
 	    d_n &:= \frac{(1.01)^n}{n^{2007}}\,, \qquad &&e_n := \frac{n^2-5n+4}{n^3+8n^2+2}\,, \qquad &&f_n := \sqrt[n]{n^3}\,, \\
 	    g_n &:= \frac{3^n - n^3}{2^n + n^2 + 7}\,, \qquad &&h_n := \frac{\sqrt n - \frac{1}{2n}}{\sqrt[3]{n} + \frac{1}{n^2}}\,, \qquad &&k_n := \frac{n^8 + n^5}{4n^8 + 5n^6 + 3}\,.
 	    \end{alignat*}
+	    
+	    For any sequences $\{a_n\}$ and $\{b_n\}$ constrained by the implication, we can use the following theorems:	    
+	    \begin{alignat}{3}
+		    \label{th:lim:a+b:finite} \tag{$\lim_f\colon a_n+b_n$}		a_n &\to a^* \,, \quad b_n \to b^* \qquad &&\implies \qquad &&a_n + b_n \to a^* + b^*\,, \\
+	    	\label{th:lim:a*b:finite} \tag{$\lim_f\colon a_nb_n$}	a_n &\to a^* \,, \quad b_n \to b^* \qquad &&\implies \qquad &&a_nb_n \to a^*b^*\,, \\
+	    	\label{th:lim:a/b:finite} \tag{$\lim_f\colon a_n/b_n$}		a_n &\to a^* \,, \quad b_n \to b^* \,, \quad b^* \neq 0 \qquad &&\implies \qquad &&\frac{a_n}{b_n} \to \frac{a^*}{b^*} \,, \\
+	    	\label{th:lim:a^p:finite} \tag{$\lim_f\colon (a_n)^p$}		a_n &\to a^* \,, \quad p \in \naturals \qquad &&\implies \qquad &&(a_n)^p \to (a^*)^p \,, \\
+	    	\label{th:lim:k root a:finite} \tag{$\lim_f\colon \sqrt[k]{a_n}$}	a_n &\to a^* \,, \quad \forall_{n\in\naturals}\colon a_n \geq 0\,, \quad k \in \naturals \quad &&\implies \qquad &&\sqrt[k]{a_n} \to \sqrt[k]{a^*} \,, \\
+	    	\nonumber\\
+	    	\label{th:lim:a+b:infinite} \tag{$\lim_\infty\colon a_n + b_n$}	a_n &\to \pm\infty \,, \quad \forall_{n\in\naturals}\colon |b_n| < K \in \reals \quad &&\implies \qquad &&a_n + b_n \to \pm\infty\,, \\
+	    	\label{th:lim:a*b:infinite=} \tag{$\lim_{+\infty}\colon a_nb_n$}	a_n &\to \infty \,, \quad \forall_{n\in\naturals}\colon b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to \infty \enskip (-\infty)\,, \\
+	    	\label{th:lim:a*b:infinite-} \tag{$\lim_{-\infty}\colon a_nb_n$}	a_n &\to -\infty \,, \enskip \forall_{n\in\naturals}\colon b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to -\infty \enskip (\infty)\,, \\
+	    	\label{th:lim:1/a:infinite} \tag{$\lim_\infty\colon 1/a_n$}	a_n &\to \pm\infty \,, \quad \forall_{n\in\naturals}\colon a_n \neq 0 \quad &&\implies \qquad &&\frac{1}{a_n} \to 0\,, \\
+	    	\label{th:lim:c+*a:infinite} \tag{$\lim_\infty\colon c_+ \cdot a_n$}	a_n &\to \pm\infty \,, \quad c \in \reals\,, \quad c > 0 \quad &&\implies \qquad &&ca_n \to \pm\infty\,, \\
+	    	\label{th:lim:c-*a:infinite} \tag{$\lim_\infty\colon c_- \cdot a_n$}	a_n &\to \pm\infty \,, \quad c \in \reals\,, \quad c < 0 \quad &&\implies \qquad &&ca_n \to \mp\infty\,.
+	    \end{alignat}
 	    \begin{parts}
 	    	\part
-	    	% INSERT Q3a
+	    	\begin{inlinetoprove}
+	    		$a_n \to -\infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    			p_n &:= \frac{1}{n^2}\,, \\
+	    			q_n &:= -\sqrt n\,,
+	    		\end{align*}
+	    		then for $a_n$ we have $a_n = p_n + q_n$. We know $\sqrt n \to \infty$ as $n \to \infty$, hence using \ref{th:lim:c-*a:infinite} we have $q_n \to - \infty$. But as $n^2 > 0$ for all $n \neq 0$, we have $p_n \to 0$ using \ref{th:lim:1/a:infinite}.
+	    		
+	    		Using \ref{th:lim:a+b:infinite}, we have $a_n \to -\infty$, as is bounded by 1, i.e. $|p_n| < 1$ for all $n$.
+	    	\end{proof}
 	    	
 	    	\part
 	    	% INSERT Q3b
