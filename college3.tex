@@ -20,7 +20,20 @@
         		$ca_n \to ca^*$
         	\end{inlinetoprove}
 	        \begin{proof}
-	        	% INSERT Q1a
+	        	For $c = 0$ this is trivial. Suppose $c \neq 0$, we need to show
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |ca_n \to ca^*| < \epsilon\,.
+	        	\]
+	        	Let $\epsilon > 0$ be given.
+	        	
+	        	We have $a_n \to a^*$ for $n\to\infty$, so we have
+	        	\[
+		        	\exists_{\bar n \in\naturals}\forall_{\bar n \geq n^*}: |a_n \to a^*| < \frac{\epsilon}{|c|}\,.
+	        	\]
+	        	Choose $n^* = \bar n$, then for $n \geq n^*$ we have
+	        	\[
+		        	|ca_n \to ca^*| = |c||a_n \to a^*| < |c| \cdot \frac{\epsilon}{|c|} = \epsilon\,.
+	        	\]
 	        \end{proof}
 	        
 	        \part
@@ -28,7 +41,21 @@
 	        	$a_n + b_n \to a^* + b^*$
 	        \end{inlinetoprove}
 	        \begin{proof}
-	        	% INSERT Q1b
+	        	We need to show
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |a_n + b_n - a^* - b^*| < \epsilon\,.
+	        	\]
+	        	Let $\epsilon > 0$ be given.
+	        	
+	        	We have $a_n \to a^*$ and $b_n \to b^*$ for $n\to\infty$, so we have
+		        \begin{align*}
+		        	\exists_{\bar n \in\naturals}\forall_{n_1 \geq n^*}: |a_n \to a^*| &< \frac{\epsilon}{2}\,, \\
+		        	\exists_{\bar n \in\naturals}\forall_{n_2 \geq n^*}: |b_n \to b^*| &< \frac{\epsilon}{2}\,.
+	        	\end{align*}
+	        	Choose $n^* = \max\{n_1,n_2\}$, then for $n \geq n^*$ we have
+	        	\[
+		        	|a_n + b_n - a^* - b^*| \letriangle |a_n - a^*| + |b_n - b^*| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon\,.
+	        	\]
 	        \end{proof}
         \end{parts}
     
