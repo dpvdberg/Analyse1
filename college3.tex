@@ -85,22 +85,18 @@
 	    \]
 	    
 	    So, $a_n$ is an increasing sequence. 
-	    We also see that:
-	    \begin{align*}
-	    	a_{n+1} &= a_n + \frac{1}{a_n} \\
-	    	&= (1 + \frac{1}{a_n^2})a_n \\
-	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2})a_{n-1} \\
-	    	&= ... \\
-	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2}) \cdots (1 + \frac{1}{a_0^2})a_0 \\
-	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2}) \cdots (1 + \frac{1}{a_0^2}) \cdot 1
-	    \end{align*}
-		Observe that $(1 + \frac{1}{a_n^2}) > 1$, $(1 + \frac{1}{a_{n-1}^2}) > 1$, etc. We can therefore conclude that $a_{n+1}$ is unbounded, as it keeps on increasing to $\infty$. 
-	    
-	    Because $a_n$ is increasing, it holds that, given some $a_{n_0} \in a_{n+1}$, $a_{n} > a_{n_0} \forall n \ge n_0$. Using this information and the fact that $a_{n+1}$ is unbounded, we can conclude that:
+	    Now assume $a_n$ converges to some limit $p \in \reals$, such that $\lim_{n\to\infty}a_{n} = \lim_{n\to\infty}a_{n+1} = p$ using index shifting. Also, using the fact that $a_n \geq 1$ (as $a_0$ equals 1 and the sequence is increasing), which means $a_n \neq 0$ for all $n$ we apply theorem 2.2.1 and find
 	    \[
-		    \forall_{M \in \reals} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : a_{n+1} > M
-	    \] 
-	    This means that $a_{n+1} \to \infty.$
+		    \frac{1}{\lim_{n\to\infty}a_n} = \frac{1}{p}\,.
+	    \]
 	    
+	    We can conclude that
+	    \[
+		    p = p + \frac{1}{p}\,.
+	    \]
+	    Since there exists no $p \in \reals$ such that $\frac{1}{p} = 0$ we can conclude sequence has an improper limit. Combining this knowledge with the fact that the sequence is (strictly) increasing, we have
+	    \[
+		    a_n \to \infty\,.
+	    \]
      \end{questions}
 \end{document}
