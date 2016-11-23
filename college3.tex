@@ -79,6 +79,28 @@
 	    
 	    Determine whether $\{a_n\}$ converges and find its limit if it exists.
 	    
-	    % INSERT Q4
+	    First of all, we see that:
+	    \[
+		    \frac{a_{n+1}}{a_n} = \frac{a_n + \frac{1}{a_n}}{a_n} = 1 + \frac{1}{a_n^2} > 1
+	    \]
+	    
+	    So, $a_n$ is an increasing sequence. 
+	    We also see that:
+	    \begin{align*}
+	    	a_{n+1} &= a_n + \frac{1}{a_n} \\
+	    	&= (1 + \frac{1}{a_n^2})a_n \\
+	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2})a_{n-1} \\
+	    	&= ... \\
+	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2}) \cdots (1 + \frac{1}{a_0^2})a_0 \\
+	    	&= (1 + \frac{1}{a_n^2})(1 + \frac{1}{a_{n-1}^2}) \cdots (1 + \frac{1}{a_0^2}) \cdot 1
+	    \end{align*}
+		Observe that $(1 + \frac{1}{a_n^2}) > 1$, $(1 + \frac{1}{a_{n-1}^2}) > 1$, etc. We can therefore conclude that $a_{n+1}$ is unbounded, as it keeps on increasing to $\infty$. 
+	    
+	    Because $a_n$ is increasing, it holds that, given some $a_{n_0} \in a_{n+1}$, $a_{n} > a_{n_0} \forall n \ge n_0$. Using this information and the fact that $a_{n+1}$ is unbounded, we can conclude that:
+	    \[
+		    \forall_{M \in \reals} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : a_{n+1} > M
+	    \] 
+	    This means that $a_{n+1} \to \infty.$
+	    
      \end{questions}
 \end{document}
