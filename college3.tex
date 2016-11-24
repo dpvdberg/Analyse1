@@ -209,14 +209,76 @@
 	    d_n &:= \frac{(1.01)^n}{n^{2007}}\,, \qquad &&e_n := \frac{n^2-5n+4}{n^3+8n^2+2}\,, \qquad &&f_n := \sqrt[n]{n^3}\,, \\
 	    g_n &:= \frac{3^n - n^3}{2^n + n^2 + 7}\,, \qquad &&h_n := \frac{\sqrt n - \frac{1}{2n}}{\sqrt[3]{n} + \frac{1}{n^2}}\,, \qquad &&k_n := \frac{n^8 + n^5}{4n^8 + 5n^6 + 3}\,.
 	    \end{alignat*}
+	    
+	    For any sequences $\{a_n\}$ and $\{b_n\}$ constrained by the implication, we can use the following theorems:	    
+	    \begin{alignat}{3}
+		    \label{th:lim:a+b:finite} \tag{$\lim_f\colon a_n+b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_n + b_n \to a^* + b^*\,, \\
+		    \label{th:lim:c*a:finite} \tag{$\lim_f\colon ca_n$}	a_n &\to a^* \,, \enskip c \in \reals \qquad &&\implies \qquad &&ca_n \to ca^*\,, \\
+	    	\label{th:lim:a*b:finite} \tag{$\lim_f\colon a_nb_n$}	a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_nb_n \to a^*b^*\,, \\
+	    	\label{th:lim:a/b:finite} \tag{$\lim_f\colon a_n/b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \,, \enskip b^* \neq 0\,, \enskip b_n \neq 0 &&\implies \qquad &&\frac{a_n}{b_n} \to \frac{a^*}{b^*} \,, \\
+	    	\label{th:lim:a^p:finite} \tag{$\lim_f\colon (a_n)^p$}		a_n &\to a^* \,, \enskip p \in \naturals \qquad &&\implies \qquad &&(a_n)^p \to (a^*)^p \,, \\
+	    	\label{th:lim:k root a:finite} \tag{$\lim_f\colon \sqrt[k]{a_n}$}	a_n &\to a^* \,, \enskip a_n \geq 0\,, \enskip k \in \naturals \quad &&\implies \qquad &&\sqrt[k]{a_n} \to \sqrt[k]{a^*} \,, \\
+	    	\nonumber\\
+	    	\label{th:lim:a->0*b:finite} \tag{$\lim_0\colon a_nb_n$}	a_n &\to 0 \,, \enskip |b_n| < K \in \reals \quad &&\implies \qquad &&a_nb_n \to 0\,, \\
+	    	\label{th:lim:a+b:infinite} \tag{$\lim_\infty\colon a_n + b_n$}	a_n &\to \pm\infty \,, \enskip |b_n| < K \in \reals \quad &&\implies \qquad &&a_n + b_n \to \pm\infty\,, \\	
+	    	\label{th:lim:a*b:infinite+} \tag{$\lim_{+\infty}\colon a_nb_n$}	a_n &\to \infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to \infty \enskip (-\infty)\,, \\
+	    	\label{th:lim:a*b:infinite-} \tag{$\lim_{-\infty}\colon a_nb_n$}	a_n &\to -\infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to -\infty \enskip (\infty)\,, \\
+	    	\label{th:lim:1/a:infinite} \tag{$\lim_\infty\colon 1/a_n$}	a_n &\to \pm\infty \,, \enskip a_n \neq 0 \quad &&\implies \qquad &&\frac{1}{a_n} \to 0\,, \\
+	    	\label{th:lim:c+*a:infinite} \tag{$\lim_\infty\colon c_+ \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c > 0 \quad &&\implies \qquad &&ca_n \to \pm\infty\,, \\
+	    	\label{th:lim:c-*a:infinite} \tag{$\lim_\infty\colon c_- \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c < 0 \quad &&\implies \qquad &&ca_n \to \mp\infty\,.
+	    \end{alignat}
 	    \begin{parts}
 	    	\part
-	    	% INSERT Q3a
+	    	\begin{inlinetoprove}
+	    		$a_n \to -\infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    			p_n &:= \frac{1}{n^2}\,, \\
+	    			q_n &:= -\sqrt n\,,
+	    		\end{align*}
+	    		then for $a_n$ we have $a_n = p_n + q_n$. We know $\sqrt n \to \infty$ as $n \to \infty$, hence using \ref{th:lim:c-*a:infinite} we have $q_n \to - \infty$. But as $n^2 > 0$ for all $n \neq 0$, we have $p_n \to 0$ using \ref{th:lim:1/a:infinite}.
+	    		
+	    		Using \ref{th:lim:a+b:infinite}, we have $a_n \to -\infty$, as $p_n$ is bounded by 1, i.e. $|p_n| < 1$ for all $n$.
+	    	\end{proof}
 	    	
 	    	\part
-	    	% INSERT Q3b
+	    	\begin{inlinetoprove}
+	    		$b_n$ diverges
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    		p_n &:= \frac{1}{\sqrt n}\,, \\
+	    		q_n &:= (-1)^n\,, \\
+	    		r_n &:= n\,,
+	    		\end{align*}
+	    		then for $b_n$ we have $a_n = p_n + q_nr_n$. We know $\sqrt n \to \infty$, hence using \ref{th:lim:1/a:infinite} we have $p_n \to 0$. Of course $n \to \infty$ such that $r_n \to \infty$.
+	    		
+	    		Now $q_n$ is an alternating term where $\sign{q_n} \neq \sign{q_{n+1}}$. As the product of an alternating and diverging sequence is a diverging sequence with no limit, the limit of $a_n$ does not exists.
+	    	\end{proof}
 	    	
-	    	% ETC..
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$c_n \to 0$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    		p_n &:= (-1)^n\,, \\
+	    		q_n &:= \left(\frac{3}{n}\right)^n\,,
+	    		\end{align*}
+	    		then $c_n = p_nq_n$. Now for $n > 3$ we have $\frac{3}{n} < 1$ such that 
+	    		\[
+		    		\left(\frac{3}{n}\right)^n < \frac{3}{n}\,.
+	    		\]
+	    		But then as $n \to \infty$, using \ref{th:lim:1/a:infinite} and \ref{th:lim:c*a:finite}, we have $\frac{3}{n} \to 0$, such that also $q_n \to 0$ (using the fact that $q_n > 0$ for all $n$). Now $p_n$ is bounded by 1, i.e.
+	    		\[
+		    		\forall_{n\in\naturals}: |p_n| \leq 1\,.
+	    		\]
+	    		Using \ref{th:lim:a->0*b:finite} we find $c_n = p_nq_n \to 0$.
+	    	\end{proof}
 	    \end{parts}
     
 	    \question Let the sequence $\{a_n\}$ be given by

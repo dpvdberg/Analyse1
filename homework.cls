@@ -253,8 +253,8 @@
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
 
-% Triangle inequality
-\newcommand\letriangle{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily $\vartriangle$}}}{\le}}}
+% Sign
+\newcommand{\sign}[1]{\ensuremath{\text{sign}\left(#1\right)}}
 
 % Custom equal sign using reference
 \renewcommand\eqref[1]{
