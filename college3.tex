@@ -81,7 +81,59 @@
 	    		$a_n + b_n \to \pm \infty$
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		% INSERT Q2a
+	    		There are two possibilities:
+	    		\begin{itemize}
+	    			\item $a_n \to \infty$
+	    			  			
+	    			We know that:
+	    			\[
+		    			\forall_{N \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n > N
+	    			\]
+	    			We also know that $b_n$ is bounded, so
+	    			\[
+		    			\exists_{K \in \reals} \forall_{n \in \naturals}: |b_n| < K\,,
+	    			\]
+	    			such that we have $-K < b_n < K$ for all $n$.
+	    			
+	    			Let $M \in \reals$ be given and let $N = M+K$. For $n \ge n_0$ we have $a_n - K > M$, hence
+	    			\[
+		    			a_n + b_n > a_n - K > M\,.
+	    			\]
+	    			We now have
+	    			\[
+		    			\forall_{M \in \reals}\exists_{n_0 \in \naturals}\forall_{n \ge n_0}: a_n + b_n > M\,,
+	    			\]
+	    			which means by definition
+	    			\[
+		    			a_n + b_n \to \infty\,.
+	    			\]
+	    			
+	    			\item $a_n \to - \infty$
+	    			
+	    			In this case, we know:
+	    			\[
+		    			\forall_{N \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n < N\,,
+	    			\]
+	    			Again, $b_n$ is bounded, so
+	    			\[
+		    			\exists_{K \in \reals} \forall_{ n \in \naturals}: |b_n| < K\,,
+		    		\]
+		    		such that we have $-K < b_n < K$ for all $n$.
+		    		
+	    			Let $M \in \reals$ be arbitrary and let $N = M-K$. For $n \ge n_0$ we have $a_n + K < M$, hence
+	    			\[
+		    			a_n + b_n < a_n + K < M\,.
+	    			\]
+	    			We now have
+	    			\[
+		    			\forall_{M \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n + b_n < M\,,
+	    			\]
+	    			which means by definition
+	    			\[
+		    			a_n + b_n \to - \infty
+	    			\]
+	    		\end{itemize}
+	    		We have now proven that, if $a_n \to \pm\infty$, $a_n \neq 0$ for all $n$ and $b_n$ is bounded, then $a_n + b_n \to \pm \infty$.
 	    	\end{proof}
     	
 	    	\part
@@ -89,7 +141,63 @@
 	    		$\frac{b_n}{a_n} \to 0$
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		% INSERT Q2a
+	    		Again, we distinguish this proof in two different parts:
+	    		\begin{itemize}
+	    			\item $a_n \to \infty$
+		    		
+		    		Let $\epsilon > 0$ be given, we need to prove
+		    		\[
+			    		\exists_{n^* \in \naturals} \forall_{n \ge n^*}: \left| \frac{b_n}{a_n}\right| < \epsilon\,.
+		    		\]
+		    		
+		    		We know that $b_n$ is bounded, so
+		    		\[
+			    		\exists_{K > 0} \forall_{n \in \naturals}: |b_n| < K\,.
+		    		\]
+		    		Also, since $a_n \to \infty$:
+		    		\[
+			    		\forall_{N \in \reals}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: a_n > N\,.
+		    		\]
+		    		Since $\epsilon > 0$ and $K > 0$, we have $\frac{K}{\epsilon} > 0$ and hence $a_n > 0$ for $n \geq n_0$. But in this case it also holds that
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| = \frac{|b_n|}{a_n} < \frac{K}{a_n}\,.
+		    		\]
+			    	Choosing $N = K/\epsilon$ and $n^* = n_0$, we find that for $n\geq n^*$ we have
+		    		\[
+			    		\left| \frac{b_n}{a_n} \right| < \frac{K}{a_n} < \frac{K}{K/\epsilon} = \epsilon\,.
+		    		\]
+		    		Hence, $\frac{b_n}{a_n} \to 0$.
+		    		
+	    			\item $a_n \to - \infty$
+	    			Let $\epsilon > 0$ be given, we need to prove
+	    			\[
+		    			\exists_{n^* \in \naturals} \forall_{n \ge n^*}: \left| \frac{b_n}{a_n} \right| < \epsilon\,.
+	    			\]
+	    			
+		    		We know that $b_n$ is bounded, so
+		    		\[
+			    		\exists_{K > 0 \in \reals} \forall_{n \in \naturals}: |b_n| < K\,.
+		    		\]
+		    		
+		    		Also, since $a_n \to -\infty$
+		    		\[
+			    		\forall_{N > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n < -N\,.
+		    		\]
+		    		
+		    		We have $N > 0$, such that $a_n < -N < 0$ and hence $|a_n| > |-N| = N$.
+		    		
+		    		We can now write
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{|a_n|}\,,
+		    		\]
+		    		which using $n^* = n_0$, choosing $N = K/\epsilon > 0$ and for $n \geq n^*$ yields 
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{K/\epsilon} = \epsilon\,.
+		    		\]
+		    		Now, by definition $\frac{b_n}{a_n} \to 0$.
+	    		\end{itemize}
+	    		
+	    		We have now proven that in both cases $\frac{b_n}{a_n} \to 0$.
 	    	\end{proof}
 	    \end{parts}
     
