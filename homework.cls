@@ -52,6 +52,7 @@
 \RequirePackage{enumitem}
 \RequirePackage{mathtools}
 \RequirePackage{mathrsfs}
+\RequirePackage{calc}
 \RequirePackage[deletedmarkup=xout]{changes}
 
 \footer{}{}{}
@@ -251,5 +252,26 @@
 % Let references be with parentheses
 \let\oldref\ref
 \renewcommand{\ref}[1]{(\oldref{#1})}
+
+% Sign
+\newcommand{\sign}[1]{\ensuremath{\text{sign}\left(#1\right)}}
+
+% Custom equal sign using reference
+\renewcommand\eqref[1]{
+	\newsavebox{\overeqbox}
+	\savebox{\overeqbox}{\mbox{\normalfont\tiny\sffamily\ref{#1}}}
+	\newlength{\overeqboxlen}
+	\settowidth{\overeqboxlen}{\usebox{\overeqbox}}
+	\newdimen \defaulteqlen
+	\defaulteqlen = 7.8pt
+	\ifdim \overeqboxlen > \defaulteqlen \def\eqlen{\overeqboxlen} \else \def\eqlen{\defaulteqlen} \fi
+	\mathrel{
+		\overset{
+			\makebox[0pt]{\usebox{\overeqbox}}
+		} {
+			\makebox[\the\overeqboxlen]{\resizebox{\the\eqlen}{3.9pt}{=}}
+		}
+	}
+}
 
 \endinput

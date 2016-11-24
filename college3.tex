@@ -1,0 +1,433 @@
+% !TeX spellcheck = en_US
+\documentclass[week=3]{homework}
+
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Let $\{a_n\}$, $\{b_n\}$ be sequences with limits $a_n \to a^*$ and $b_n \to b^*$, where $a^*,b^* \in \reals$. Let $c\in\reals$ be arbitrary.
+        
+        Prove the following statements:
+        \begin{parts}
+        	\part
+        	\begin{inlinetoprove}
+        		$ca_n \to ca^*$
+        	\end{inlinetoprove}
+	        \begin{proof}
+	        	For $c = 0$ this is trivial. Suppose $c \neq 0$, we need to show
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |ca_n \to ca^*| < \epsilon\,.
+	        	\]
+	        	Let $\epsilon > 0$ be given.
+	        	
+	        	We have $a_n \to a^*$ for $n\to\infty$, so we have
+	        	\[
+		        	\exists_{\bar n \in\naturals}\forall_{n \geq \bar n}: |a_n \to a^*| < \frac{\epsilon}{|c|}\,.
+	        	\]
+	        	Choose $n^* = \bar n$, then for $n \geq n^*$ we have
+	        	\[
+		        	|ca_n - ca^*| = |c||a_n - a^*| < |c| \cdot \frac{\epsilon}{|c|} = \epsilon\,.
+	        	\]
+	        	
+	        	Thus, we find that:
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |ca_n - ca^*| < \epsilon 
+	        	\]
+		      	We have now proven that $ca_n \to ca^*$.
+	      
+	        \end{proof}
+	        
+	        \part
+	        \begin{inlinetoprove}
+	        	$a_n + b_n \to a^* + b^*$
+	        \end{inlinetoprove}
+	        \begin{proof}
+	        	We need to show
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |a_n + b_n - a^* - b^*| < \epsilon\,.
+	        	\]
+	        	Let $\epsilon > 0$ be given.
+	        	
+	        	We have $a_n \to a^*$ and $b_n \to b^*$ for $n\to\infty$, so we have
+		        \begin{align*}
+		        	\exists_{n_1 \in\naturals}\forall_{n \geq n_1}: |a_n \to a^*| &< \frac{\epsilon}{2}\,, \\
+		        	\exists_{n_2 \in\naturals}\forall_{n \geq n_2}: |b_n \to b^*| &< \frac{\epsilon}{2}\,.
+	        	\end{align*}
+	        	Choose $n^* = \max\{n_1,n_2\}$, then for $n \geq n^*$ we have
+	        	\[
+		        	|a_n + b_n - a^* - b^*| \letriangle |a_n - a^*| + |b_n - b^*| < \frac{\epsilon}{2} + \frac{\epsilon}{2} = \epsilon\,.
+	        	\]
+	        	Thus:
+	        	\[
+		        	\forall_{\epsilon > 0}\exists_{n^*\in\naturals}\forall_{n\geq n^*}: |a_n + b_n - a^* - b^*| < \epsilon
+	        	\]
+	        	We have now proven that $a_n + b_n \to a^* + b^*$.
+	        \end{proof}
+        \end{parts}
+    
+	    \question
+	    Let $\{a_n\}$ be a sequence with improper limit $a_n \to \pm\infty$ and $a_n \neq 0$ for all $n$. Let $\{b_n\}$ be a bounded sequence.
+	    
+	    Show the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$a_n + b_n \to \pm \infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		There are two possibilities:
+	    		\begin{itemize}
+	    			\item $a_n \to \infty$
+	    			  			
+	    			We know that:
+	    			\[
+		    			\forall_{N \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n > N
+	    			\]
+	    			We also know that $b_n$ is bounded, so
+	    			\[
+		    			\exists_{K \in \reals} \forall_{n \in \naturals}: |b_n| < K\,,
+	    			\]
+	    			such that we have $-K < b_n < K$ for all $n$.
+	    			
+	    			Let $M \in \reals$ be given and let $N = M+K$. For $n \ge n_0$ we have $a_n - K > M$, hence
+	    			\[
+		    			a_n + b_n > a_n - K > M\,.
+	    			\]
+	    			We now have
+	    			\[
+		    			\forall_{M \in \reals}\exists_{n_0 \in \naturals}\forall_{n \ge n_0}: a_n + b_n > M\,,
+	    			\]
+	    			which means by definition
+	    			\[
+		    			a_n + b_n \to \infty\,.
+	    			\]
+	    			
+	    			\item $a_n \to - \infty$
+	    			
+	    			In this case, we know:
+	    			\[
+		    			\forall_{N \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n < N\,,
+	    			\]
+	    			Again, $b_n$ is bounded, so
+	    			\[
+		    			\exists_{K \in \reals} \forall_{ n \in \naturals}: |b_n| < K\,,
+		    		\]
+		    		such that we have $-K < b_n < K$ for all $n$.
+		    		
+	    			Let $M \in \reals$ be arbitrary and let $N = M-K$. For $n \ge n_0$ we have $a_n + K < M$, hence
+	    			\[
+		    			a_n + b_n < a_n + K < M\,.
+	    			\]
+	    			We now have
+	    			\[
+		    			\forall_{M \in \reals}\exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n + b_n < M\,,
+	    			\]
+	    			which means by definition
+	    			\[
+		    			a_n + b_n \to - \infty
+	    			\]
+	    		\end{itemize}
+	    		We have now proven that, if $a_n \to \pm\infty$, $a_n \neq 0$ for all $n$ and $b_n$ is bounded, then $a_n + b_n \to \pm \infty$.
+	    	\end{proof}
+    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$\frac{b_n}{a_n} \to 0$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Again, we distinguish this proof in two different parts:
+	    		\begin{itemize}
+	    			\item $a_n \to \infty$
+		    		
+		    		Let $\epsilon > 0$ be given, we need to prove
+		    		\[
+			    		\exists_{n^* \in \naturals} \forall_{n \ge n^*}: \left| \frac{b_n}{a_n}\right| < \epsilon\,.
+		    		\]
+		    		
+		    		We know that $b_n$ is bounded, so
+		    		\[
+			    		\exists_{K > 0} \forall_{n \in \naturals}: |b_n| < K\,.
+		    		\]
+		    		Also, since $a_n \to \infty$:
+		    		\[
+			    		\forall_{N \in \reals}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: a_n > N\,.
+		    		\]
+		    		Since $\epsilon > 0$ and $K > 0$, we have $\frac{K}{\epsilon} > 0$ and hence $a_n > 0$ for $n \geq n_0$. But in this case it also holds that
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| = \frac{|b_n|}{a_n} < \frac{K}{a_n}\,.
+		    		\]
+			    	Choosing $N = K/\epsilon$ and $n^* = n_0$, we find that for $n\geq n^*$ we have
+		    		\[
+			    		\left| \frac{b_n}{a_n} \right| < \frac{K}{a_n} < \frac{K}{K/\epsilon} = \epsilon\,.
+		    		\]
+		    		Hence, $\frac{b_n}{a_n} \to 0$.
+		    		
+	    			\item $a_n \to - \infty$
+	    			Let $\epsilon > 0$ be given, we need to prove
+	    			\[
+		    			\exists_{n^* \in \naturals} \forall_{n \ge n^*}: \left| \frac{b_n}{a_n} \right| < \epsilon\,.
+	    			\]
+	    			
+		    		We know that $b_n$ is bounded, so
+		    		\[
+			    		\exists_{K > 0 \in \reals} \forall_{n \in \naturals}: |b_n| < K\,.
+		    		\]
+		    		
+		    		Also, since $a_n \to -\infty$
+		    		\[
+			    		\forall_{N > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n < -N\,.
+		    		\]
+		    		
+		    		We have $N > 0$, such that $a_n < -N < 0$ and hence $|a_n| > |-N| = N$.
+		    		
+		    		We can now write
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{|a_n|}\,,
+		    		\]
+		    		which using $n^* = n_0$, choosing $N = K/\epsilon > 0$ and for $n \geq n^*$ yields 
+		    		\[
+			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{K/\epsilon} = \epsilon\,.
+		    		\]
+		    		Now, by definition $\frac{b_n}{a_n} \to 0$.
+	    		\end{itemize}
+	    		
+	    		We have now proven that in both cases $\frac{b_n}{a_n} \to 0$.
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Determine if the following sequences converge en find their (possibly improper) limits if such a limit exists. Show what rules and theorems are used.
+	    
+	    \begin{alignat*}{3}
+	    a_n &:= \frac{1}{n^2} - \sqrt n\,,  \qquad &&b_n := \frac{1}{\sqrt n } + (-1)^nn\,,\qquad &&c_n := \left(-\frac{3}{n}\right)^n\,, \\
+	    d_n &:= \frac{(1.01)^n}{n^{2007}}\,, \qquad &&e_n := \frac{n^2-5n+4}{n^3+8n^2+2}\,, \qquad &&f_n := \sqrt[n]{n^3}\,, \\
+	    g_n &:= \frac{3^n - n^3}{2^n + n^2 + 7}\,, \qquad &&h_n := \frac{\sqrt n - \frac{1}{2n}}{\sqrt[3]{n} + \frac{1}{n^2}}\,, \qquad &&k_n := \frac{n^8 + n^5}{4n^8 + 5n^6 + 3}\,.
+	    \end{alignat*}
+	    
+	    For any sequences $\{a_n\}$ and $\{b_n\}$ constrained by the implication, we can use the following theorems:	    
+	    \begin{alignat}{3}
+		    \label{th:lim:a+b:finite} \tag{$\lim_f\colon a_n+b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_n + b_n \to a^* + b^*\,, \\
+		    \label{th:lim:c*a:finite} \tag{$\lim_f\colon ca_n$}	a_n &\to a^* \,, \enskip c \in \reals \qquad &&\implies \qquad &&ca_n \to ca^*\,, \\
+	    	\label{th:lim:a*b:finite} \tag{$\lim_f\colon a_nb_n$}	a_n &\to a^* \,, \enskip b_n \to b^* \qquad &&\implies \qquad &&a_nb_n \to a^*b^*\,, \\
+	    	\label{th:lim:a/b:finite} \tag{$\lim_f\colon a_n/b_n$}		a_n &\to a^* \,, \enskip b_n \to b^* \,, \enskip b^* \neq 0\,, \enskip b_n \neq 0 &&\implies \qquad &&\frac{a_n}{b_n} \to \frac{a^*}{b^*} \,, \\
+	    	\label{th:lim:a^p:finite} \tag{$\lim_f\colon (a_n)^p$}		a_n &\to a^* \,, \enskip p \in \naturals \qquad &&\implies \qquad &&(a_n)^p \to (a^*)^p \,, \\
+	    	\label{th:lim:k root a:finite} \tag{$\lim_f\colon \sqrt[k]{a_n}$}	a_n &\to a^* \,, \enskip a_n \geq 0\,, \enskip k \in \naturals \quad &&\implies \qquad &&\sqrt[k]{a_n} \to \sqrt[k]{a^*} \,, \\
+	    	\nonumber\\
+	    	\label{th:lim:a->0*b:finite} \tag{$\lim_0\colon a_nb_n$}	a_n &\to 0 \,, \enskip |b_n| < K \in \reals \quad &&\implies \qquad &&a_nb_n \to 0\,, \\
+	    	\label{th:lim:a+b:infinite} \tag{$\lim_\infty\colon a_n + b_n$}	a_n &\to \pm\infty \,, \enskip |b_n| < K \in \reals \quad &&\implies \qquad &&a_n + b_n \to \pm\infty\,, \\	
+	    	\label{th:lim:a*b:infinite+} \tag{$\lim_{+\infty}\colon a_nb_n$}	a_n &\to \infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to \infty \enskip (-\infty)\,, \\
+	    	\label{th:lim:a*b:infinite-} \tag{$\lim_{-\infty}\colon a_nb_n$}	a_n &\to -\infty \,, \enskip b_n > 0 \enskip (b_n < 0) \quad &&\implies \qquad &&a_nb_n \to -\infty \enskip (\infty)\,, \\
+	    	\label{th:lim:1/a:infinite} \tag{$\lim_\infty\colon 1/a_n$}	a_n &\to \pm\infty \,, \enskip a_n \neq 0 \quad &&\implies \qquad &&\frac{1}{a_n} \to 0\,, \\
+	    	\label{th:lim:c+*a:infinite} \tag{$\lim_\infty\colon c_+ \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c > 0 \quad &&\implies \qquad &&ca_n \to \pm\infty\,, \\
+	    	\label{th:lim:c-*a:infinite} \tag{$\lim_\infty\colon c_- \cdot a_n$}	a_n &\to \pm\infty \,, \enskip c \in \reals\,, \enskip c < 0 \quad &&\implies \qquad &&ca_n \to \mp\infty\,.
+	    \end{alignat}
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$a_n \to -\infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    			p_n &:= \frac{1}{n^2}\,, \\
+	    			q_n &:= -\sqrt n\,,
+	    		\end{align*}
+	    		then for $a_n$ we have $a_n = p_n + q_n$. We know $\sqrt n \to \infty$ as $n \to \infty$, hence using \ref{th:lim:c-*a:infinite} we have $q_n \to - \infty$. But as $n^2 > 0$ for all $n \neq 0$, we have $p_n \to 0$ using \ref{th:lim:1/a:infinite}.
+	    		
+	    		Using \ref{th:lim:a+b:infinite}, we have $a_n \to -\infty$, as $p_n$ is bounded by 1, i.e. $|p_n| < 1$ for all $n$.
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$b_n$ diverges
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    		p_n &:= \frac{1}{\sqrt n}\,, \\
+	    		q_n &:= (-1)^n\,, \\
+	    		r_n &:= n\,,
+	    		\end{align*}
+	    		then for $b_n$ we have $a_n = p_n + q_nr_n$. We know $\sqrt n \to \infty$, hence using \ref{th:lim:1/a:infinite} we have $p_n \to 0$. Of course $n \to \infty$ such that $r_n \to \infty$.
+	    		
+	    		Now $q_n$ is an alternating term where $\sign{q_n} \neq \sign{q_{n+1}}$. As the product of an alternating and diverging sequence is a diverging sequence with no limit, the limit of $a_n$ does not exists.
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		$c_n \to 0$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+	    		p_n &:= (-1)^n\,, \\
+	    		q_n &:= \left(\frac{3}{n}\right)^n\,,
+	    		\end{align*}
+	    		then $c_n = p_nq_n$. Now for $n > 3$ we have $\frac{3}{n} < 1$ such that 
+	    		\[
+		    		\left(\frac{3}{n}\right)^n < \frac{3}{n}\,.
+	    		\]
+	    		But then as $n \to \infty$, using \ref{th:lim:1/a:infinite} and \ref{th:lim:c*a:finite}, we have $\frac{3}{n} \to 0$, such that also $q_n \to 0$ (using the fact that $q_n > 0$ for all $n$). Now $p_n$ is bounded by 1, i.e.
+	    		\[
+		    		\forall_{n\in\naturals}: |p_n| \leq 1\,.
+	    		\]
+	    		Using \ref{th:lim:a->0*b:finite} we find $c_n = p_nq_n \to 0$.
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+	    		$d_n \to \infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+		    		p_n := \frac{n^{2007}}{(1.01)^n}	    			
+	    		\end{align*}
+	    		We know this converges to 0, because of the following standard sequence:
+	    		\[
+		    		\lim_{n \to \infty} \frac{n^k}{a^n} = 0,
+	    		\]
+	    		as long as $|a| > 1$ and $k \in \naturals$. 
+	    		In our case $a = 1.01$ and $k = 2007$. But then we know $p_n \to 0$. We can use this to explore the behaviour of $b_n$:
+	    		\[
+		    		b_n = \frac{1}{p_n} \xrightarrow{n\to\infty} \infty
+	    		\]
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+	    		$e_n \to 0$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+		    		p_n &:= \frac{1}{n} \\
+		    		q_n &:= \frac{5}{n^2} \\
+		    		r_n &:= \frac{4}{n^2} \\
+			    	s_n &:= \frac{8}{n} \\
+			    	t_n &:= \frac{2}{n^2}   		
+	    		\end{align*}
+	    		
+	    		Clearly:
+	    		\[
+		    		e_n = \frac{n^2 - 5n + 4}{n^3 + 8n^2 + 2} = \frac{p_n - q_n + r_n}{1 + s_n + t_n}\,.
+	    		\]
+	    		
+	    		Using \ref{th:lim:1/a:infinite}, we can conclude that $p_n, q_n, r_n, s_n \text{ and } t_n$ all converge to 0. We can use this information to conclude:
+	    		\[
+		    		e_n = \frac{p_n - q_n + r_n}{1 + s_n + t_n} \xrightarrow{n\to\infty} \infty\,.
+	    		\]
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+		    	$f_n \to 1$	
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}	
+		    		p_n := \sqrt[n]{n}\,.	
+	    		\end{align*}
+	    		This is a standard limit, that converges to $1$. We can use this to explore the behaviour of $f_n$:
+	    		\[
+		    		f_n = \sqrt[n]{n^3} = n^{\frac{3}{n}} = (n^{\frac{1}{n}})^3 = (p_n)^3 \xrightarrow{n \to \infty } 1^3 = 1\,.
+	    		\]
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+		    	$g_n \to \infty$	
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}
+		    		p_n &:= \frac{n^3}{3^n} \\
+		    		q_n &:= \left(\frac{2}{3} \right)^n \\
+		    		r_n &:= \frac{n^2}{3^n} \\
+		    		s_n &:= \frac{7}{3^n}
+	    		\end{align*}
+	    		$p_n$ and $r_n$ converge to $0$, using the following standard limit:
+	    		\[
+		    		\lim_{n \to \infty} \frac{n^k}{a^n} = 0,
+	    		\]
+	    		because in both cases $|a| > 1$ and $k \in \naturals$. $q_n$ converges to $0$ also, using another standard limit:
+	    		\[
+		    		\lim_{n \to \infty} a^n \to 0 \text{ if } |a| < 1
+	    		\]
+	    		because in our case $a = \frac{2}{3} < 1$. Lastly, $s_n$ also converges to $0$, because of \ref{th:lim:1/a:infinite}.
+	    		
+	    		Now, we can use all of this information to explore the behavior of $g_n$:
+	    		\[
+		    		g_n = \frac{3^n - n^3}{2^n + n^2 + 7} = \frac{1 - p_n}{q_n + r_n + s_n} \xrightarrow{n \to \infty} \infty\,.    		
+	    		\]
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+	    		$h_n \to \infty$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}	 
+	    		   	p_n &:= \frac{1}{2n \sqrt{n}} \\
+	    		   	q_n &:= \frac{1}{\sqrt[6]{n}} \\
+	    		   	r_n &:= \frac{1}{n^2 \sqrt{n}}	    			    	
+	    		\end{align*}
+	    		$p_n, q_n$ and $r_n$ all converge to $0$, because of the limit theorem \ref{th:lim:1/a:infinite}. We can use this information to explore the behaviour of $h_n$:
+	    		\[
+		    		h_n = \frac{\sqrt{n} - \frac{1}{2n}}{\sqrt[3]{n} + \frac{1}{n^2}} = \frac{1 - p_n}{q_n + r_n} \xrightarrow{n \to \infty} \infty\,.
+	    		\]	    		
+	    	\end{proof}
+	    	
+	    	\part 
+	    	\begin{inlinetoprove}
+	    		$k_n \to \frac{1}{4}$
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Define sequences
+	    		\begin{align*}	    		
+		    		p_n &:= \frac{1}{n^3} \\
+		    		q_n &:= \frac{5}{n^2} \\
+		    		r_n &:= \frac{3}{n^8}
+	    		\end{align*}
+	    		All these sequences converge to $0$, because of the limit theorem \ref{th:lim:1/a:infinite}. We can use this information to explore the behaviour of $k_n$:
+	    		\[
+		    		k_n = \frac{n^8 + n^5}{4n^8 + 5n^6 + 3}= \frac{1 + p_n}{4 + q_n + r_n} \xrightarrow{n \to \infty} \frac{1}{4}\,.
+	    		\]
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question Let the sequence $\{a_n\}$ be given by
+	    \[
+		    a_0 = 1\,, \qquad a_{n+1} = a_n + \frac{1}{a_n}\,, \qquad n = 0,1,2,\ldots
+	    \]
+	    
+	    Determine whether $\{a_n\}$ converges and find its limit if it exists.
+	    
+	    First of all, we see that:
+	    \[
+		    \frac{a_{n+1}}{a_n} = \frac{a_n + \frac{1}{a_n}}{a_n} = 1 + \frac{1}{a_n^2} > 1
+	    \]
+	    
+	    So, $a_n$ is an increasing sequence. 
+	    Now assume $a_n$ converges to some limit $p \in \reals$, such that $\lim_{n\to\infty}a_{n} = \lim_{n\to\infty}a_{n+1} = p$ using index shifting. Also, using the fact that $a_n \geq 1$ (as $a_0$ equals 1 and the sequence is increasing), which means $a_n \neq 0$ for all $n$ we apply theorem 2.2.1 and find
+	    \[
+		    \frac{1}{\lim_{n\to\infty}a_n} = \frac{1}{p}\,.
+	    \]
+	    
+	    We can conclude that
+	    \[
+		    p = p + \frac{1}{p}\,.
+	    \]
+	    Since there exists no $p \in \reals$ such that $\frac{1}{p} = 0$ we can conclude sequence has an improper limit. Combining this knowledge with the fact that the sequence is (strictly) increasing, we have
+	    \[
+		    a_n \to \infty\,.
+	    \]
+     \end{questions}
+\end{document}
