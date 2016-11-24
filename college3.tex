@@ -158,11 +158,11 @@
 		    		\[
 			    		\forall_{N \in \reals}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: a_n > N\,.
 		    		\]
-		    		Since $\epsilon > 0$ and $K > 0$, we have $\frac{K}{\epsilon} > 0$ and hence $a_n > 0$ for $n \geq n_0$. But in this case it also holds that
+			    	  Choose $N$ such that $N > 0$. Then $a_n > 0$ for $n \geq n_0$. In this case it also holds that
 		    		\[
 			    		\left|\frac{b_n}{a_n}\right| = \frac{|b_n|}{a_n} < \frac{K}{a_n}\,.
 		    		\]
-			    	Choosing $N = K/\epsilon$ and $n^* = n_0$, we find that for $n\geq n^*$ we have
+			    		Since $\epsilon > 0$ and $K > 0$, we have $\frac{K}{\epsilon} > 0$. Choosing $N = K/\epsilon$ and $n^* = n_0$, we find that for $n\geq n^*$ we have
 		    		\[
 			    		\left| \frac{b_n}{a_n} \right| < \frac{K}{a_n} < \frac{K}{K/\epsilon} = \epsilon\,.
 		    		\]
@@ -184,13 +184,13 @@
 			    		\forall_{N > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0}: a_n < -N\,.
 		    		\]
 		    		
-		    		We have $N > 0$, such that $a_n < -N < 0$ and hence $|a_n| > |-N| = N$.
+		    		We have $N > 0$, such that $a_n < -N < 0$ and hence $|a_n| > |-N| = N$. So, $\frac{1}{|a_n|} < \frac{1}{N}$.
 		    		
 		    		We can now write
 		    		\[
-			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{|a_n|}\,,
+			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{|a_n|}\,.
 		    		\]
-		    		which using $n^* = n_0$, choosing $N = K/\epsilon > 0$ and for $n \geq n^*$ yields 
+		    		Using $n^* = n_0$, choosing $N = K/\epsilon > 0$ and for $n \geq n^*$ yields 
 		    		\[
 			    		\left|\frac{b_n}{a_n}\right| < \frac{K}{K/\epsilon} = \epsilon\,.
 		    		\]
@@ -320,7 +320,7 @@
 		    		e_n = \frac{n^2 - 5n + 4}{n^3 + 8n^2 + 2} = \frac{p_n - q_n + r_n}{1 + s_n + t_n}\,.
 	    		\]
 	    		
-	    		Using \ref{th:lim:c/a:infinite}, we can conclude that $p_n, q_n, r_n, s_n \text{ and } t_n$ all converge to 0. Taking all limits except for $p_n$ we find $e_n \xrightarrow{n\to\infty} p_n$, where $p_n \xrightarrow{n\to\infty} 0$, hence
+	    		Using \ref{th:lim:c/a:infinite}, we can conclude that $p_n, q_n, r_n, s_n \text{ and } t_n$ all converge to 0. Using this information, we can explore the behavior of $e_n$:
 	    		\[
 		    		e_n = \frac{p_n - q_n + r_n}{1 + s_n + t_n} \xrightarrow{n\to\infty} 0\,.
 	    		\]
@@ -422,7 +422,7 @@
 		    \frac{1}{\lim_{n\to\infty}a_n} = \frac{1}{p}\,.
 	    \]
 	    
-	    We can conclude that
+	    Using $\lim_{n \to \infty} a_n = \lim_{n \to \infty} a_{n+1}$, we can conclude that
 	    \[
 		    p = p + \frac{1}{p}\,.
 	    \]
