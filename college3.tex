@@ -410,6 +410,24 @@
 	    
 	    Determine whether $\{a_n\}$ converges and find its limit if it exists.
 	    
-	    % INSERT Q4
+	    First of all, we see that:
+	    \[
+		    \frac{a_{n+1}}{a_n} = \frac{a_n + \frac{1}{a_n}}{a_n} = 1 + \frac{1}{a_n^2} > 1
+	    \]
+	    
+	    So, $a_n$ is an increasing sequence. 
+	    Now assume $a_n$ converges to some limit $p \in \reals$, such that $\lim_{n\to\infty}a_{n} = \lim_{n\to\infty}a_{n+1} = p$ using index shifting. Also, using the fact that $a_n \geq 1$ (as $a_0$ equals 1 and the sequence is increasing), which means $a_n \neq 0$ for all $n$ we apply theorem 2.2.1 and find
+	    \[
+		    \frac{1}{\lim_{n\to\infty}a_n} = \frac{1}{p}\,.
+	    \]
+	    
+	    We can conclude that
+	    \[
+		    p = p + \frac{1}{p}\,.
+	    \]
+	    Since there exists no $p \in \reals$ such that $\frac{1}{p} = 0$ we can conclude sequence has an improper limit. Combining this knowledge with the fact that the sequence is (strictly) increasing, we have
+	    \[
+		    a_n \to \infty\,.
+	    \]
      \end{questions}
 \end{document}
