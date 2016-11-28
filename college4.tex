@@ -1,0 +1,43 @@
+% !TeX spellcheck = en_US
+\documentclass[week=4]{homework}
+
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Determine the limits of the following sequences:
+        
+        \[
+	        a_n := \left(1 + \frac{1}{n} \right)^{2n}, \quad b_n := \left(\frac{n+8}{n+7} \right)^{n+4}, \quad c_n := \left(n + \frac{1}{n^2} \right)^{n}, \quad d_n := \left(1 - \frac{1}{n} \right)^n
+        \]
+        
+        \question 
+        Show: Each subsequence of a convergent sequence converges to the same limit. 
+        
+        \question 
+        Show: Each sequence that is unbounded above / below has a subsequence that goes to $+ \infty / - \infty$. Conclude: Every sequence of real numbers has a finite or improper convergent subsequence. 
+        
+        \question
+        Find all accumulation points of the following sequences:
+        \[
+	        a_n := \frac{k}{dn}, \quad b_n := \left(-1-\frac{1}{n}\right)^n
+        \]
+        
+        (Show that you have indeed found all accumulation points!)
+        
+        \question
+        For a sequence $\{a_n \} $, define $V(\{a_n \})$ the set of accumulation points. Give examples of sequences $\{a_n \}$ such that:
+        
+        \begin{parts}
+        	\part $V(\{a_n \})$ has exactly 4 elements 
+        	\part $V(\{a_n \})$ has infinitely many elements
+        	\part $\star$ $V(\{a_n \}) = [0, 1]$
+        \end{parts}
+     \end{questions}
+\end{document}
