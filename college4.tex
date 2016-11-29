@@ -36,7 +36,19 @@
         
         \begin{parts}
         	\part $V(\{a_n \})$ has exactly 4 elements 
+        	
+        	Define $a_n = n \pmod 4 = \{0,1,2,3,\enskip0,1,2,3,\enskip0,1,2,3,\ldots\}$, then $V(\{a_n\}) = \{0,1,2,3\}$.
         	\part $V(\{a_n \})$ has infinitely many elements
+        	
+        	Define
+        	\[
+	        	a_n =  n + 1 - \frac{\ceil{p_n}(\ceil{p_n}-1)}{2} = \{0,1,\enskip0,1,2,\enskip0,1,2,3,\ldots\}\,,
+	        \]
+	        where
+	        \[
+		        p_n := \frac{\sqrt{8n+9}-1}{2}\,,
+		    \]
+		    then $V(\{a_n\}) = \{0,1,2,3,\ldots\} = \naturals$.
         	\part $\star$ $V(\{a_n \}) = [0, 1]$
         \end{parts}
      \end{questions}
