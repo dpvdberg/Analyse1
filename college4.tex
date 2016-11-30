@@ -79,7 +79,31 @@
         
         
         \question 
-        Show: Each subsequence of a convergent sequence converges to the same limit. 
+        \begin{inlinetoprove}
+        	Each subsequence of a convergent sequence converges to the same limit. 
+        \end{inlinetoprove}
+        \begin{proof}
+        	Let $a_n$ be a convergent sequence, $a_n \xrightarrow{n\to\infty} a^*$. Let $\{n_k\}$ be an index sequence of the subsequence $\{a_{n_k}\}$ and let $\epsilon > 0$ be arbitrary. We need to show
+        	\[
+	        	\exists_{k^* \in \naturals}\forall_{k \geq k^*}: |a_{n_k} - a^*| < \epsilon\,.
+        	\]
+        	
+        	We have $a_n \xrightarrow{n\to\infty} a^*$, which means
+        	\[
+	        	\exists_{n_1 \in \naturals}\forall_{n \geq n_1}: |a_n - a^*| < \epsilon\,.
+        	\]
+        	By definition of a index sequence for a subsequence, we have that $n_{k+1} > n_k$ and $n_k \xrightarrow{k\to\infty} \infty$, therefore
+        	\[
+	        	\forall_{M > 0}\exists_{k_1 \in \naturals}\forall_{k \geq k_1}: n_k > M\,.
+        	\]
+        	
+        	Choose $M = n_1$ and $k^* = k_1$, then for all $k \geq k^* = k_1$ we find $n_k > n_1$, which implies
+        	\[
+	        	|a_{n_k} - a^*| < \epsilon\,.
+        	\]
+        	
+        	This in turn implies $a_{n_k} \xrightarrow{n\to\infty} a^*$.
+        \end{proof}
         
         \question 
         Show: Each sequence that is unbounded above / below has a subsequence that goes to $+ \infty / - \infty$. Conclude: Every sequence of real numbers has a finite or improper convergent subsequence. 
