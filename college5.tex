@@ -185,30 +185,72 @@
 	    
 	    \begin{parts}
 	    	\part
-	    	If $\sum a_n$ and $\sum b_n$ are convergent, then so is $\sum (a_n + b_n)$ and $\sum (a_n + b_n) = \sum a_n + \sum b_n$.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ and $\sum b_n$ are convergent, then so is $\sum (a_n + b_n)$ and $\sum (a_n + b_n) = \sum a_n + \sum b_n$.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		content...
+	    		We know that $\sum a_n$ and $\sum b_n$ are convergent. Let $S_n$ be the sequence of partial sums of $\sum a_n$, let $T_n$ be the partial sums of $\sum b_n$ and let $R_n$ be the partial sums of $\sum (a_n + b_n)$.
+	    		By associativity of addition we have
+	    		\begin{align*}
+	    			\sum_{k=1}^{n} (a_n + b_n) &= \sum_{k=1}^{n} a_n + \sum_{k=1}^{n} b_n \\
+	    			\therefore R_n &= S_n + T_n\,.
+	    		\end{align*}
+	    		
+	    		$\sum a_n$ is convergent which implies convergence of $S_n$. The same holds for $T_n$.
+	    		
+	    		But for sequences, we have already proven that if the sequences $S_n$ and $T_n$ are convergent, then the sequence $R_n = S_n + T_n$ is also convergent and
+	    		\[
+		    		\sum (a_n + b_n) = \lim_{n \to \infty} R_n = \lim_{n \to \infty} S_n + \lim_{n \to \infty} T_n = \sum a_n + \sum b_n
+	    		\]
+	    		
 	    	\end{proof}
     	
 	    	\part
-	    	If $\sum a_n$ is convergent then so is $\sum ca_n$ and $\sum ca_n = c\sum a_n$.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ is convergent then so is $\sum ca_n$ and $\sum ca_n = c\sum a_n$.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		content...
+	    		Let $S_n$ be the sequence of partial sums of $\sum a_n$. Because $\sum a_n$ converges, we know that $S_n$ also converges. 
+	    		
+	    		For sequences, we know that if $\lim_{n \to \infty} S_n$ exists, then also $\lim_{n \to \infty} c \cdot S_n$ exists and
+	    		\[
+		    		\lim_{n\to\infty} c \cdot S_n = c\lim_{n\to\infty} S_n\,.
+	    		\]
+	    		
+	    		We conclude
+	    		\begin{align*}
+	    			\sum c \cdot a_n &= \lim_{n \to \infty} c \cdot S_n \\
+	    			&= c \cdot \lim_{n \to \infty} S_n \\
+	    			&= c \cdot \sum a_n 
+	    		\end{align*}
 	    	\end{proof}
     	
 	    	\part
-	    	If $\sum a_n$ is convergent and $\sum b_n$ is divergent, then $\sum (a_n + b_n)$ is divergent.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ is convergent and $\sum b_n$ is divergent, then $\sum (a_n + b_n)$ is divergent.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		content...
+	    		
+	    		Let $S_n$ and $T_n$ denote the partial sums of $\sum a_n$ and $\sum b_n$ respectively.
+	    		
+	    		Because $\sum a_n$ converges, $S_n$ also converges and $S_n$ is bounded. Because $\sum b_n$ diverges, $T_n$ also diverges. 
+	    		
+	    		For sequences, we have already proven that---given $S_n$ bounded and $T_n$ divergent--- $S_n + T_n$ is also divergent. 
+	    		
+	    		But this means, that $\sum (a_n + b_n) = S_n + T_n$ diverges. 
 	    	\end{proof}
 	    	
 	    	\part
 	    	If $\sum a_n$ and $\sum b_n$ are divergent, then so is $\sum (a_n + b_n)$.
 	    	
-	    	%PROOF BY CONTRADICTION a_n = 1, b_n = -1 bijv.
+	    	We disprove this statement by using a counter example. Let $a_n = \frac{1}{n}$ and $b_n = -\frac{1}{n}$. Clearly $\sum a_n$ and $\sum b_n$ are divergent. Now:
+	    	\[
+		    	\sum (a_n + b_n) = \sum \left(\frac{1}{n} - \frac{1}{n}\right) = \sum 0 = 0
+	    	\]
+	    	In this case, both $\sum a_n$ and $\sum b_n$ are divergent, but $\sum (a_n + b_n)$ is convergent. 
 	    \end{parts}
     
 	    \question
