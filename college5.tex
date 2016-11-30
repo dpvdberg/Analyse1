@@ -42,49 +42,102 @@
 	    	\[
 		    	\sum_{k=2}^{\infty} a_k = \sum_{k=2}^{\infty} \frac{(-1)^k}{2^{k-1}}\,.
 	    	\]
+	    	We find that
+	    	\begin{align*}
+	    	\sum_{k = 2}^{\infty} \frac{(-1)^k}{2^{k-1}}&= \sum_{k = 1}^{\infty} \frac{(-1)^{k-1}}{2^{k-1}} \\
+	    	&= \sum_{k = 1}^{\infty} \left(\frac{-1}{2} \right)^{k-1} \\
+	    	&= - \sum_{k = 1}^{\infty} \left(\frac{-1}{2} \right)^{k} && \mbox{this is a standard geometric series}\\ 
+	    	&= - \left(\frac{- \frac{1}{2}}{1 + \frac{1}{2}} \right)  \\
+	    	&= \frac{1}{3}\,.
+	    	\end{align*}
 	    	
 	    	\item Define $a_k = \frac{3^{k-1} - 2^k}{6^k}$. We are interested in 
 	    	\[
 	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{3^{k-1} - 2^k}{6^k}\,.
 	    	\]
+	    	We find that
+	    	\begin{align*}
+	    	\sum_{k = 1}^{\infty} \frac{3^{k-1} - 2^k}{6^k} &= \sum_{k = 1}^{\infty} \frac{1}{3} \cdot \left(\frac{1}{2} \right)^k - \left(\frac{1}{3} \right)^k \\
+	    	&= \frac{1}{3} \sum_{k = 1}^{\infty} \left(\frac{1}{2} \right)^k - \sum_{k = 1}^{\infty} \left(\frac{1}{3} \right)^k && \mbox{these are both standard geometric series}\\
+	    	&= \frac{1}{3} \cdot \frac{1/2}{1 - 1/2} - \frac{1/3}{1 - 1/3} \\
+	    	&= - \frac{5}{6}\,.
+	    	\end{align*}
 	    	
 	    	\item Define $a_k = \frac{1}{k^2 + 3k + 2}$. We are interested in 
 	    	\[
 	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{1}{k^2 + 3k + 2}\,.
 	    	\]
+	    	\[
+	    	\sum_{k = 1}^{\infty} \frac{1}{k^2 + 3k + 2} = \sum_{k = 1}^{\infty} \frac{1}{k + 1} - \frac{1}{k + 2} 
+	    	\]
+	    	This is a telescope series, for which it holds that:
+	    	\[
+	    	S_n = \frac{1}{2} - \frac{1}{3} + \frac{1}{3} - \frac{1}{4} + \cdots + \frac{1}{n + 1} - \frac{1}{n + 2} = \frac{1}{2} - \frac{1}{n + 2}
+	    	\]
+	    	This converges to $1/2$ as $n \to \infty$.
 	    	
 	    	\addtocounter{enumi}{1}
 	    	\item Define $a_k = \frac{k}{2k+1}$. We are interested in 
 	    	\[
-	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{k}{2k+1}\,.
+		    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{k}{2k+1} = \sum_{k = 1}^{\infty} \frac{1}{2 + \frac{1}{k}}\,.
 	    	\]
+	    	But this means
+	    	\[
+		    	a_k = \frac{1}{2 + \frac{1}{k}} \xrightarrow{k\to\infty} \frac{1}{2} \neq 0\,.
+	    	\]
+	    	Therefore, the sum $\sum_{k = 1}^{\infty} \frac{k}{2k + 1}$ diverges, as a consequence of theorem $7.1.9$.
 	    	
 	    	\item Define $a_k = \frac{2}{k^2+2k}$. We are interested in 
 	    	\[
 	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{2}{k^2+2k}\,.
 	    	\] 
+	    	\[
+	    	\sum_{k = 1}^{\infty} \frac{2}{k^2 + 2k} = \sum_{k = 1}^{\infty} \frac{1}{k} - \frac{1}{k + 2}
+	    	\]
+	    	This is a telescope series, for which it holds that:
+	    	\[
+	    	S_n =  1 - \frac{1}{3} + \frac{1}{2} - \frac{1}{4} + ... + \frac{1}{n - 1} - \frac{1}{n + 1} + \frac{1}{n} - \frac{1}{n + 2} = 1 + \frac{1}{2} - \frac{1}{n + 1} - \frac{1}{n + 2}
+	    	\]
+	    	This converges to $3/2$ as $n \to \infty$.
 	    	
 	    	\item Define $a_k = \ln \frac{1}{k}$. We are interested in 
 	    	\[
 	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \ln \frac{1}{k}\,.
 	    	\] 
+	    	However, 
+	    	\[
+	    	\ln \frac{1}{k} \xrightarrow{k\to\infty} -\infty \neq 0\,.
+	    	\]
+	    	Therefore, the sum $\sum_{k = 1}^{\infty} \ln \frac{1}{k}$ diverges, as a consequence of theorem $7.1.9$.
 	    	
 	    	\addtocounter{enumi}{1}
 	    	\item Define $a_k = \sqrt{k^2 + k} -k$. We are interested in 
 	    	\[
-	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \sqrt{k^2 + k} -k\,.
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \left(\sqrt{k^2 + k} -k\right)\,.
 	    	\]
-	    	
-	    	\item Define $a_k = k \sin \frac{1}{k}$. We are interested in 
+	    	We have
+	    	\begin{align*}
+	    	a_k = \left(\sqrt{k^2 + k} - k \right) &= \frac{k}{\sqrt{k^2 + k} + k } \\
+	    	&= \frac{1}{\sqrt{k + 1/k} + 1}\,.
+	    	\end{align*}
+	    	However,
 	    	\[
-	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} k \sin \frac{1}{k}\,.
-	    	\] 
+	    	\frac{1}{\sqrt{k + 1/k} + 1} \xrightarrow{k\to\infty} \frac{1}{2} \neq 0
+	    	\]
+	    	Therefore, $\sum_{k = 1}^{\infty} \left(\sqrt{k^2 + k} - k \right)$ diverges, as a consequence of theorem $7.1.9$.	       	
 	    	
-	    	\addtocounter{enumi}{1}
+	    	\addtocounter{enumi}{2}
 	    	\item Define $a_k = \left(\frac{k-2}{k}\right)^k$. We are interested in 
 	    	\[
-	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \left(\frac{k-2}{k}\right)^k\,.
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \left(\frac{k-2}{k}\right)^k = \sum_{k = 1}^{\infty} \left(1 - \frac{2}{k} \right)^k\,.
 	    	\]
+	    	However, using $u = -k/2$, we find
+	    	\begin{align*}
+		    	a_k = \left(1 - \frac{2}{k} \right)^k &= \left(1 + \frac{1}{u} \right)^{-2u} \\
+		    	&= \left(\left(1 + \frac{1}{u} \right)^u\right)^{-2} \xrightarrow{u\to\infty} \frac{1}{e^2} \neq 0.
+	    	\end{align*}
+	    	Therefore, the sum $\sum_{k = 1}^{\infty} \left(\frac{k - 2}{k} \right)^k$ diverges, as a consequence of theorem $7.1.9$.
+	    	
 	    \end{enumerate}
     
 	    \question
