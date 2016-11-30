@@ -92,62 +92,70 @@
 	    
 	    \begin{parts}
 	    	\part
-	    	If $\sum a_n$ and $\sum b_n$ are convergent, then so is $\sum (a_n + b_n)$ and $\sum (a_n + b_n) = \sum a_n + \sum b_n$.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ and $\sum b_n$ are convergent, then so is $\sum (a_n + b_n)$ and $\sum (a_n + b_n) = \sum a_n + \sum b_n$.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		$\sum a_n$ and $\sum b_n$ are convergent. Let $s_n$ be the row of partial sums of $\sum a_n$ and let $t_n$ be the row of partial sums of $\sum b_n$. 
-	    		
-	    		$\sum a_n$ is convergent, so that means the row $s_n$ is convergent. The same holds for $t_n$, since $\sum b_n$ is convergent. 
-	    		
-	    		But for rows, we have already proven that if the rows $s_n$ and $t_n$ are convergent, then the row $(s_n + t_n)$ is also convergent. 
-	    		
-	    		But this means, that $\sum (a_n + b_n)$ is convergent. Also:
+	    		We know that $\sum a_n$ and $\sum b_n$ are convergent. Let $S_n$ be the sequence of partial sums of $\sum a_n$, let $T_n$ be the partial sums of $\sum b_n$ and let $R_n$ be the partial sums of $\sum (a_n + b_n)$.
+	    		By associativity of addition we have
 	    		\begin{align*}
-	    			\sum (a_n + b_n) = \lim_{n \to \infty} = \lim_{n \to \infty} s_n + \lim_{n \to \infty} t_n = \sum a_n + \sum b_n
+	    			\sum_{k=1}^{n} (a_n + b_n) &= \sum_{k=1}^{n} a_n + \sum_{k=1}^{n} b_n \\
+	    			\therefore R_n &= S_n + T_n\,.
 	    		\end{align*}
+	    		
+	    		$\sum a_n$ is convergent which implies convergence of $S_n$. The same holds for $T_n$.
+	    		
+	    		But for sequences, we have already proven that if the sequences $S_n$ and $T_n$ are convergent, then the sequence $R_n = S_n + T_n$ is also convergent and
+	    		\[
+		    		\sum (a_n + b_n) = \lim_{n \to \infty} R_n = \lim_{n \to \infty} S_n + \lim_{n \to \infty} T_n = \sum a_n + \sum b_n
+	    		\]
 	    		
 	    	\end{proof}
     	
 	    	\part
-	    	If $\sum a_n$ is convergent then so is $\sum ca_n$ and $\sum ca_n = c\sum a_n$.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ is convergent then so is $\sum ca_n$ and $\sum ca_n = c\sum a_n$.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		Let $s_n$ be the row of partial sums of $\sum a_n$. Because $\sum a_n$ converges, we know that $s_n$ also converges. 
+	    		Let $S_n$ be the sequence of partial sums of $\sum a_n$. Because $\sum a_n$ converges, we know that $S_n$ also converges. 
 	    		
-	    		For rows, we know that if $\lim_{n \to \infty} s_n$ exists, then so does $\lim_{n \to \infty} c \cdot s_n$. 
+	    		For sequences, we know that if $\lim_{n \to \infty} S_n$ exists, then also $\lim_{n \to \infty} c \cdot S_n$ exists and
+	    		\[
+		    		\lim_{n\to\infty} c \cdot S_n = c\lim_{n\to\infty} S_n\,.
+	    		\]
 	    		
-	    		Because we know that $\lim_{n \to \infty} c \cdot s_n$ exists, we know that $\sum c \cdot a_n$ converges. Also:
-	    		
+	    		We conclude
 	    		\begin{align*}
-	    			\sum c \cdot a_n &= \lim_{n \to \infty} c \cdot s_n \\
-	    			&= c \cdot \lim_{n \to \infty} s_n \\
+	    			\sum c \cdot a_n &= \lim_{n \to \infty} c \cdot S_n \\
+	    			&= c \cdot \lim_{n \to \infty} S_n \\
 	    			&= c \cdot \sum a_n 
 	    		\end{align*}
 	    	\end{proof}
     	
 	    	\part
-	    	If $\sum a_n$ is convergent and $\sum b_n$ is divergent, then $\sum (a_n + b_n)$ is divergent.
+	    	\begin{inlinetoprove}
+	    		If $\sum a_n$ is convergent and $\sum b_n$ is divergent, then $\sum (a_n + b_n)$ is divergent.
+	    	\end{inlinetoprove}
 	    	
 	    	\begin{proof}
-	    		Let $s_n$ be the row of partial sums of $\sum a_n$ and let $t_n$ be the row of partial sums of $\sum b_n$. 
 	    		
-	    		Because $\sum a_n$ converges, $s_n$ also converges. This also means that $s_n$ is bounded. 
+	    		Let $S_n$ and $T_n$ denote the partial sums of $\sum a_n$ and $\sum b_n$ respectively.
 	    		
-	    		Because $\sum b_n$ diverges, $t_n$ also diverges. 
+	    		Because $\sum a_n$ converges, $S_n$ also converges and $S_n$ is bounded. Because $\sum b_n$ diverges, $T_n$ also diverges. 
 	    		
-	    		For rows, we have already proven that, if $s_n$ is bounded, and $t_n$ diverges, then $(s_n + t_n)$ also diverges. 
+	    		For sequences, we have already proven that---given $S_n$ bounded and $T_n$ divergent--- $S_n + T_n$ is also divergent. 
 	    		
-	    		But this means, that $\sum (a_n + b_n)$ diverges. 
+	    		But this means, that $\sum (a_n + b_n) = S_n + T_n$ diverges. 
 	    	\end{proof}
 	    	
 	    	\part
 	    	If $\sum a_n$ and $\sum b_n$ are divergent, then so is $\sum (a_n + b_n)$.
 	    	
-	    	We disprove this statement by contradiction. 
-	    	
-	    	Let $a_n = \frac{1}{n}$ and $b_n = -\frac{1}{n}$. Observe that both $\sum a_n$ and $\sum b_n$ are divergent. Now:
+	    	We disprove this statement by using a counter example. Let $a_n = \frac{1}{n}$ and $b_n = -\frac{1}{n}$. Clearly $\sum a_n$ and $\sum b_n$ are divergent. Now:
 	    	\[
-		    	\sum (a_n + b_n) = \sum \frac{1}{n} - \frac{1}{n} = \sum 0 = 0
+		    	\sum (a_n + b_n) = \sum \left(\frac{1}{n} - \frac{1}{n}\right) = \sum 0 = 0
 	    	\]
 	    	In this case, both $\sum a_n$ and $\sum b_n$ are divergent, but $\sum (a_n + b_n)$ is convergent. 
 	    \end{parts}
