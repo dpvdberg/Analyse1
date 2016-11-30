@@ -128,7 +128,25 @@
 	    \end{toprove}
     
 	    \begin{proof}
-	    	content...
+	    	Let $n \in \naturals$, then using the triangle inequality we have
+	    	\[
+		    	\left| \sum_{k=1}^{n} a_k \right| = |a_1 + a_2 + \cdots + a_n | \leq |a_1| + |a_2| + \cdots + |a_n| = \sum_{k=1}^{n} |a_k|\,.
+	    	\]
+	    	
+	    	We also have
+	    	\[
+		    	\sum_{k=1}^{\infty} |a_k| = \sum_{k=1}^{n} |a_k| + \sum_{k=n+1}^{\infty} |a_k|\,,
+	    	\]
+	    	which, using what we found above and the fact that $|a_k| \geq 0$ for all $k$, yields
+	    	\[
+		    	\left| \sum_{k=1}^{n} a_k \right| \leq \sum_{k=1}^{\infty} |a_k|\,.
+	    	\]
+	    	Now as the sequence is absolutely convergent (i.e. $\sum_{k=1}^{\infty} |a_k| = Q \in \reals$), we know that each of the partial sums $\left|\sum_{k=1}^{n} a_k\right|$ is at most $Q$ and the limit of this sequence is bounded by this same value, $Q$.
+	    	
+	    	Simply put, we have
+	    	\[
+	    	\left| \sum_{k=1}^{\infty} a_k \right| = \left| \lim_{n\to\infty} \sum_{k=1}^{n} a_k \right| = \lim_{n\to\infty} \left|\sum_{k=1}^{n} a_k\right| \leq \lim_{n\to\infty} \sum_{k=1}^{n} |a_k| = \sum_{k=1}^{\infty} |a_k|\,.
+	    	\]
 	    \end{proof}
     
 	    \question
