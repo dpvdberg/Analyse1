@@ -22,7 +22,17 @@
 	        		\sum_{k=1}^{\infty}a_k = \lim_{n\to\infty} b_n - b_0
         		\]
         		\begin{proof}
-        			% INSERT 1A
+        			Because $\sum_{k=1}^{\infty} a_k$ is a telescoping series, the following holds for all partial sums of $s := \sum_{k=1}^{\infty} a_k$:
+        			\begin{align*}
+        				S_n &= \sum_{k=1}^{n} a_k \\
+        				&= a_1 + a_2 + ... + a_{n-1} + a_n \\
+        				&= b_1 - b_0 + b_2 - b_1 + ... + b_{n-1} - b_{n-2} + b_n - b_{n-1} \\
+        				&= b_n - b_0
+        			\end{align*}
+        			Now let $n \to \infty$. The limit $\lim_{n \to \infty} b_n - b_0$ exists if and only if $b_n$ converges. Therefore, $\sum_{k=1}^{\infty} a_k$ only converges if $b_n$ converges. Also, we now know:
+        			\[
+	        			\sum_{k=1}^{\infty} a_k = \lim_{n \to \infty} b_n - b_0
+        			\]
         		\end{proof}
         	\end{inlinetoprove}
         
@@ -31,6 +41,21 @@
 	        \[
 		        \sum_{k=2}^{\infty} \frac{2k+1}{k^2(k+1)^2}
 	        \]
+	        
+	        If we decompose the fraction, we get the following equation:
+	        \[
+		        \sum_{k=2}^{\infty} \frac{2k+1}{k^2(k+1)^2} = \sum_{k=2}^{\infty} \frac{1}{k^2} - \frac{1}{(k+1)^2}
+	        \] 
+	        
+	        The partial sums of this series look as follows:
+	        \[
+		        S_n = \sum_{k = 2}^{n} \frac{2k+1}{k^2(k+1)^2} = \frac{1}{4} - \frac{1}{9} + \frac{1}{9} - \frac{1}{16} + ... + \frac{1}{(n - 1)^2} - \frac{1}{n^2} + \frac{1}{n^2} - \frac{1}{(n + 1)^2} = \frac{1}{4} - \frac{1}{(n + 1)^2}
+	        \]
+	        Using \ref{1:A}, we can now conclude that $\sum_{k=2}^{\infty} \frac{2k+1}{k^2(k+1)^2}$, because $\frac{1}{(n + 1)^2}$ converges as $n \to \infty$. Now, we can calculate the following: 
+	        \[
+		        \sum_{k=2}^{\infty} \frac{2k+1}{k^2(k+1)^2} = \lim_{n \to \infty} S_n = \frac{1}{4} - \lim_{n \to \infty} \frac{1}{(n + 1)^2} = \frac{1}{4}
+	        \]
+	        
         \end{parts}
     
 	    \question
