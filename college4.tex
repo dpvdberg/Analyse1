@@ -106,8 +106,70 @@
         \end{proof}
         
         \question 
-        Show: Each sequence that is unbounded above / below has a subsequence that goes to $+ \infty / - \infty$. Conclude: Every sequence of real numbers has a finite or improper convergent subsequence. 
+        Show that for each sequence that is unbounded above / below has a subsequence that goes to $+ \infty / - \infty$. Conclude: Every sequence of real numbers has a finite or improper convergent subsequence. 
         
+        \begin{inlinetoprove}
+        	Each sequence that is unbounded above has a subsequence that goes to infinity.
+        \end{inlinetoprove}
+        \begin{proof}
+        	Let $a_n$ be a random sequence unbounded above. Then it holds that:
+        	\[
+	        	\forall_{M > 0} \exists_{n \in \naturals} : a_n > M\,.
+        	\]
+	        Let $n_k$ be an index sequence. As any such sequence is strictly increasing and $n_k \xrightarrow{k\to\infty} \infty$ we have
+	        \[
+		        \forall_{M > 0} \exists_{k \in \naturals} : a_{n_{k}} > M\,.
+	        \]
+	        Now, let $a_{n_{k-1}} = M$. Then
+	        \[
+		        \exists_{k \in \naturals} : a_{n_{k}} > M = a_{n_{k-1}}\,.
+	        \]
+	        Take $a_{n_0} = a_0$ as a starting point. Now $a_{n_k}$ is a strictly increasing (sub)sequence that is unbounded above. Therefore it holds that:
+	        \[
+		        \forall_{M > 0} \exists_{k^* \in \naturals} \forall_{k \ge k^*} : a_{n_k} > M \implies a_{n_k} \xrightarrow{k \to \infty} \infty\,.
+	        \]
+	        We have now shown that each sequence that is unbounded above has a subsequence that goes to infinity.
+        \end{proof}
+        
+        \begin{inlinetoprove}
+        	Each sequence that is unbounded below has a subsequence that goes to $- \infty$.
+        \end{inlinetoprove}
+        \begin{proof}
+        	Let $a_n$ be a random sequence unbounded below. Then it holds that:
+        	\[
+        	\forall_{M < 0} \exists_{n \in \naturals} : a_n < M
+        	\]
+        	Let $n_k$ be an index sequence. As any such sequence is strictly increasing and $n_k \xrightarrow{k\to\infty} \infty$ we have
+        	\[
+        	\forall_{M < 0} \exists_{k \in \naturals} : a_{n_{k}} < M
+        	\]
+        	Now, let $a_{n_{k-1}} = M$. Then
+        	\[
+        	\exists_{k \in \naturals} : a_{n_{k}} < M = a_{n_{k-1}}
+        	\]
+        	Take $a_{n_0} = a_0$ as a starting point. Now $a_{n_k}$ is a strictly decreasing (sub)sequence that is unbounded below. Therefore it holds that:
+        	\[
+        	\forall_{M > 0} \exists_{k^* \in \naturals} \forall_{k \ge k^*} : a_{n_k} < M \implies a_{n_k} \xrightarrow{k \to \infty} -\infty\,.
+        	\]
+        	We have now shown that each sequence that is unbounded above has a subsequence that goes to minus infinity.
+        \end{proof}
+        
+        \begin{inlinetoprove}
+        	Every sequence of real numbers has a finite or improper convergent subsequence. 
+        \end{inlinetoprove}
+        \begin{proof}
+        	Every sequence $a_n$ falls under one of the following categories:
+        	\begin{itemize}
+        		\item $a_n$ bounded.
+        		
+	        	In this case, according to Bolzano-Weierstrass' theorem, the sequence $a_n$ has a subsequence $a_{n_k}$ converging to some finite number.
+        	
+        		\item $a_n$ is unbounded (above, below or both).
+        		
+		        In this case, we can use the fact that we have proven that if $a_n$ is unbounded above / below, then it has a subsequence that goes to $\infty / - \infty$. This sequence therefore has an improper convergent subsequence. 
+        	\end{itemize}
+        	In conclusion: in all cases, $a_n$ has a subsequence that converges or has an improper limit. 
+        \end{proof}
         \question
         Find all accumulation points of the following sequences:
         \[
