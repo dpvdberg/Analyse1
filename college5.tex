@@ -1,0 +1,159 @@
+% !TeX spellcheck = en_US
+\documentclass[week=5]{homework}
+
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        A \textit{telescoping series} is a sum $\sum_{k=1}^{\infty} a_k$ where $a_k = b_k - b_{k-1}$, $k = 1, 2, \ldots$.
+        
+        \begin{parts}
+        	\part \label{1:A}
+        	\begin{inlinetoprove}
+        		A telescoping series $\sum_{k=1}^{\infty} a_k$ is convergent if and only if $b_n$ is convergent and in this case we have
+        		\[
+	        		\sum_{k=1}^{\infty}a_k = \lim_{n\to\infty} b_n - b_0
+        		\]
+        		\begin{proof}
+        			% INSERT 1A
+        		\end{proof}
+        	\end{inlinetoprove}
+        
+	        \part 
+	        Using \ref{1:A}, find the value of
+	        \[
+		        \sum_{k=2}^{\infty} \frac{2k+1}{k^2(k+1)^2}
+	        \]
+        \end{parts}
+    
+	    \question
+	    Determine whether the given series converges or diverges. In the case of a convergence, find the sum.
+	    
+	    
+	    \begin{enumerate}[label=(\alph*)]
+	    	\item Define $a_k = \frac{(-1)^k}{2^{k-1}}$. We are interested in 
+	    	\[
+		    	\sum_{k=2}^{\infty} a_k = \sum_{k=2}^{\infty} \frac{(-1)^k}{2^{k-1}}\,.
+	    	\]
+	    	
+	    	\item Define $a_k = \frac{3^{k-1} - 2^k}{6^k}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{3^{k-1} - 2^k}{6^k}\,.
+	    	\]
+	    	
+	    	\item Define $a_k = \frac{1}{k^2 + 3k + 2}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{1}{k^2 + 3k + 2}\,.
+	    	\]
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item Define $a_k = \frac{k}{2k+1}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{k}{2k+1}\,.
+	    	\]
+	    	
+	    	\item Define $a_k = \frac{2}{k^2+2k}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \frac{2}{k^2+2k}\,.
+	    	\] 
+	    	
+	    	\item Define $a_k = \ln \frac{1}{k}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \ln \frac{1}{k}\,.
+	    	\] 
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item Define $a_k = \sqrt{k^2 + k} -k$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \sqrt{k^2 + k} -k\,.
+	    	\]
+	    	
+	    	\item Define $a_k = k \sin \frac{1}{k}$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} k \sin \frac{1}{k}\,.
+	    	\] 
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item Define $a_k = \left(\frac{k-2}{k}\right)^k$. We are interested in 
+	    	\[
+	    	\sum_{k=1}^{\infty} a_k = \sum_{k=1}^{\infty} \left(\frac{k-2}{k}\right)^k\,.
+	    	\]
+	    \end{enumerate}
+    
+	    \question
+	    Let $\sum a_n$, $\sum b_n$ be two series, $c\in\reals$. Proof or disprove the following statements.
+	    
+	    \begin{parts}
+	    	\part
+	    	If $\sum a_n$ and $\sum b_n$ are convergent, then so is $\sum (a_n + b_n)$ and $\sum (a_n + b_n) = \sum a_n + \sum b_n$.
+	    	
+	    	\begin{proof}
+	    		content...
+	    	\end{proof}
+    	
+	    	\part
+	    	If $\sum a_n$ is convergent then so is $\sum ca_n$ and $\sum ca_n = c\sum a_n$.
+	    	
+	    	\begin{proof}
+	    		content...
+	    	\end{proof}
+    	
+	    	\part
+	    	If $\sum a_n$ is convergent and $\sum b_n$ is divergent, then $\sum (a_n + b_n)$ is divergent.
+	    	
+	    	\begin{proof}
+	    		content...
+	    	\end{proof}
+	    	
+	    	\part
+	    	If $\sum a_n$ and $\sum b_n$ are divergent, then so is $\sum (a_n + b_n)$.
+	    	
+	    	%PROOF BY CONTRADICTION a_n = 1, b_n = -1 bijv.
+	    \end{parts}
+    
+	    \question
+	    Let $\sum_{k=1}^{\infty} a_k$ be an absolutely converging series.
+	    
+	    \begin{toprove}
+	    	\[
+		    	\left| \sum_{k=1}^{\infty} a_k \right| \leq \sum_{k=1}^{\infty} |a_k|
+	    	\]
+	    \end{toprove}
+    
+	    \begin{proof}
+	    	content...
+	    \end{proof}
+    
+	    \question
+	    Let $q \in \reals$, $|q| < 1$. Determine the values of the following series;
+	    
+	    \begin{parts}
+	    	\part Define $a_k = \frac{q^k}{2}$. We are interested in 
+	    	\[
+	    	\sum_{k=7}^{\infty} a_k = \sum_{k=7}^{\infty} \frac{q^k}{2}\,.
+	    	\]
+	    	
+	    	\part Define $a_k = \left(\frac{q}{2}\right)^k$. We are interested in 
+	    	\[
+	    	\sum_{k=7}^{\infty} a_k = \sum_{k=7}^{\infty} \left(\frac{q}{2}\right)^k\,.
+	    	\]
+	    	
+	    	\part Define $a_k = \frac{2^{k/2}}{2^{2k}}$. We are interested in 
+	    	\[
+	    	\sum_{k=0}^{\infty} a_k = \sum_{k=0}^{\infty} \frac{2^{k/2}}{2^{2k}}\,.
+	    	\]
+	    	
+	    	\part Define $a_k = \frac{4^{k-5}}{5^{2k+2}}$. We are interested in 
+	    	\[
+	    	\sum_{k=0}^{\infty} a_k = \sum_{k=0}^{\infty} \frac{4^{k-5}}{5^{2k+2}}\,.
+	    	\]
+	    \end{parts}
+     \end{questions}
+\end{document}
