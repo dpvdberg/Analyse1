@@ -140,20 +140,48 @@
 	    	\sum_{k=7}^{\infty} a_k = \sum_{k=7}^{\infty} \frac{q^k}{2}\,.
 	    	\]
 	    	
+	    	\begin{align*}
+	    		\sum_{k=7}^{\infty} \frac{q^k}{2} &= \sum_{k=0}^{\infty} \frac{q^k}{2} - \sum_{k=0}^{6} \frac{q^k}{2} \\
+	    		&= \frac{1}{2} \cdot \sum_{k=0}^{\infty} \frac{q^k}{2} - \sum_{k=0}^{6} \frac{q^k}{2} \\
+	    		&= \frac{1}{2} \cdot \frac{1}{1-q} - \frac{1}{2} \cdot \frac{1 - q^5}{1-q} \\
+	    		&= \frac{1}{2} \cdot \frac{q^5}{1-q}
+	    	\end{align*}
+	    	
 	    	\part Define $a_k = \left(\frac{q}{2}\right)^k$. We are interested in 
 	    	\[
 	    	\sum_{k=7}^{\infty} a_k = \sum_{k=7}^{\infty} \left(\frac{q}{2}\right)^k\,.
 	    	\]
+	    	
+	    	\begin{align*}
+	    		\sum_{k=7}^{\infty} \left(\frac{q}{2} \right)^k &= \sum_{k=0}^{\infty} \left(\frac{q}{2} \right)^k - \sum_{k=0}^{6} \left(\frac{q}{2} \right)^k \\
+	    		&= \frac{1}{1 - \frac{q}{2}} - \left(\frac{1 - \left(\frac{q}{2} \right)^5}{1 - \frac{q}{2}} \right) \\
+	    		&= \frac{\frac{q^5}{2^5}}{1 - \frac{q}{2}} \\
+	    		&= \frac{q^5}{2^5 - 2^4 q}
+	    	\end{align*}
 	    	
 	    	\part Define $a_k = \frac{2^{k/2}}{2^{2k}}$. We are interested in 
 	    	\[
 	    	\sum_{k=0}^{\infty} a_k = \sum_{k=0}^{\infty} \frac{2^{k/2}}{2^{2k}}\,.
 	    	\]
 	    	
+	    	\begin{align*}
+	    		\sum_{k=0}^{\infty} \frac{2^{\frac{k}{2}}}{2^{2k}} &= \sum_{k=0}^{\infty} \left(\frac{1}{2\sqrt{2}} \right)^k \\
+	    		&= \frac{1}{1 - \frac{1}{2\sqrt{2}}} \\
+	    		&= \frac{2\sqrt{2}}{2\sqrt{2} - 1}
+	    	\end{align*}
+	    	
 	    	\part Define $a_k = \frac{4^{k-5}}{5^{2k+2}}$. We are interested in 
 	    	\[
 	    	\sum_{k=0}^{\infty} a_k = \sum_{k=0}^{\infty} \frac{4^{k-5}}{5^{2k+2}}\,.
 	    	\]
+	    	
+	    	\begin{align*}
+	    		\sum_{k=0}^{\infty} \frac{4^{k - 5}}{5^{2k + 2}} &= \sum_{k=0}^{\infty} \frac{4^{-5}}{5^2} \cdot \sum_{k=0}^{\infty} \left(\frac{4}{25} \right)^k \\
+	    		&= \frac{1}{4^5 \cdot 5^2} \cdot \frac{1}{1 - \frac{4}{25}} \\
+	    		&= \frac{1}{25600} \cdot \frac{25}{25 - 4} \\
+	    		&= \frac{1}{21504}
+	    	\end{align*}
+	    	
 	    \end{parts}
      \end{questions}
 \end{document}
