@@ -173,10 +173,40 @@
         \question
         Find all accumulation points of the following sequences:
         \[
-	        a_n := \frac{k}{dn}, \quad b_n := \left(-1-\frac{1}{n}\right)^n
+	        a_n := \frac{(-2)^n - 2n}{2^{n+1}+n^2}, \quad b_n := \left(-1-\frac{1}{n}\right)^n
         \]
         
         (Show that you have indeed found all accumulation points!)
+        
+        \begin{parts}
+        	\part \label{4:A} We look at the sequence $a_n$ for subsequences $a_{2n}$ and $a_{2n+1}$. We find
+        	\begin{align*}
+        		a_{2n} &= \frac{(-2)^{2n} - 4n}{2^{2n+1}+(2n)^2} \\
+	        		&= \frac{4^n - 4n}{2\cdot 4^n + 4n^2} \\
+	        		&= \frac{1 - \frac{4n}{4^n}}{2 + \frac{4n^2}{4^n}} \xrightarrow{n\to\infty} \frac{1}{2}\,, \\
+	        		\\
+		        a_{2n+1} &= \frac{(-2)^{2n+1} - 2(2n+1)}{2^{2n+2}+(2n+1)^2} \\
+			        &= \frac{-2\cdot 4^n - 4n - 2}{4\cdot 4^n + 4n^2 + 4n + 1} \\
+			        &= \frac{-2 - \frac{4n-2}{4^n}}{4 + \frac{4n^2+4n+1}{4^n}} \xrightarrow{n\to\infty} -\frac{1}{2}\,.
+        	\end{align*}
+        	
+        	Now suppose we have some subsequence $a_{n_k}$ that is not $a_{2n}$ or $a_{2n+1}$ with subsequential limit $\reals \ni a^* \neq \pm 1/2$. Then for any $k$ we have that $n_k$ is either odd or even ($n_k = 2q+1$ or $n_k = 2q$ for some $q \in \naturals$), which means that for $k \to \infty$ (i.e. $q\to\infty$) we have that $a_{n_k}$ oscillates between the values $\pm 1/2$. Hence, no such $a^*$ exists.
+        	
+        	We find that $\pm 1/2$ are the only two accumulation points of $a_n$.
+        	
+        	\part We look at the sequence $b_n$ for subsequences $b_{2n}$ and $b_{2n+1}$. We find
+        	\begin{align*}
+        		a_{2n} &= \left(-1-\frac{1}{2n}\right)^{2n} \\
+	        		&= (-1)^{2n}\left(1+\frac{1}{2n}\right)^{2n} \\
+	        		&= \left(1+\frac{1}{2n}\right)^{2n} \xrightarrow{n\to\infty} e\,, \\
+	        		\\
+	        	a_{2n+1} &= \left(-1-\frac{1}{2n+1}\right)^{2n+1} \\
+		        	&= (-1)^{2n+1}\left(1+\frac{1}{2n+1}\right)^{2n+1} \\
+		        	&= -\left(1+\frac{1}{2n+1}\right)^{2n+1} \xrightarrow{n\to\infty} -e\,,
+        	\end{align*}
+        	
+        	Using the same reasoning as described in \ref{4:A} we find that the only two accumulation points of $b_n$ are $\pm e$.
+        \end{parts}
         
         \question
         For a sequence $\{a_n \} $, define $V(\{a_n \})$ the set of accumulation points. Give examples of sequences $\{a_n \}$ such that:
