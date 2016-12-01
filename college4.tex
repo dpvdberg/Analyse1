@@ -53,17 +53,23 @@
         	\part
         	For any $n \neq 0$ we have $1/n^2 > 0$ such that
         	\[
-	        	c_n = \left(1 + \frac{1}{n}\right)^n \geq 1^n = 1\,.
+	        	c_n = \left(1 + \frac{1}{n^2}\right)^n \geq 1^n = 1\,.
         	\]
         	
-        	Also, we can write
+        	Also, we know
         	\[
-	        	c_n = \left(1 + \frac{1}{n^n}\right)^n = \left(1 + \frac{1}{n^2}\right)^{n^2 \cdot \frac{1}{n}} = \left(\left(1 + \frac{1}{n^2}\right)^{n^2}\right)^\frac{1}{n} = \sqrt[n]{\left(1 + \frac{1}{n^2}\right)^{n^2}}\,,
+	        	c_n = \left(1 + \frac{1}{n^2}\right)^n = \left(1 + \frac{1}{n^2}\right)^{n^2 \cdot \frac{1}{n}} = \left(\left(1 + \frac{1}{n^2}\right)^{n^2}\right)^\frac{1}{n} = \sqrt[n]{\left(1 + \frac{1}{n^2}\right)^{n^2}}\,,
         	\]
-        	which, using the fact that for any convergent sequence $q_n \to q^*$ we have $\sqrt[n]{q_n} \xrightarrow{n\to\infty} 1$, yields
+        	which, using the fact that
         	\[
-	        	c_n = \sqrt[n]{e_n} \xrightarrow{n\to\infty} 1\,.
+	        	\forall_{n\in\naturals}: \left(1 + \frac{1}{n^2}\right)^{n^2} \leq 3\,,
         	\]
+        	we have
+        	\[
+	        	c_n = \sqrt[n]{\left(1 + \frac{1}{n^2}\right)^{n^2}} \leq \sqrt[n]{3} \xrightarrow{n\to\infty} 1\,.
+        	\]
+        	
+        	Using the Squeeze theorem we find $c_n \xrightarrow{n\to\infty} 1$.
         	
         	\part
         	Using $u = -n$ we can write
@@ -90,19 +96,19 @@
         	
         	We have $a_n \xrightarrow{n\to\infty} a^*$, which means
         	\[
-	        	\exists_{n_1 \in \naturals}\forall_{n \geq n_1}: |a_n - a^*| < \epsilon\,.
+	        	\exists_{\bar n \in \naturals}\forall_{n \geq \bar n}: |a_n - a^*| < \epsilon\,.
         	\]
         	By definition of a index sequence for a subsequence, we have that $n_{k+1} > n_k$ and $n_k \xrightarrow{k\to\infty} \infty$, therefore
         	\[
-	        	\forall_{M > 0}\exists_{k_1 \in \naturals}\forall_{k \geq k_1}: n_k > M\,.
+	        	\forall_{M > 0}\exists_{\bar k \in \naturals}\forall_{k \geq k_1}: n_k > M\,.
         	\]
         	
-        	Choose $M = n_1$ and $k^* = k_1$, then for all $k \geq k^* = k_1$ we find $n_k > n_1$, which implies
+        	Choose $M = \bar n$ and $k^* = \bar k$, then for all $k \geq k^* = \bar k$ we find $n_k > \bar n$, which implies
         	\[
 	        	|a_{n_k} - a^*| < \epsilon\,.
         	\]
         	
-        	This in turn implies $a_{n_k} \xrightarrow{n\to\infty} a^*$.
+        	This in turn implies $a_{n_k} \xrightarrow{k\to\infty} a^*$.
         \end{proof}
         
         \question 
