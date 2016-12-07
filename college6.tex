@@ -91,26 +91,63 @@
 	    \begin{enumerate}[label=(\alph*)]
 	    	\item $\displaystyle \sum_{k=2}^{\infty} \frac{k^2 2^{k+1}}{3^k}$
 	    	
-	    	% INSERT 4A
+	    	We use the root test to find out whether this sum converges:
+	    	\begin{align*}
+		    	& \sqrt[k]{\frac{k^2 2^{k+1}}{3^k}} = \\
+		    	& \frac{\sqrt[k]{k^2} \cdot \sqrt[k]{2^{k+1}}}{\sqrt[k]{k}} = \\
+			    & \frac{\sqrt[k]{k}^2 \cdot 2^{\frac{k+1}{k}}}{3^{\frac{k}{k}}} \xrightarrow{k \to \infty} \frac{1^2 \cdot 2}{3} = \frac{2}{3}
+	    	\end{align*}
+	    	Since $\lim_{k \to \infty} \sqrt[k]{\frac{k^2 2^{k+1}}{3^k}} = \frac{2}{3} < 1$, by the root test, $\sum_{k=2}^{\infty} \frac{k^2 2^{k+1}}{3^k}$ converges. 
 	    	
 	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{(k!)^2}{(2k)!}$
 	    	
-	    	% INSERT 4B
+		    We use the ratio test to find out whether this sum converges:
+		    \begin{align*}
+		    	& \frac{\frac{(k+1)!^2}{(2k+2)!}}{\frac{(k!)^2}{(2k)!}} = \\
+		    	& \frac{(k+1)!^2}{(2k+2)!} \cdot \frac{(2k)!}{(k!)^2} = \\
+		    	& \frac{(k+1)^2}{(2k+1)(2k+2)} = \\
+		    	& \frac{k^2 + 2k + 1}{4k^2 + 6k + 2} = \\
+		    	& \frac{1 + \frac{2}{k} + \frac{1}{^2}}{4 + \frac{6}{k} + \frac{2}{k^2}} \xrightarrow{k \to \infty} \frac{1}{4}
+		    \end{align*}
+		    Now, since 
+		    \[
+		    \lim_{k \to \infty} \frac{(k+1)!^2}{(2k+2)!} \cdot \frac{(2k)!}{(k!)^2} = \frac{1}{4} < 1,
+		    \]
+		    by the ratio test the sum $\sum_{k=1}^{\infty} \frac{(k!)^2}{(2k)!}$ converges. 
 	    	
 	    	\addtocounter{enumi}{2}
 	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{3^{2k+1}}{k^{2k}}$
 	    	
-	    	% INSERT 4E
+	    	We use the root test to find out whether this sum converges:
+	    	\begin{align*}
+	    		& \sqrt[k]{\frac{3^{2k+1}}{k^{2k}}} = \\
+	    		& \frac{\sqrt[k]{3^{2k+1}}}{\sqrt[k]{k^{2k}}} = \\
+	    		& \frac{3^{\frac{2k+1}{k}}}{k^{\frac{2k}{k}}} = \\
+	    		& \frac{3^{2 + \frac{1}{k}}}{k^2} \xrightarrow{k \to \infty} 0
+	    	\end{align*}
+	    	Now, since:
+	    	\[
+		    	\lim_{k \to \infty} \sqrt[k]{\frac{3^{2k+1}}{k^{2k}}} = 0 < 1,
+	    	\]
+	    	by the root test, the sum $ \sum_{k=1}^{\infty} \frac{3^{2k+1}}{k^{2k}}$ converges. 
 	    	
 	    	\addtocounter{enumi}{1}
 	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k!}{k^k}$
 	    	
-	    	% INSERT 4G
+	    	We know that:
+	    	\[
+		    	\sum \frac{k!}{k^k} \ge \sum \frac{1}{k^k} \ge \sum \frac{1}{k}
+	    	\]
+	    	We know that $\sum \frac{1}{k}$ diverges. We have now found a divergent minorante for $\sum_{k=1}^{\infty} \frac{k!}{k^k}$ and so by the minorante criterium we can conclude that $\sum_{k=1}^{\infty} \frac{k!}{k^k}$ diverges. 
 	    	
 	    	\addtocounter{enumi}{1}
 	    	\item $\displaystyle \sum_{k=1}^{\infty} \left(1 + \frac{1}{k}\right)^k$
 	    	
-	    	% INSERT 1I
+	    	We already know that
+	    	\[
+		    	\left(1 + \frac{1}{k}\right)^k \xrightarrow{k \to \infty} e \neq 0
+	    	\]
+	    	Since the row $\left(1 + \frac{1}{k}\right)^k$ does not converge to $0$, the sum $\sum_{k=1}^{\infty} \left(1 + \frac{1}{k}\right)^k$ diverges. 
 	    \end{enumerate}
      \end{questions}
 \end{document}
