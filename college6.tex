@@ -1,0 +1,116 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Test the given series for convergence or divergence.
+        \begin{enumerate}[label=(\alph*)]
+        	\item $\displaystyle \sum_{k=2}^{\infty} \frac{1}{\ln k}$
+        	
+        	% INSERT 1A
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{\sqrt k + 1.1}$
+        	
+        	% INSERT 1B
+        	
+        	\addtocounter{enumi}{2}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k!}$
+        	
+        	% INSERT 1E
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k+1}{k^2}$
+        	
+        	% INSERT 1F
+        	
+        	\addtocounter{enumi}{3}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\sin k}{k^2}$
+        	
+        	% INSERT 1J
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\ln k}{k}$
+        	
+        	% INSERT 1K
+        	
+        	\addtocounter{enumi}{1}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k^k}$
+        	
+        	% INSERT 1M
+        \end{enumerate}
+	    
+	    \question
+	    Let $\sum a_n$ be a series consisting of positive terms. Prove the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		%INSERT 2A
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		%INSERT 2B
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Let $\sum a_n$ be a series consisting of non-negative terms. Prove the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		%INSERT 3A
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		%INSERT 3B
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Test the given series for convergence or divergence.
+	    \begin{enumerate}[label=(\alph*)]
+	    	\item $\displaystyle \sum_{k=2}^{\infty} \frac{k^2 2^{k+1}}{3^k}$
+	    	
+	    	% INSERT 4A
+	    	
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{(k!)^2}{(2k)!}$
+	    	
+	    	% INSERT 4B
+	    	
+	    	\addtocounter{enumi}{2}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{3^{2k+1}}{k^{2k}}$
+	    	
+	    	% INSERT 4E
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k!}{k^k}$
+	    	
+	    	% INSERT 4G
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \left(1 + \frac{1}{k}\right)^k$
+	    	
+	    	% INSERT 1I
+	    \end{enumerate}
+     \end{questions}
+\end{document}
