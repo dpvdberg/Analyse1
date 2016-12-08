@@ -16,34 +16,46 @@
         \begin{enumerate}[label=(\alph*)]
         	\item $\displaystyle \sum_{k=2}^{\infty} \frac{1}{\ln k}$
         	
-        	% INSERT 1A
+        	For $k \to \infty$, we have $\ln k < k$, which implies $1/\ln k > 1/k$ for $k$ sufficiently large. Using the comparison test and fact that $\sum 1/k$ is divergent, we conclude our original series diverges as well.
         	
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{\sqrt k + 1.1}$
         	
-        	% INSERT 1B
+        	For $k$ sufficiently large ($k \geq 2$), we have $\sqrt k + 1.1 < 2\sqrt k$ such that
+        	\[
+	        	\frac{1}{\sqrt k + 1.1} > \frac{1}{2\sqrt k}\,,
+        	\]
+        	which implies divergence of our original series using the comparison test, as $\sum 1/(2\sqrt k) = 1/2 \sum 1/\sqrt k$ is a diverging hyperharmonic series ($p$-series) with $p = 1/2 < 1$, i.e. $1/2 \sum 1/\sqrt k$ diverges. 
         	
         	\addtocounter{enumi}{2}
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k!}$
         	
-        	% INSERT 1E
+        	For $k$ sufficiently large enough, we have $k! > k^2$, such that $1/k! < 1/k^2$. We know that $\sum 1/k^2$ is a converging hyperharmonic series with $p = 2 > 1$, which in turn means that the latter series dominates our original series and hence; (by the comparison test) $\sum 1/k!$ converges as well.
         	
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k+1}{k^2}$
         	
-        	% INSERT 1F
+        	For all $k \in \naturals$, we know
+        	\[
+	        	\frac{k+1}{k^2} > \frac{k}{k^2} = \frac{1}{k}\,.
+        	\]
+        	As $\sum 1/k$ is a diverging series, by the comparison test the original series diverges.
         	
         	\addtocounter{enumi}{3}
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\sin k}{k^2}$
         	
-        	% INSERT 1J
+        	For all $k$, we know $|\sin k| \leq 1$ and $k^2 > 0$, such that
+        	\[
+	        	\left| \frac{\sin k}{k^2} \right| \leq \frac{1}{k^2}\,.
+        	\]
+        	By the limit comparison test; $\sum |\frac{\sin k}{k^2}|$ converges, as $\sum 1/k^2$ is a converging hyperharmonic series with $p = 2 > 1$. But then our original series converges absolutely, which in turn implies ordinary convergence.
         	
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\ln k}{k}$
         	
-        	% INSERT 1K
+        	For $k$ sufficiently large enough, we have $\ln k > 1$ (in fact; $\ln k \xrightarrow{n\to\infty} \infty$), which means $\sum \ln k / k > \sum 1 / k$. Using the limit comparison test and the fact that $\sum 1/k$ is divergent, we can conclude our original series diverges.
         	
         	\addtocounter{enumi}{1}
         	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k^k}$
         	
-        	% INSERT 1M
+        	For $k$ sufficiently large enough, we have $k^k > k^2$, which means $1/k^k < 1/k^2$. Applying the limit comparison test, we know that $\sum 1 / k^2$ is a converging hyperharmonic series with $p = 2 > 1$ which leads us to conclude our original series converges as well.
         \end{enumerate}
 	    
 	    \question
