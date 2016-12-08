@@ -148,7 +148,22 @@
 	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		%INSERT 3A
+	    		We know:
+	    		\[
+		    		\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0}: |\sqrt[n]{a_n} - r| < \epsilon 
+	    		\]
+	    		But then it holds $\forall_{n \ge n_0}$ that:
+	    		\begin{align*}
+		    		&-\epsilon < \sqrt[n]{a_n} - r < \epsilon \\
+		    		& -\epsilon +r < \sqrt[n]{a_n} < \epsilon + r
+	    		\end{align*}
+	    		We know $r < 1$, so we can choose $\epsilon > 0$ such that $\epsilon + r < 1$. Now define $q = \epsilon + r$, for this chosen $\epsilon$. Then:
+	    		\[
+					\exists_{q \in [0,1)} \exists_{n_0} \forall_{n \ge n_0} : \sqrt[n]{a_n} < q	    		
+	    		\]
+	    		But then, by the general root test, $\sum a_n$ converges. 
+	    		
+	    		Now, by the general root test, $\sum a_n$ diverges. 
 	    	\end{proof}
 	    	
 	    	\part
@@ -156,7 +171,19 @@
 	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		%INSERT 3B
+	    		We know:
+	    		\[
+		    		\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0}: |\sqrt[n]{a_n} - r| < \epsilon 
+	    		\]
+	    		But then it holds $\forall_{n \ge n_0}$ that:
+	    		\begin{align*}
+		    		&-\epsilon < \sqrt[n]{a_n} - r < \epsilon \\
+		    		& -\epsilon +r < \sqrt[n]{a_n} < \epsilon + r
+	    		\end{align*}
+	    		We know that $r > 0$. Now, we can choose $\epsilon > 0$ such that $-\epsilon + r \ge 1$. Now define $q = -\epsilon + r$, for this chosen $\epsilon$. Now:
+	    		\[
+		    		\exists_{q \in [1,\infty)} \exists_{n_0} \forall_{n \ge n_0} : \sqrt[n]{a_n} \ge q
+	    		\]
 	    	\end{proof}
 	    \end{parts}
     
