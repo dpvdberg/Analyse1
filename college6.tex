@@ -1,6 +1,6 @@
 % !TeX spellcheck = en_US
 \documentclass[week=6]{homework}
-
+\usepackage{scrextend}
 \date{\today}
 
 
@@ -66,7 +66,44 @@
 	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		%INSERT 2A
+	    		We first proof the following \textit{Generalized Ratio Test for convergence}
+	    		\begin{addmargin}[2em]{0em}
+	    			\begin{inlinetoprove}
+	    				$\displaystyle \exists_{q\in [0,1)}\exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \leq q \implies \sum a_k = S \in \reals\,.$
+	    			\end{inlinetoprove}
+	    			\begin{proof}
+	    				The antecedent holds for all $n\geq n_0$, which means that for $n_0$ we have $a_{n_0} > 0$ and
+	    				\begin{align*}
+		    				\frac{a_{n_0+1}}{a_{n_0}} &\le q \\
+		    				\therefore a_{n_0+1} &\le q \cdot a_{n_0}\,.
+	    				\end{align*}
+	    				and for $n_0 + 1$, using similar reasoning
+	    				\begin{align*}
+	    					\frac{a_{n_0+2}}{a_{n_0+1}} &\le q \\
+	    					\therefore a_{n_0+2} &\le q \cdot a_{n_0+1} \le q^2 a_{n_0}\,,
+	    				\end{align*}
+	    				Continuing this argument, we find
+	    				\begin{align*}
+	    					a_{n_0+1} &\le q \cdot a_{n_0} \\
+	    					a_{n_0+2} &\le q \cdot a_{n_0+1} \le q^2 a_{n_0} \\
+	    					\vdots \quad & \qquad \quad \vdots \\
+	    					a_{n_0+k} &\le q^k a_{n_0} \enskip \forall_{k \geq 1}\,.
+	    				\end{align*}
+	    				But then $\sum_{k=n_0}^{\infty} a_k$ is dominated by the converging series $\sum_{k=0}^{\infty}q^k a_{n_0}$. The latter series converges as it is a geometric series times some constant $a_{n_0}$ and the behavior of the terms preceding $n_0$ is only a finite sum. Using the comparison test we conclude $\sum a_k$ is convergent.
+	    			\end{proof}
+		    	\end{addmargin}
+	    		As $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r$, we have
+	    		\[
+		    		\forall_{\epsilon > 0}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: \left| \frac{a_{n+1}}{a_n} - r \right| < \epsilon\,.
+	    		\]
+	    		
+	    		We have $r < 1$, choosing $\epsilon = 1-r > 0$, we have for $n \geq n_0$:
+	    		\begin{alignat*}{3}
+	    			 & && \hspace{13pt} \left| \frac{a_{n+1}}{a_n} - r \right| &&< \epsilon\\
+	    			 &\therefore -(1-r) &&< \enskip\frac{a_{n+1}}{a_n} - r \enskip &&< 1-r \\
+	    			 &\therefore -1+2r &&< \enskip\enskip\enskip \frac{a_{n+1}}{a_n} \enskip &&< 1 \\
+	    		\end{alignat*}
+	    		Now since $\frac{a_{n+1}}{a_n} < 1$ for $n \geq n_0$ and $a_n > 0$ for all $n$, using the Generalized Ratio Test for convergence we can conclude $\sum a_n$ is convergent. 
 	    	\end{proof}
 	    	
 	    	\part
@@ -74,7 +111,32 @@
 	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
 	    	\end{inlinetoprove}
 	    	\begin{proof}
-	    		%INSERT 2B
+	    		We first proof the following \textit{Generalized Ratio Test for divergence}
+	    		\begin{addmargin}[2em]{0em}
+	    			\begin{inlinetoprove}
+	    				$\displaystyle \exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \geq 1 \implies \sum a_k \text{ diverges.}$
+	    			\end{inlinetoprove}
+	    			\begin{proof}
+	    				For $n \geq n_0$ we have $a_n > 0$ and
+	    				\begin{align*}
+	    					\frac{a_{n+1}}{a_n} &\geq 1 \\
+	    					\therefore a_{n+1} &\geq a_n\,.
+	    				\end{align*}
+	    				As $a_{n_0} > 0$, we know $a_n \geq a_{n_0} > 0$ and $\lim_{n\to\infty} a_n \neq 0$. But then $\sum a_n$ can not converge by the divergence test.
+	    			\end{proof}
+	    		\end{addmargin}
+	    		As $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r$, we have
+	    		\[
+	    		\forall_{\epsilon > 0}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: \left| \frac{a_{n+1}}{a_n} - r \right| < \epsilon\,.
+	    		\]
+	    		
+	    		We have $r > 1$, choosing $\epsilon = r-1 > 0$, we have for $n \geq n_0$:
+	    		\begin{alignat*}{3}
+	    		& && \hspace{13pt} \left| \frac{a_{n+1}}{a_n} - r \right| &&< \epsilon\\
+	    		&\therefore -(r-1) &&< \enskip\frac{a_{n+1}}{a_n} - r \enskip &&< r-1 \\
+	    		&\therefore \qquad 1 &&< \enskip\enskip\enskip \frac{a_{n+1}}{a_n} \enskip &&< 2r-1 \\
+	    		\end{alignat*}
+	    		Now since $\frac{a_{n+1}}{a_n} > 1$ for $n \geq n_0$ and $a_n > 0$ for all $n$, using the Generalized Ratio Test for divergence we can conclude $\sum a_n$ is divergent. 
 	    	\end{proof}
 	    \end{parts}
     
