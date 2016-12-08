@@ -1,0 +1,265 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Test the given series for convergence or divergence.
+        \begin{enumerate}[label=(\alph*)]
+        	\item $\displaystyle \sum_{k=2}^{\infty} \frac{1}{\ln k}$
+        	
+        	For $k \to \infty$, we have $\ln k < k$, which implies $1/\ln k > 1/k$ for $k$ sufficiently large. Using the comparison test and fact that $\sum 1/k$ is divergent, we conclude our original series diverges as well.
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{\sqrt k + 1.1}$
+        	
+        	For $k$ sufficiently large ($k \geq 2$), we have $\sqrt k + 1.1 < 2\sqrt k$ such that
+        	\[
+	        	\frac{1}{\sqrt k + 1.1} > \frac{1}{2\sqrt k}\,,
+        	\]
+        	which implies divergence of our original series using the comparison test, as $\sum 1/(2\sqrt k) = 1/2 \sum 1/\sqrt k$ is a diverging hyperharmonic series ($p$-series) with $p = 1/2 < 1$, i.e. $1/2 \sum 1/\sqrt k$ diverges. 
+        	
+        	\addtocounter{enumi}{2}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k!}$
+        	
+        	For $k$ sufficiently large enough, we have $k! > k^2$, such that $1/k! < 1/k^2$. We know that $\sum 1/k^2$ is a converging hyperharmonic series with $p = 2 > 1$, which in turn means that the latter series dominates our original series and hence; (by the comparison test) $\sum 1/k!$ converges as well.
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k+1}{k^2}$
+        	
+        	For all $k \in \naturals$, we know
+        	\[
+	        	\frac{k+1}{k^2} > \frac{k}{k^2} = \frac{1}{k}\,.
+        	\]
+        	As $\sum 1/k$ is a diverging series, by the comparison test the original series diverges.
+        	
+        	\addtocounter{enumi}{3}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\sin k}{k^2}$
+        	
+        	For all $k$, we know $|\sin k| \leq 1$ and $k^2 > 0$, such that
+        	\[
+	        	\left| \frac{\sin k}{k^2} \right| \leq \frac{1}{k^2}\,.
+        	\]
+        	By the limit comparison test; $\sum |\frac{\sin k}{k^2}|$ converges, as $\sum 1/k^2$ is a converging hyperharmonic series with $p = 2 > 1$. But then our original series converges absolutely, which in turn implies ordinary convergence.
+        	
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{\ln k}{k}$
+        	
+        	For $k$ sufficiently large enough, we have $\ln k > 1$ (in fact; $\ln k \xrightarrow{n\to\infty} \infty$), which means $\sum \ln k / k > \sum 1 / k$. Using the limit comparison test and the fact that $\sum 1/k$ is divergent, we can conclude our original series diverges.
+        	
+        	\addtocounter{enumi}{1}
+        	\item $\displaystyle \sum_{k=1}^{\infty} \frac{1}{k^k}$
+        	
+        	For $k$ sufficiently large enough, we have $k^k > k^2$, which means $1/k^k < 1/k^2$. Applying the limit comparison test, we know that $\sum 1 / k^2$ is a converging hyperharmonic series with $p = 2 > 1$ which leads us to conclude our original series converges as well.
+        \end{enumerate}
+	    
+	    \question
+	    Let $\sum a_n$ be a series consisting of positive terms. Prove the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		We first proof the following \textit{Generalized Ratio Test for convergence}
+	    		\begin{addmargin}[2em]{0em}
+	    			\begin{inlinetoprove}
+	    				$\displaystyle \exists_{q\in [0,1)}\exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \leq q \implies \sum a_k = S \in \reals\,.$
+	    			\end{inlinetoprove}
+	    			\begin{proof}
+	    				The antecedent holds for all $n\geq n_0$, which means that for $n_0$ we have $a_{n_0} > 0$ and
+	    				\begin{align*}
+		    				\frac{a_{n_0+1}}{a_{n_0}} &\le q \\
+		    				\therefore a_{n_0+1} &\le q \cdot a_{n_0}\,.
+	    				\end{align*}
+	    				and for $n_0 + 1$, using similar reasoning
+	    				\begin{align*}
+	    					\frac{a_{n_0+2}}{a_{n_0+1}} &\le q \\
+	    					\therefore a_{n_0+2} &\le q \cdot a_{n_0+1} \le q^2 a_{n_0}\,,
+	    				\end{align*}
+	    				Continuing this argument, we find
+	    				\begin{align*}
+	    					a_{n_0+1} &\le q \cdot a_{n_0} \\
+	    					a_{n_0+2} &\le q \cdot a_{n_0+1} \le q^2 a_{n_0} \\
+	    					\vdots \quad & \qquad \quad \vdots \\
+	    					a_{n_0+k} &\le q^k a_{n_0} \enskip \forall_{k \geq 1}\,.
+	    				\end{align*}
+	    				But then $\sum_{k=n_0}^{\infty} a_k$ is dominated by the converging series $\sum_{k=0}^{\infty}q^k a_{n_0}$. The latter series converges as it is a geometric series times some constant $a_{n_0}$ and the behavior of the terms preceding $n_0$ is only a finite sum. Using the comparison test we conclude $\sum a_k$ is convergent.
+	    			\end{proof}
+		    	\end{addmargin}
+	    		As $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r$, we have
+	    		\[
+		    		\forall_{\epsilon > 0}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: \left| \frac{a_{n+1}}{a_n} - r \right| < \epsilon\,.
+	    		\]
+	    		
+	    		We have $r < 1$, then for $n \geq n_0$:
+	    		\begin{alignat*}{3}
+	    			 & && \hspace{13pt} \left| \frac{a_{n+1}}{a_n} - r \right| &&< \epsilon\\
+	    			 &\therefore -\epsilon &&< \enskip\frac{a_{n+1}}{a_n} - r \enskip &&< \epsilon \\
+	    			 &\therefore -\epsilon+r &&< \enskip\enskip\enskip \frac{a_{n+1}}{a_n} \enskip &&< \epsilon + r\,.
+	    		\end{alignat*}
+	    		Now since $0 \le r < 1$, we can find an $\epsilon > 0$ such that $\epsilon + r < 1$ and hence
+	    		\[
+		    		\exists_{q\in [0,1)}\exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \leq q\,.
+	    		\]
+	    		Using the Generalized Ratio Test for convergence we can conclude $\sum a_n$ is convergent. 
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		We first proof the following \textit{Generalized Ratio Test for divergence}
+	    		\begin{addmargin}[2em]{0em}
+	    			\begin{inlinetoprove}
+	    				$\displaystyle \exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \geq 1 \implies \sum a_k \text{ diverges.}$
+	    			\end{inlinetoprove}
+	    			\begin{proof}
+	    				For $n \geq n_0$ we have $a_n > 0$ and
+	    				\begin{align*}
+	    					\frac{a_{n+1}}{a_n} &\geq 1 \\
+	    					\therefore a_{n+1} &\geq a_n\,.
+	    				\end{align*}
+	    				As $a_{n_0} > 0$, we know $a_n \geq a_{n_0} > 0$ and $\lim_{n\to\infty} a_n \neq 0$. But then $\sum a_n$ can not converge by the divergence test.
+	    			\end{proof}
+	    		\end{addmargin}
+	    		As $\frac{a_{n+1}}{a_n} \xrightarrow{n\to\infty} r$, we have
+	    		\[
+	    		\forall_{\epsilon > 0}\exists_{n_0 \in \naturals}\forall_{n \geq n_0}: \left| \frac{a_{n+1}}{a_n} - r \right| < \epsilon\,.
+	    		\]
+	    		
+	    		We have $r > 1$, choosing $\epsilon = r-1 > 0$, we have for $n \geq n_0$:
+	    		\begin{alignat*}{3}
+	    		& && \hspace{13pt} \left| \frac{a_{n+1}}{a_n} - r \right| &&< \epsilon\\
+	    		&\therefore -(r-1) &&< \enskip\frac{a_{n+1}}{a_n} - r \enskip &&< r-1 \\
+	    		&\therefore \qquad 1 &&< \enskip\enskip\enskip \frac{a_{n+1}}{a_n} \enskip &&< 2r-1 \\
+	    		\end{alignat*}
+	    		Now since $\frac{a_{n+1}}{a_n} > 1$ for $n \geq n_0$ and $a_n > 0$ for all $n$, we have
+	    		\[
+		    		\exists_{n_0 \in \naturals}\forall_{n\geq n_0}: a_n > 0 \wedge \frac{a_{n+1}}{a_n} \geq 1\,.
+	    		\]
+	    		Using the Generalized Ratio Test for divergence we can conclude $\sum a_n$ is divergent. 
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Let $\sum a_n$ be a series consisting of non-negative terms. Prove the following statements:
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r < 1$, then $\sum a_n$ is convergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		We know:
+	    		\[
+		    		\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0}: |\sqrt[n]{a_n} - r| < \epsilon 
+	    		\]
+	    		But then it holds $\forall_{n \ge n_0}$ that:
+	    		\begin{align*}
+		    		&-\epsilon < \sqrt[n]{a_n} - r < \epsilon \\
+		    		& -\epsilon +r < \sqrt[n]{a_n} < \epsilon + r
+	    		\end{align*}
+	    		We know $r < 1$, so we can choose $\epsilon > 0$ such that $\epsilon + r < 1$. Now define $q = \epsilon + r$, for this chosen $\epsilon$. Then:
+	    		\[
+					\exists_{q \in [0,1)} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : \sqrt[n]{a_n} < q	    		
+	    		\]
+	    		But then, by the general root test, $\sum a_n$ converges. 
+	    	\end{proof}
+	    	
+	    	\part
+	    	\begin{inlinetoprove}
+	    		If $\sqrt[n]{a_n} \xrightarrow{n\to\infty} r > 1$, then $\sum a_n$ is divergent.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		We know:
+	    		\[
+		    		\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0}: |\sqrt[n]{a_n} - r| < \epsilon 
+	    		\]
+	    		But then it holds $\forall_{n \ge n_0}$ that:
+	    		\begin{align*}
+		    		&-\epsilon < \sqrt[n]{a_n} - r < \epsilon \\
+		    		& -\epsilon +r < \sqrt[n]{a_n} < \epsilon + r
+	    		\end{align*}
+	    		We know that $r > 1$. Now, we can choose $\epsilon > 0$ such that $-\epsilon + r \ge 1$. Now define $q = -\epsilon + r$, for this chosen $\epsilon$. Now:
+	    		\[
+		    		\exists_{q \in [1,\infty)} \exists_{n_0} \forall_{n \ge n_0} : \sqrt[n]{a_n} \ge q
+	    		\]
+	    		Now, by the general root test, $\sum a_n$ diverges.
+	    	\end{proof}
+	    \end{parts}
+    
+	    \question
+	    Test the given series for convergence or divergence.
+	    
+	    \textbf{Note:} All terms in all given series are positive, hence; we can apply both the ratio and root test.
+	    \begin{enumerate}[label=(\alph*)]
+	    	\item $\displaystyle \sum_{k=2}^{\infty} \frac{k^2 2^{k+1}}{3^k}$
+	    	
+	    	We use the root test to find out whether this sum converges:
+	    	\begin{align*}
+		    	\sqrt[k]{\frac{k^2 2^{k+1}}{3^k}} &=  \frac{\sqrt[k]{k^2} \cdot \sqrt[k]{2^{k+1}}}{\sqrt[k]{k}} \\
+			    &= \frac{\sqrt[k]{k}^2 \cdot 2^{\frac{k+1}{k}}}{3^{\frac{k}{k}}} \xrightarrow{k \to \infty} \frac{1^2 \cdot 2}{3} = \frac{2}{3}
+	    	\end{align*}
+	    	Since $\lim_{k \to \infty} \sqrt[k]{\frac{k^2 2^{k+1}}{3^k}} = \frac{2}{3} < 1$, by the root test, $\sum_{k=2}^{\infty} \frac{k^2 2^{k+1}}{3^k}$ converges. 
+	    	
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{(k!)^2}{(2k)!}$
+	    	
+		    We use the ratio test to find out whether this sum converges:
+		    \begin{align*}
+		    	\frac{\frac{(k+1)!^2}{(2k+2)!}}{\frac{(k!)^2}{(2k)!}} &= \frac{(k+1)!^2}{(2k+2)!} \cdot \frac{(2k)!}{(k!)^2} \\
+		    	&= \frac{(k+1)^2}{(2k+1)(2k+2)} \\
+		    	&= \frac{k^2 + 2k + 1}{4k^2 + 6k + 2} \\
+		    	&= \frac{1 + \frac{2}{k} + \frac{1}{k^2}}{4 + \frac{6}{k} + \frac{2}{k^2}} \xrightarrow{k \to \infty} \frac{1}{4}
+		    \end{align*}
+		    Now, since 
+		    \[
+		    \lim_{k \to \infty} \frac{(k+1)!^2}{(2k+2)!} \cdot \frac{(2k)!}{(k!)^2} = \frac{1}{4} < 1,
+		    \]
+		    by the ratio test the sum $\sum_{k=1}^{\infty} \frac{(k!)^2}{(2k)!}$ converges. 
+	    	
+	    	\addtocounter{enumi}{2}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{3^{2k+1}}{k^{2k}}$
+	    	
+	    	We use the root test to find out whether this sum converges:
+	    	\begin{align*}
+	    		\sqrt[k]{\frac{3^{2k+1}}{k^{2k}}} &=  \frac{\sqrt[k]{3^{2k+1}}}{\sqrt[k]{k^{2k}}} \\
+	    		&= \frac{3^{\frac{2k+1}{k}}}{k^{\frac{2k}{k}}} \\
+	    		&= \frac{3^{2 + \frac{1}{k}}}{k^2} \xrightarrow{k \to \infty} 0
+	    	\end{align*}
+	    	Now, since:
+	    	\[
+		    	\lim_{k \to \infty} \sqrt[k]{\frac{3^{2k+1}}{k^{2k}}} = 0 < 1,
+	    	\]
+	    	by the root test, the sum $ \sum_{k=1}^{\infty} \frac{3^{2k+1}}{k^{2k}}$ converges. 
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \frac{k!}{k^k}$
+	    	
+	    	We use the ratio test to find out whether this sum converges:
+	    	\begin{align*}
+	    		\frac{\frac{k!}{k^k}}{\frac{(k+1)!}{(k+1)^{k+1}}} &= \frac{(k+1)!k^k}{(k+1)^{k+1}k!} \\
+	    		&= \frac{(k+1)k^k}{(k+1)^{k+1}} \\
+	    		&= \frac{k^k}{(k+1)^k} \\
+	    		&= \left(\frac{k}{k+1}\right)^k \\
+	    		&= \left(1 + \frac{1}{k}\right)^{-k} \xrightarrow{k \to \infty} \frac{1}{e}\,.
+	    	\end{align*}
+	    	
+	    	As $1/e < 1$, by the ratio test, our original sum converges.
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item $\displaystyle \sum_{k=1}^{\infty} \left(1 + \frac{1}{k}\right)^k$
+	    	
+	    	We already know that
+	    	\[
+		    	\left(1 + \frac{1}{k}\right)^k \xrightarrow{k \to \infty} e \neq 0
+	    	\]
+	    	Since the row $\left(1 + \frac{1}{k}\right)^k$ does not converge to $0$, the sum $\sum_{k=1}^{\infty} \left(1 + \frac{1}{k}\right)^k$ diverges by the divergence test.
+	    \end{enumerate}
+     \end{questions}
+\end{document}
