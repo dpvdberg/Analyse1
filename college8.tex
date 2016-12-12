@@ -1,0 +1,74 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Let $D \subset \reals$ unbounded above, $a \in (D \cap (-\infty,a))', b \in (D \cap (b,\infty))'$, $L \in \reals$, $f : D \to \reals$. 
+        
+        Formulate the precise definition of the folowing limit operations. Give an equivalent formulation in terms of sequences and prove that these are equivalent. 
+        
+        \begin{enumerate}
+        	\item $\lim_{x \uparrow a} f(x) = L$
+        	\item $\lim_{x \downarrow a} f(x) = \infty$
+        	\item $\lim_{x \to \infty} f(x) = - \infty$
+        \end{enumerate}
+        
+        \question
+        Let $D \subset \reals$, $a \in (D \cap (-\infty,a))' \cap (D \cap (b,\infty))'$, $f : D \to \reals$. 
+        
+        Show: $\lim_{x \to a} f(x)$ exists if and only if the one-sided limits $\lim_{x \uparrow a} f(x)$ and $\lim_{x \downarrow a} f(x)$ both exist and 
+        \[
+	        \lim_{x \uparrow a} f(x) = \lim_{x \downarrow a} f(x)
+        \]
+        In this case:
+        \[
+	        \lim_{x \to a} f(x) = \lim_{x \uparrow a} f(x) = \lim_{x \uparrow a} f(x)
+        \]
+        
+        \question
+        Let $D \subset \reals $, $a \in D'$, $f, g : D \to \reals$, $f bounded$ and $\lim_{x \to a} g(x) = +\infty$. 
+        
+        Show:
+        \[
+	        \lim_{x \to a} \frac{f(x)}{g(x)} = 0
+        \]
+        
+        \question
+        Let $I \subset \reals$ an interval, $f, g : I \to \reals$ continuous and $g(x) \neq 0$ for all $x \in I$. 
+        
+        Show:
+        
+        \begin{enumerate}
+        	\item It holds 
+        	\[
+	        	(\forall x \in I : g(x) > 0) \vee (\forall x \in I : g(x) < 0).
+        	\]
+        	\item The (by pointwise arithmatic operations defined) functions 
+        	\[
+	        	f + g, f \cdot g, \frac{f}{g} : I \to \reals
+        	\]
+        	are continuous on $I$
+        \end{enumerate}
+        
+        \question
+        Let $f : \reals \to \reals$ a continuous periodic function with period $T > 0$. 
+        
+        Show: there exists an $x \in \reals$ such that $f(x) = f(x + T/2)$.
+        
+        \question
+        Let $f : \reals \to \reals$ continuous, $f(0) = 1$ and 
+        \[
+	        \lim_{x \to - \infty} f(x) = \lim_{x \to  \infty} f(x) = 0
+        \]
+        Show: there exists $x^* \in \reals$ such that $f(x^*) = \max\{f(x) | x \in \reals \}$
+     \end{questions}
+\end{document}
