@@ -14,13 +14,184 @@
         \firstquestion
         Let $D \subset \reals$ unbounded above, $a \in (D \cap (-\infty,a))', b \in (D \cap (b,\infty))'$, $L \in \reals$, $f : D \to \reals$. 
         
-        Formulate the precise definition of the folowing limit operations. Give an equivalent formulation in terms of sequences and prove that these are equivalent. 
+        Formulate the precise definition of the following limit operations. Give an equivalent formulation in terms of sequences and prove that these are equivalent. 
         
-        \begin{enumerate}
-        	\item $\lim_{x \uparrow a} f(x) = L$
-        	\item $\lim_{x \downarrow a} f(x) = \infty$
-        	\item $\lim_{x \to \infty} f(x) = - \infty$
-        \end{enumerate}
+        \begin{parts}
+        	\part $\lim_{x \uparrow a} f(x) = L$
+        	
+        Precise definition: 
+        \[
+	        \lim_{x \uparrow a} f(x) = L \iff \forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \Rightarrow |f(x) - L| < \epsilon
+        \]
+        Definition in terms of sequences:
+        \[
+	        \lim_{x \uparrow a} f(x) = L \iff \forall \text{ sequences } (x_n) \text{ in } D \cap (-\infty, a) \text{ with } x_n \to a \text{ holds } f(x_n) \to L
+        \]
+        
+        \begin{toprove}
+        	$\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \Rightarrow |f(x) - L| < \epsilon \iff$
+        	
+        	$\forall \text{ sequences } (x_n) \text{ in } D \cap (-\infty, a) \text{ with } x_n \to a \text{ holds } f(x_n) \to L$
+        \end{toprove}
+        \begin{proof}
+        	
+        	\begin{itemize}        		
+        		\item "$\Rightarrow$"
+        		
+        		Let $(x_n)$ be an arbitrary sequence in $D \cap (-\infty, a)$ with $x_n \to a$. Let $\epsilon > 0$. Then:
+        		\[
+	        		\exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \Rightarrow |f(x) - L| < \epsilon
+        		\]
+        		Also $x_n \to a$, so
+        		\[
+	        		\forall_{\delta > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : a - x_n < \delta
+        		\]
+        		Now $\forall_{n \ge n_0}$: 
+        		\[
+	        		\exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a)} : 0 < a - x_n < \delta \Rightarrow |f(x_n) - L| < \epsilon
+        		\]
+        		Since $(x_n)$ was an arbitrary sequence, it now holds that:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \cap (-\infty, a) \text{ with } x_n \to a \text{ holds } f(x_n) \to L
+        		\]
+        		        		
+        		\item "$\Leftarrow$"
+        		
+        		We prove this indirectly. Assume:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \cap (-\infty, a) \text{ with } x_n \to a \text{ holds } f(x_n) \to L, \text{ but } \neg( \lim_{x \uparrow a} f(x) = L)
+        		\]
+        		This means:
+        		\[
+	        		\exists_{\epsilon>0} \forall_{\delta > 0} \exists_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \wedge |f(x) - L| \ge \epsilon
+        		\]
+        		Now take $\delta = \frac{1}{n}$. Then: 
+        		\[
+	        		\exists \text{ a sequence } (x_n) \in D \cap (-\infty, a) : 0 < a - x_n < \frac{1}{n} \wedge |f(x_n) - L| \ge \epsilon
+        		\]
+        		So we have found a sequence $(x_n) in D \cap (-\infty, a)$ with $x_n \to a$, but $f(x_n) \not \to L$. $\lightning$
+        		
+        		
+        	\end{itemize}
+        \end{proof}
+        
+        	\part $\lim_{x \downarrow b} f(x) = \infty$
+        Precise definition: 
+        
+        \[
+	        \lim_{x \downarrow b} f(x) = \infty \iff \forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap (b, \infty)} : 0 < x - b < \delta \Rightarrow f(x) \ge M
+        \]
+        Definition in terms of sequences:
+        \[
+	        \lim_{x \downarrow b} f(x) = \infty \iff \forall \text{ sequences } (x_n) \text{ in } D \cap (b, \infty) \text{ with } x_n \to b \text{ holds } f(x_n) \to \infty
+        \]	
+        
+        \begin{toprove}
+        	$\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap [b, \infty)} : 0 < x - b < \delta \Rightarrow f(x) \ge M$ $\iff$
+        	
+        	$\forall \text{ sequences } (x_n) \text{ in } D \cap (b, \infty) \text{ with } x_n \to b \text{ holds } f(x_n) \to \infty$
+        \end{toprove}	
+        \begin{proof}
+        	
+        	\begin{itemize}        		
+        		\item "$\Rightarrow$"
+        		
+        		Let $(x_n)$ be an arbitrary sequence in $D \cap (b, \infty)$ with $x_n \to b$. Let $M > 0$. Then:
+        		\[
+	        		\exists_{\delta > 0} \forall_{x \in D \cap [b, \infty)} : 0 \le x - b < \delta \Rightarrow f(x) \ge M
+        		\]
+        		Also $x_n \to b$, so
+        		\[
+	        		\forall_{\delta > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : x_n - b < \delta
+        		\]
+        		Now $\forall_{n \ge n_0}$: 
+        		\[
+	        		\exists_{\delta > 0} \forall_{x \in D \cap [b, \infty)} : 0 < x_n - b < \delta \Rightarrow f(x_n) \ge M
+        		\]
+        		Since $(x_n)$ was an arbitrary sequence, it now holds that:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \cap (b, \infty) \text{ with } x_n \to b \text{ holds } f(x_n) \to \infty
+        		\]
+        		
+        		\item "$\Leftarrow$"
+        		
+        		We prove this indirectly. Assume:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \cap (b, \infty) \text{ with } x_n \to b \text{ holds } f(x_n) \to \infty, \text{ but } \neg( \lim_{x \downarrow b} f(x) = \infty)
+        		\]
+        		This means:
+        		\[
+	        		\exists_{\epsilon>0} \forall_{\delta > 0} \exists_{x \in D \cap [b, \infty)} : 0 \le x - b < \delta \wedge f(x) < M
+        		\]
+        		Now take $\delta = \frac{1}{n}$. Then: 
+        		\[
+	        		\exists \text{ a sequence } (x_n) \in D \cap (b, \infty) : 0 < x_n - b < \frac{1}{n} \wedge f(x_n) < M
+        		\]
+        		So we have found a sequence $(x_n)$ in $D \cap (b, \infty)$ with $x_n \to b$, but $f(x_n) \not \to \infty$. $\lightning$
+        		
+        		
+        	\end{itemize}
+        \end{proof}
+        
+        	\part $\lim_{x \to \infty} f(x) = - \infty$
+       
+        Precise definition: 
+        \[
+	        \lim_{x \to \infty} f(x) = - \infty \iff \forall_{M < 0} \exists_{N > 0} \forall_{x \in D} : x \ge N \Rightarrow f(x) \le M
+        \]
+        Definition in terms of sequences:
+        \[
+	        \lim_{x to \infty} f(x) = - \infty \iff \forall \text{ sequences } (x_n) \text{ in } D \text{ with } x_n \to \infty \text{ holds } f(x_n) \to - \infty
+        \]
+        
+        \begin{toprove}
+        	$\forall_{M < 0} \exists_{N > 0} \forall_{x \in D} : x \ge N \Rightarrow f(x) \le M$ $\iff$
+        	
+        	$\forall \text{ sequences } (x_n) \text{ in } D \text{ with } x_n \to \infty \text{ holds } f(x_n) \to - \infty$
+        \end{toprove}
+        \begin{proof}
+        	
+        	\begin{itemize}        		
+        		\item "$\Rightarrow$"
+        		
+        		Let $(x_n)$ be an arbitrary sequence in $D$ with $x_n \to \infty$. Let $M < 0$. Then:
+        		\[
+	        		\exists_{N > 0} \forall_{x \in D} : x \ge N \Rightarrow f(x) \le M
+        		\]
+        		Also $x_n \to \infty$, so
+        		\[
+	        		\forall_{N > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : x_n \ge N
+        		\]
+        		Now $\forall_{n \ge n_0}$: 
+        		\[
+	        		\exists_{N > 0} \forall_{x \in D} : x_n \ge N \Rightarrow f(x_n) \le M
+        		\]
+        		Since $(x_n)$ was an arbitrary sequence, it now holds that:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \text{ with } x_n \to \infty \text{ holds } f(x_n) \to - \infty
+        		\]
+        		
+        		\item "$\Leftarrow$"
+        		
+        		We prove this indirectly. Assume:
+        		\[
+	        		\forall \text{ sequences } (x_n) \text{ in } D \text{ with } x_n \to b \text{ holds } f(x_n) \to - \infty, \text{ but } \neg( \lim_{x \to \infty} f(x) = - \infty)
+        		\]
+        		This means:
+        		\[
+	        		\exists_{M < 0} \forall_{N > 0} \exists_{x \in D} : x \ge N \wedge f(x) > M
+        		\]
+        		Now take $N = n$. Then: 
+        		\[
+	        		\exists \text{ a sequence } (x_n) \in D : x_n \ge n \wedge f(x_n) > M
+        		\]
+        		So we have found a sequence $(x_n)$ in $D$ with $x_n \to \infty$, but $f(x_n) \not \to - \infty$. $\lightning$
+        		
+        		
+        	\end{itemize}
+        \end{proof}	
+                      	
+        \end{parts}            
         
         \question
         Let $D \subset \reals$, $a \in (D \cap (-\infty,a))' \cap (D \cap (b,\infty))'$, $f : D \to \reals$. 
@@ -33,31 +204,149 @@
         \[
 	        \lim_{x \to a} f(x) = \lim_{x \uparrow a} f(x) = \lim_{x \uparrow a} f(x)
         \]
+        \begin{proof}
+	        
+	        \begin{itemize}
+	        	\item "$\Rightarrow$"
+	        	
+	        	Assume $\lim_{x \to a} f(x)$ exists and is equal to $L$. This means:
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+	        	\]
+	        	Then surely it also holds that (because $D \cap (-\infty, a] \subset D$)
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+	        	\]
+	        	as well as (because $D \cap [a, \infty) \subset D$): 
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap [a, \infty)} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+	        	\]
+	        	and so $\lim_{x \uparrow a} f(x)$ and $\lim_{x \downarrow a} f(x)$ exist. Also:
+	        	\[
+		        	\lim_{x \uparrow a} f(x) = \lim_{x \downarrow a} f(x) = L
+	        	\]
+	        	and so:
+	        	\[
+		        	\lim_{x \uparrow a} f(x) = \lim_{x \downarrow a} f(x) = \lim_{x \to a} f(x)
+	        	\]
+	        	
+	        	\item "$\Leftarrow$"
+	        	
+	        	Now assume $\lim_{x \uparrow a} f(x)$ and $\lim_{x \downarrow a} f(x)$ exist and $\lim_{x \uparrow a} f(x) = \lim_{x \downarrow a} f(x) = L$. Then:
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+	        	\]
+	        	as well as
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap [a, \infty)} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+	        	\]
+	        	Because $(D \cap (-\infty, a]) \cap (D \cap [a, \infty)) = D$, it holds that:
+	        	\[
+		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
+		        \]
+		        In this case
+		        \[
+						\lim_{x \to a} f(x) = L	        
+		        \]
+		        and so:
+		        \[
+			        \lim_{x \uparrow a} f(x) = \lim_{x \downarrow a} f(x) = \lim_{x \to a} f(x)
+		        \]
+	        	
+	        	
+	        \end{itemize}
+        \end{proof}
         
         \question
-        Let $D \subset \reals $, $a \in D'$, $f, g : D \to \reals$, $f bounded$ and $\lim_{x \to a} g(x) = +\infty$. 
+        Let $D \subset \reals $, $a \in D'$, $f, g : D \to \reals$, $f$ bounded and $\lim_{x \to a} g(x) = +\infty$. 
         
         Show:
         \[
 	        \lim_{x \to a} \frac{f(x)}{g(x)} = 0
         \]
         
+        \begin{proof}
+        	f is bounded on D, so:
+        	\[
+	        	\exists_{M > 0} \forall_{x \in D} : -M < f(x) < M
+        	\]
+        	Also $\lim_{x \to a} g(x) = +\infty$, so:
+        	\[
+	        	\forall \text{ sequences } (x_n) \text{ in } D\backslash \{a\} \text{ with } x_n \to a \text{ it holds that } g(x_n) \to \infty
+        	\]
+        	Now let $(x_n)$ be an arbitrary sequence in $D\backslash \{a\}$ with $x_n \to a$. Then $g(x_n) \to \infty $. Also $\forall_{x \in D}$:
+        	\[
+	        	\frac{-M}{g(x_n)} \le \frac{f(x)}{g(x_n)} \le \frac{M}{g(x_n)}
+        	\]
+        	For sequences we already know that:
+        	\[
+	        	\lim_{n \to \infty} \frac{-M}{g(x_n)} = \lim_{n \to \infty} \frac{M}{g(x_n)} = 0
+        	\]
+        	Now, because of the squeeze theorem, it now holds that $\forall_{x \in D}$:
+        	\[
+	        	\lim_{n \to \infty} \frac{f(x)}{g(x_n)} = 0
+        	\]
+        	But then also:
+        	\[
+	        	\lim_{x \to a} \frac{f(x)}{g(x)} = 0
+        	\]
+        \end{proof}
+        
         \question
         Let $I \subset \reals$ an interval, $f, g : I \to \reals$ continuous and $g(x) \neq 0$ for all $x \in I$. 
         
         Show:
         
-        \begin{enumerate}
-        	\item It holds 
+        \begin{parts}
+        	\part It holds 
         	\[
 	        	(\forall x \in I : g(x) > 0) \vee (\forall x \in I : g(x) < 0).
         	\]
-        	\item The (by pointwise arithmatic operations defined) functions 
+        	
+        	\begin{proof}
+        		We prove this indirectly. Assume:
+        		\[
+	        		\neg ( (\forall x \in I : g(x) > 0) \vee (\forall x \in I : g(x) < 0) )
+        		\]
+        		Then:
+        		\[
+	        		\exists_{\bar x \in I} : g(\bar x) \le 0 \wedge \exists_{x^* \in I} : g(x^*) \ge 0 
+        		\]
+        		But since $g(x) \neq 0 \forall_{x \in I}$, so:
+        		\[
+	        		\exists_{\bar x \in I} : g(\bar x) < 0 \wedge \exists_{x^* \in I} : g(x^*) > 0
+        		\]
+        		Because $g(x)$ is continuous, because of the intermediate value theorem it holds that:
+        		\[
+	        		\text{ because } g(\bar x) < 0 < g(x^*) \text{ it holds that } \exists_{c \in (\bar x, x^*)} : g(c) = 0 \quad \lightning
+        		\]
+        	\end{proof}
+        	        	
+        	\part The (by pointwise arithmatic operations defined) functions 
         	\[
 	        	f + g, f \cdot g, \frac{f}{g} : I \to \reals
         	\]
         	are continuous on $I$
-        \end{enumerate}
+        	
+        	\begin{proof}
+        		f, g continous on $I$ , so:
+        		\[
+	        		\forall_{a \in I} : \forall \text{ sequences } (x_n) \text{ in } I \text{ with } x_n \to a \Rightarrow f(x_n) \to f(a)
+        		\]
+        		and also:
+        		\[
+	        		\forall_{a \in I} : \forall \text{ sequences } (y_n) \text{ in } I \text{ with } y_n \to a \Rightarrow f(y_n) \to f(a)
+        		\]
+        		Now let $a \in I$ be set and arbitrary. Let $x_n$ be an arbitrary sequence in $I$ with $x_n \to a$. Because $f, g$ are both continuous on $I$ they are therefore bounded. Now, for bounded sequences we know:
+        		\begin{align*}
+	        		f(x_n) + g(x_n) &\to f(a) + g(a) \\
+	        		f(x_n) \cdot g(x_n) &\to f(a) \cdot g(a) \\
+	        		\frac{f(x_n)}{g(x_n)} &\to \frac{f(a)}{g(a)}
+        		\end{align*}
+        		Remember that $g(x) \neq 0$ for all $x \in I$, so the last equation also holds. But now, since $x_n$ was arbitrary, we now know that $f + g$, $f \cdot g$, $\frac{f}{g} : I \to \reals$ are continuous on $I$.
+        	\end{proof}
+        	
+        \end{parts}
         
         \question
         Let $f : \reals \to \reals$ a continuous periodic function with period $T > 0$. 
@@ -70,5 +359,30 @@
 	        \lim_{x \to - \infty} f(x) = \lim_{x \to  \infty} f(x) = 0
         \]
         Show: there exists $x^* \in \reals$ such that $f(x^*) = \max\{f(x) | x \in \reals \}$
+        
+        \begin{proof}
+        	We know $\lim_{x \to - \infty} f(x) = 0$, so 
+        	\[
+	        	\forall_{\epsilon > 0} \exists_{x_0 \in \reals} \forall_{x \in \reals} : x \ge x_0 \Rightarrow |f(x)| < \epsilon
+        	\]
+        	We also know $\lim_{x \to  \infty} f(x) = 0$, so
+        	\[
+	        	\forall_{\epsilon > 0} \exists_{x_1 \in \reals} \forall_{x \in \reals} : x \le x_1 \Rightarrow |f(x)| < \epsilon
+        	\]
+        	Now take $\epsilon = \frac{1}{2}$. Then:
+        	\begin{align*}
+        		\exists_{x_0 \in \reals} \forall_{x \in \reals} : x \ge x_0 &\Rightarrow |f(x)| < \frac{1}{2} \\
+        		\exists_{x_1 \in \reals} \forall_{x \in \reals} : x \le x_1 &\Rightarrow |f(x)| < \frac{1}{2}
+        	\end{align*}
+        	Now because $f(0) = 1$, and $\forall_{x \ge x_0} : |f(x)| < \frac{1}{2} $ and $\forall_{x \le x_1} : |f(x)| < \frac{1}{2} $, so if the maximum exists, it lies in the interval $[x_0, x_1]$. Because $f(x)$ is continuous, we can use the maximum property theorem to conclude:
+        	\[
+	        	\exists_{x^* \in [x_0, x_1]} : f(x^*) = \max\{f(x) | x \in [x_0, x_1] \}. 
+        	\]
+        	But then also:
+        	\[
+	        	\exists_{x^* \in \reals} : f(x^*) = \max\{f(x) | x \in \reals \}
+        	\]
+        \end{proof}
+        
      \end{questions}
 \end{document}
