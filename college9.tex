@@ -180,7 +180,7 @@
 	    	\begin{proof}
 	    		We first note that $f$ is continuous for all $x \in \reals$, as $\lim_{x \downarrow 0} f(x) = \lim_{x \uparrow 0} f(x) = 0$ and $e^{-1/x^2}$ is a continuous function.
 	    		
-	    		Let $x \neq 0$ be arbitrary, then $f(x) = e^{-1/x^2}$. To show that $f'(x)$ exists, we write $f(x) = (p\circ q)(x)$, where $q(x) = e^x$ and $r(x) = -1/x^2$.
+	    		Let $x \neq 0$ be arbitrary, then $f(x) = e^{-1/x^2}$. To show that $f'(x)$ exists, we write $f(x) = (q\circ r)(x)$, where $q(x) = e^x$ and $r(x) = -1/x^2$.
 	    		For $q$ we know that 
 	    		\begin{equation} \label{5:a:qprime} \tag{$\star$}
 		    		\diff[x][n]{}q(x) = q(x)\,,
@@ -229,7 +229,7 @@
 		    	\[
 			    	f^{(k+1)} = (q\circ r)(p_{k+1}\circ s)= p_{k+1}(1/x)e^{-1/x^2}
 			    \]
-			    for $x \neq 0$. Furthermore, for $x = 0$ we have $f^{k+1} = 0$ and therefore
+			    for $x \neq 0$. Furthermore, for $x = 0$ we have $f^{k+1}(x) = 0$ and therefore
 		    	\[
 		    	f^{(k+1)}(x) = \begin{cases} p_{k+1}(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,, \end{cases}
 		    	\]
