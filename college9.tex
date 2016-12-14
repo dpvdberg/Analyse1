@@ -1,0 +1,63 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        a
+        \question
+        Let $I \subset \reals$ be an interval. Let $f,g \colon I \to \reals$ be two $n$-times differentiable functions.
+        \begin{toprove}
+        	The pointwise defined product $f\cdot g$ is $n$-times differentiable and
+        	\[
+	        	(fg)^{(n)} = \sum_{k=0}^{n} {n\choose k} f^{(k)}g^{(n-k)}\,.
+        	\]
+        \end{toprove}
+	    \begin{proof}
+	    	We prove by induction.
+	    	
+	    	\textbf{Induction basis:}
+	    	For $n=1$ we have
+	    	\begin{align*}
+	    		\lim_{x\to a} \frac{(fg)(x)-(fg)(a)}{x-a} &= \lim_{x\to a} \frac{f(x)g(x)-f(a)g(x)+f(a)g(x)-f(a)g(a)}{x-a} \\
+	    		&= \left[ \lim_{x\to a}g(x) \right] \left[ \lim_{x\to a} \frac{f(x)-f(a)}{x-a} \right] + f(a) \left[ \lim_{x\to a} \frac{g(x)-g(a)}{x-a} \right] \\
+	    		&= g(a)f'(a)+f(a)g'(a)\,,
+	    	\end{align*}
+	    	known as the product rule.
+	    	
+	    	\textbf{Induction hypothesis:}
+	    	Assume true for some $n=q$, hence
+	    	\[
+		    	(fg)^{(q)} = \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k)}\,.
+	    	\]
+	    	
+	    	\textbf{Induction step:}
+	    	We show the equality holds for $n=q+1$. We have
+	    	\begin{align*}
+		    	(fg)^{(q+1)}(x) &= \diff{}\left[ (fg)^{(q)}(x) \right] \\
+		    	&= \diff{} \left[ \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k)} \right] \qquad \mbox{(using the IH)} \\
+		    	&= \sum_{k=0}^{q} {q\choose k} \diff{} \left[ f^{(k)}g^{(q-k)} \right] \\
+		    	&= \sum_{k=0}^{q} {q\choose k} \left[f^{(k)}g^{(q-k+1)} + f^{(k+1)}g^{(q-k)}\right] \\
+		    	&= \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=0}^{q} {q\choose k} f^{(k+1)}g^{(q-k)} \\
+		    	&= \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=1}^{q+1} {q\choose k-1} f^{(k)}g^{(q-k+1)} \\
+		    	&= fg^{(q+1)} + f^{(q+1)}g + \sum_{k=1}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=1}^{q} {q\choose k-1} f^{(k)}g^{(q-k+1)} \\
+		    	&= fg^{(q+1)} + f^{(q+1)}g + \sum_{k=1}^{q} {q+ 1 \choose k} f^{(k)}g^{(q-k+1)} \\
+		    	&= \sum_{k=0}^{q+1} {q+ 1 \choose k} f^{(k)}g^{(q-k+1)}\,,
+	    	\end{align*}
+	    	using some properties of the binomial coefficients, namely;
+	    	\begin{gather*}
+	    		{n \choose k} + {n \choose k-1} = {n+1 \choose k} \,, \\
+	    		{n \choose 0} = 1 \,, \qquad {n \choose n} = 1\,.
+	    	\end{gather*}
+	    	This completes the proof.
+	    \end{proof}
+     \end{questions}
+\end{document}
