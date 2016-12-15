@@ -40,15 +40,15 @@
         		
         		Let $(x_n)$ be an arbitrary sequence in $D \cap (-\infty, a)$ with $x_n \to a$. Let $\epsilon > 0$. Then:
         		\[
-	        		\exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \Rightarrow |f(x) - L| < \epsilon
+	        		\exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a]} : 0 < a - x < \delta \Rightarrow |f(x) - L| < \epsilon
         		\]
         		Also $x_n \to a$, so
         		\[
 	        		\forall_{\delta > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : a - x_n < \delta
         		\]
-        		Now $\forall_{n \ge n_0}$: 
+        		Now 
         		\[
-	        		\exists_{\delta > 0} \forall_{x \in D \cap (-\infty, a)} : 0 < a - x_n < \delta \Rightarrow |f(x_n) - L| < \epsilon
+	        		\exists_{n_0 \in \naturals}\forall_{n \ge n_0}: 0 < a - x_n < \delta \Rightarrow |f(x_n) - L| < \epsilon
         		\]
         		Since $(x_n)$ was an arbitrary sequence, it now holds that:
         		\[
@@ -63,13 +63,13 @@
         		\]
         		This means:
         		\[
-	        		\exists_{\epsilon>0} \forall_{\delta > 0} \exists_{x \in D \cap (-\infty, a]} : 0 \le a - x < \delta \wedge |f(x) - L| \ge \epsilon
+	        		\exists_{\epsilon>0} \forall_{\delta > 0} \exists_{x \in D \cap (-\infty, a]} : 0 < a - x < \delta \wedge |f(x) - L| \ge \epsilon
         		\]
         		Now take $\delta = \frac{1}{n}$. Then: 
         		\[
 	        		\exists \text{ a sequence } (x_n) \in D \cap (-\infty, a) : 0 < a - x_n < \frac{1}{n} \wedge |f(x_n) - L| \ge \epsilon
         		\]
-        		So we have found a sequence $(x_n) in D \cap (-\infty, a)$ with $x_n \to a$, but $f(x_n) \not \to L$. $\lightning$
+        		So we have found a sequence $(x_n)$ in $D \cap (-\infty, a)$ with $x_n \to a$, but $f(x_n) \not \to L$. $\lightning$
         		
         		
         	\end{itemize}
@@ -102,11 +102,11 @@
         		\]
         		Also $x_n \to b$, so
         		\[
-	        		\forall_{\delta > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : x_n - b < \delta
+	        		\forall_{\delta > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : 0 < x_n - b < \delta
         		\]
-        		Now $\forall_{n \ge n_0}$: 
+        		Now 
         		\[
-	        		\exists_{\delta > 0} \forall_{x \in D \cap [b, \infty)} : 0 < x_n - b < \delta \Rightarrow f(x_n) \ge M
+	        		\exists_{n_0 \in \naturals}\forall_{n \ge n_0}: 0 < x_n - b < \delta \Rightarrow f(x_n) \ge M
         		\]
         		Since $(x_n)$ was an arbitrary sequence, it now holds that:
         		\[
@@ -162,9 +162,9 @@
         		\[
 	        		\forall_{N > 0} \exists_{n_0 \in \naturals} \forall_{n \ge n_0} : x_n \ge N
         		\]
-        		Now $\forall_{n \ge n_0}$: 
+        		Now 
         		\[
-	        		\exists_{N > 0} \forall_{x \in D} : x_n \ge N \Rightarrow f(x_n) \le M
+        		\exists_{n_0 \in \naturals}\forall_{n \ge n_0}:  x_n \ge N \Rightarrow f(x_n) \le M
         		\]
         		Since $(x_n)$ was an arbitrary sequence, it now holds that:
         		\[
@@ -240,7 +240,7 @@
 	        	\[
 		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D \cap [a, \infty)} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
 	        	\]
-	        	Because $(D \cap (-\infty, a]) \cap (D \cap [a, \infty)) = D$, it holds that:
+	        	Because $(D \cap (-\infty, a]) \cup (D \cap [a, \infty)) = D$, it holds that:
 	        	\[
 		        	\forall_{\epsilon > 0} \exists_{\delta > 0} \forall_{x \in D} : |x - a| < \delta \Rightarrow |f(x) - L| < \epsilon
 		        \]
@@ -312,32 +312,32 @@
         		\[
 	        		\exists_{\bar x \in I} : g(\bar x) \le 0 \wedge \exists_{x^* \in I} : g(x^*) \ge 0 
         		\]
-        		But since $g(x) \neq 0 \forall_{x \in I}$, so:
+        		But since $\forall_{x \in I}: g(x) \neq 0 $, so:
         		\[
 	        		\exists_{\bar x \in I} : g(\bar x) < 0 \wedge \exists_{x^* \in I} : g(x^*) > 0
         		\]
-        		Because $g(x)$ is continuous, because of the intermediate value theorem it holds that:
+        		Because $g(x)$ is continuous, because of the intermediate value theorem on $[\bar x, x^*]$ it holds that:
         		\[
-	        		\text{ because } g(\bar x) < 0 < g(x^*) \text{ it holds that } \exists_{c \in (\bar x, x^*)} : g(c) = 0 \quad \lightning
+	        		\text{ because } g(\bar x) < 0 < g(x^*) \text{ it holds that } \exists_{c \in (\bar x, x^*)} : g(c) = 0\,. \quad \lightning
         		\]
         	\end{proof}
         	        	
-        	\part The (by pointwise arithmatic operations defined) functions 
+        	\part The (by pointwise arithmetic operations defined) functions 
         	\[
 	        	f + g, f \cdot g, \frac{f}{g} : I \to \reals
         	\]
         	are continuous on $I$
         	
         	\begin{proof}
-        		f, g continous on $I$ , so:
+        		$f, g$ continuous on $I$ , so:
         		\[
 	        		\forall_{a \in I} : \forall \text{ sequences } (x_n) \text{ in } I \text{ with } x_n \to a \Rightarrow f(x_n) \to f(a)
         		\]
         		and also:
         		\[
-	        		\forall_{a \in I} : \forall \text{ sequences } (y_n) \text{ in } I \text{ with } y_n \to a \Rightarrow f(y_n) \to f(a)
+	        		\forall_{a \in I} : \forall \text{ sequences } (y_n) \text{ in } I \text{ with } y_n \to a \Rightarrow g(y_n) \to g(a)
         		\]
-        		Now let $a \in I$ be set and arbitrary. Let $x_n$ be an arbitrary sequence in $I$ with $x_n \to a$. Because $f, g$ are both continuous on $I$ they are therefore bounded. Now, for bounded sequences we know:
+        		Now let $a \in I$ be fixed and arbitrary. Let $x_n$ be an arbitrary sequence in $I$ with $x_n \to a$. Now, for sequences we know:
         		\begin{align*}
 	        		f(x_n) + g(x_n) &\to f(a) + g(a) \\
 	        		f(x_n) \cdot g(x_n) &\to f(a) \cdot g(a) \\
@@ -351,36 +351,65 @@
         \question
         Let $f : \reals \to \reals$ a continuous periodic function with period $T > 0$. 
         
-        Show: there exists an $x \in \reals$ such that $f(x) = f(x + T/2)$.
+        \begin{toprove}
+        	There exists an $x \in \reals$ such that $f(x) = f(x + T/2)$.
+        \end{toprove}
+	    \begin{proof}
+	    	We have that $f$ is periodic, hence
+	    	\[
+		    	\forall_{x\in\reals}: f(x) = f(x+T)
+	    	\]
+	    	Define $h(x) := f(x) - f(x-T/2)$. Then we have
+	    	\begin{align*}
+	    		h(T) &= f(T) - f(3/2 T) = f(t) - f(1/2T)\,, \\
+	    		h(T/2) &= f(1/2T) - f(T)\,.
+	    	\end{align*}
+	    	As $f$ is continuous, $h$ is continuous. We distinguish three cases
+	    	\begin{itemize}
+	    		\item $h(T) = 0$, then $f(x) = f(x+T/2)$.
+	    		\item $h(T) > 0$, then $f(T) > f(T/2) \implies h(T/2) < 0$.
+	    		Using the intermediate value theorem
+	    		\[
+		    		\exists_{c \in [T/2,T]}: h(c) = 0 \implies f(c) = f(c + T/2)\,.
+	    		\]
+	    		\item $h(T) < 0$, then $f(T) < f(T/2) \implies h(T/2) > 0$.
+	    		Using the intermediate value theorem
+	    		\[
+	    		\exists_{c \in [T/2,T]}: h(c) = 0 \implies f(c) = f(c + T/2)\,.
+	    		\]
+	    	\end{itemize}
+	    \end{proof}
         
         \question
         Let $f : \reals \to \reals$ continuous, $f(0) = 1$ and 
         \[
 	        \lim_{x \to - \infty} f(x) = \lim_{x \to  \infty} f(x) = 0
         \]
-        Show: there exists $x^* \in \reals$ such that $f(x^*) = \max\{f(x) | x \in \reals \}$
+        \begin{toprove}
+        	There exists $x^* \in \reals$ such that $f(x^*) = \max\{f(x) | x \in \reals \}$
+        \end{toprove}
         
         \begin{proof}
-        	We know $\lim_{x \to - \infty} f(x) = 0$, so 
+        	We know $\lim_{x \to -\infty} f(x) = 0$, so 
         	\[
-	        	\forall_{\epsilon > 0} \exists_{x_0 \in \reals} \forall_{x \in \reals} : x \ge x_0 \Rightarrow |f(x)| < \epsilon
+	        	\forall_{\epsilon > 0} \exists_{x_0 \in \reals} \forall_{x \in \reals} : x \le x_0 \Rightarrow |f(x)| < \epsilon
         	\]
-        	We also know $\lim_{x \to  \infty} f(x) = 0$, so
+        	We also know $\lim_{x \to \infty} f(x) = 0$, so
         	\[
-	        	\forall_{\epsilon > 0} \exists_{x_1 \in \reals} \forall_{x \in \reals} : x \le x_1 \Rightarrow |f(x)| < \epsilon
+	        	\forall_{\epsilon > 0} \exists_{x_1 \in \reals} \forall_{x \in \reals} : x \ge x_1 \Rightarrow |f(x)| < \epsilon
         	\]
         	Now take $\epsilon = \frac{1}{2}$. Then:
         	\begin{align*}
-        		\exists_{x_0 \in \reals} \forall_{x \in \reals} : x \ge x_0 &\Rightarrow |f(x)| < \frac{1}{2} \\
-        		\exists_{x_1 \in \reals} \forall_{x \in \reals} : x \le x_1 &\Rightarrow |f(x)| < \frac{1}{2}
+        		\exists_{x_0 \in \reals} \forall_{x \in \reals} : x \le x_0 &\Rightarrow |f(x)| < \frac{1}{2} \\
+        		\exists_{x_1 \in \reals} \forall_{x \in \reals} : x \ge x_1 &\Rightarrow |f(x)| < \frac{1}{2}
         	\end{align*}
-        	Now because $f(0) = 1$, and $\forall_{x \ge x_0} : |f(x)| < \frac{1}{2} $ and $\forall_{x \le x_1} : |f(x)| < \frac{1}{2} $, so if the maximum exists, it lies in the interval $[x_0, x_1]$. Because $f(x)$ is continuous, we can use the maximum property theorem to conclude:
+        	Now because $f(0) = 1$, and $\forall_{x \le x_0} : |f(x)| < \frac{1}{2} $ and $\forall_{x \ge x_1} : |f(x)| < \frac{1}{2} $, so if the maximum exists, it lies in the interval $[x_0, x_1]$. Because $f(x)$ is continuous, we can use the maximum property theorem to conclude:
         	\[
-	        	\exists_{x^* \in [x_0, x_1]} : f(x^*) = \max\{f(x) | x \in [x_0, x_1] \}. 
+	        	\exists_{x^* \in [x_0, x_1]} : f(x^*) = \max\{f(x) | x \in [x_0, x_1] \}\,. 
         	\]
         	But then also:
         	\[
-	        	\exists_{x^* \in \reals} : f(x^*) = \max\{f(x) | x \in \reals \}
+	        	\exists_{x^* \in \reals} : f(x^*) = \max\{f(x) | x \in \reals \}\,.
         	\]
         \end{proof}
         

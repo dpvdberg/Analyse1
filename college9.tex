@@ -39,13 +39,13 @@
         	
         	\part \label{5:b} We know
         	\begin{align*}
-        		f \text{ differentiable in } a &\implies f \text{ continuous in } a\,, \\
-        		\therefore f \text{ not continuous in } a &\implies f \text{ not differentiable in } a\,.
+        		g \text{ differentiable in } a &\implies g \text{ continuous in } a\,, \\
+        		\therefore g \text{ not continuous in } a &\implies g \text{ not differentiable in } a\,.
         	\end{align*}
         	
-        	If $f$ is not continuous in $a$ then
+        	If $g$ is not continuous in $a$ then
         	\[
-	        	\forall_{\text{sequences } x_n \text{ in } \reals}: x_n \xrightarrow{n\to\infty} a \implies \neg\left[ f(x_n) \xrightarrow{n\to\infty} f(a)\right]
+	        	\forall_{\text{sequences } x_n \text{ in } \reals}: x_n \xrightarrow{n\to\infty} a \implies \neg\left[ g(x_n) \xrightarrow{n\to\infty} g(a)\right]
         	\]
         	Let $0 \neq a \in \reals$ be arbitrary. We distinguish two cases
         	\begin{itemize}
@@ -53,31 +53,31 @@
         		
         		Let $x_n$ be a sequence in $\reals \backslash \rationals$ (i.e. irrational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
         		
-        		Now $f(x_n) = 0$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} 0 \neq a = f(a)$. This means $f$ is not continuous in $a$.
+        		Now $g(x_n) = 0$ for all $n \in \naturals$ and $g(x_n) \xrightarrow{n\to\infty} 0 \neq a = g(a)$. This means $g$ is not continuous in $a$.
         		
         		\item $a \in \reals \backslash \rationals$
         		
         		Let $x_n$ be a sequence in $\rationals$ (i.e. rational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
         		
-        		Now $f(x_n) = x_n$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} a \neq 0 = f(a)$. This means $f$ is not continuous in $a$. 
+        		Now $g(x_n) = x_n$ for all $n \in \naturals$ and $g(x_n) \xrightarrow{n\to\infty} a \neq 0 = g(a)$. This means $g$ is not continuous in $a$. 
         	\end{itemize}
 	        
-	        However, for $x = 0$ we see that every sequence in $\reals$ converges to $f(0) = 0$, which means that $f$ is continuous in $x = 0$ and possibly also differentiable.
+	        However, for $x = 0$ we see that every sequence in $\reals$ converges to $g(0) = 0$, which means that $g$ is continuous in $x = 0$ and possibly also differentiable.
 	        
 	        However, we have
 	        \[
-		        \lim_{h\to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,,
+		        \lim_{h\to 0} \frac{g(0+h) - g(0)}{h} = \lim_{h\to 0} \frac{g(h)}{h}\,,
 	        \]
-	        which does not exists, as $f(h)$ can be either $h$ or $0$, which is to say the limit is either $1$ or $0$.
+	        which does not exists, as $g(h)$ can be either $h$ or $0$, which is to say the limit is either $1$ or $0$.
 	        
 	        \part
-	        We can use the same argument as in \ref{5:b} and create sequences to show that $f$ is not continuous in $a \neq 0$, only now if $a \in \rationals$ then $f(a) = a^2 \neq 0$ and if $a \in \rationals$ then $f(a) = 0 \neq a^2$.
+	        We can use the same argument as in \ref{5:b} and create sequences to show that $h$ is not continuous in $a \neq 0$, only now if $a \in \reals \backslash \rationals$ then $h(a) = a^2 \neq 0$ and if $a \in \rationals$ then $h(a) = 0 \neq a^2$.
 	        
 	        For $a = 0$, we have
 	        \begin{align*}
-	        	\lim_{h\to 0} \frac{f(0+h)-f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,.
+	        	\lim_{q\to 0} \frac{h(0+q)-h(0)}{q} = \lim_{q\to 0} \frac{h(q)}{q}\,.
 	        \end{align*}
-	        Now either $f(h) = 0$, such that the limit is $0$ or $f(h) = h^2$, such that we find $\lim_{h\to 0} h = 0$. Therefore, $f$ is differentiable in $0$.
+	        Now either $h(q) = 0$, such that the limit is $0$ or $h(q) = q^2$, such that we find $\lim_{q\to 0} q = 0$. Therefore, $h$ is differentiable in $0$.
         \end{parts}
         
         \question
@@ -248,7 +248,7 @@
 	    		We first note that $f$ is continuous for all $x \in \reals$, as $\lim_{x \downarrow 0} f(x) = \lim_{x \uparrow 0} f(x) = 0$ and $e^{-1/x^2}$ is a continuous function.
 	    		
 	    		Let $x \neq 0$ be arbitrary, then $f(x) = e^{-1/x^2}$. To show that $f'(x)$ exists, we write $f(x) = (q\circ r)(x)$, where $q(x) = e^x$ and $r(x) = -1/x^2$.
-	    		For $q$ we know that 
+	    		For $q$ we know that for all $n \in \naturals$
 	    		\begin{equation} \label{5:a:qprime} \tag{$\star$}
 		    		\diff[x][n]{}q(x) = q(x)\,,
 	    		\end{equation}
@@ -277,7 +277,7 @@
 	    		
 	    		we show that $f$ is $k+1$ times differentiable. To this end we let $s(x) = 1/x$ such that
 	    		\[
-		    		f^{(k)} = (p_k \circ r)(x)(p\circ q)(x)\,,
+		    		f^{(k)}(x) = (p_k \circ s)(x)\cdot (q\circ r)(x)\,,
 		    	\]
 		    	such that
 		    	\begin{align*}
@@ -297,7 +297,7 @@
 		    	Now let $p_{k+1} = p_k't + p_ku$, then since  $p_k$, $p_k'$, $t$ and $u$ are polynomial functions, both $p_k't$ and $p_ku'$ are again polynomials, such that $p_{k+1}$ is a polynomial.
 		    	Then we have
 		    	\[
-			    	f^{(k+1)} = (q\circ r)(p_{k+1}\circ s)= p_{k+1}(1/x)e^{-1/x^2}
+			    	f^{(k+1)} = (p_{k+1}\circ s)(q\circ r) = p_{k+1}(1/x)e^{-1/x^2}
 			    \]
 			    for $x \neq 0$. Furthermore, for $x = 0$ we have $f^{k+1}(x) = 0$ and therefore
 		    	\[
