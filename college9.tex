@@ -12,7 +12,74 @@
 		\let\firstquestion\question
 		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
         \firstquestion
-        a
+        Let $f \colon \reals \backslash \{0\}$, $g,h \colon \reals \to \reals$ be given by
+        \[
+	        f(x) = 1/x\,, \qquad g(x) =
+	        \begin{cases}
+	        x & x \in \rationals \\
+	        0 & x \not\in \rationals
+	        \end{cases}\,, \qquad
+	        h(x) = 
+	        \begin{cases}
+	        x^2 & x \in \rationals \\
+	        0 & x \in \rationals
+	        \end{cases}\,.
+        \]
+        Determine in what points the given functions are differentiable and calculate the derivative in these points.
+        
+        \begin{parts}
+        	\part We know $f$ is differentiable in $x = a$ if and only if $\lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$ exists. Let $x \in \reals \backslash \{0\}$ be arbitrary, then
+        	\begin{align*}
+        		\lim_{h\to 0} \frac{f(x+h)-f(x)}{h} &= \lim_{h\to 0} \frac{1/(x+h)-1/x}{h} \\
+        		&= \lim_{h\to 0} \frac{1}{h}\left( \frac{-h/x}{x+h} \right) \\
+        		&= \lim_{h\to 0} -\frac{1}{x(x+h)} = -\frac{1}{x^2}.
+        	\end{align*}
+        	
+        	This implies the derivative exists for all $x \in \reals \backslash \{0\}$.
+        	
+        	\part \label{5:b} We know
+        	\begin{align*}
+        		f \text{ differentiable in } a &\implies f \text{ continuous in } a\,, \\
+        		\therefore f \text{ not continuous in } a &\implies f \text{ not differentiable in } a\,.
+        	\end{align*}
+        	
+        	If $f$ is not continuous in $a$ then
+        	\[
+	        	\forall_{\text{sequences } x_n \text{ in } \reals}: x_n \xrightarrow{n\to\infty} a \implies \neg\left[ f(x_n) \xrightarrow{n\to\infty} f(a)\right]
+        	\]
+        	Let $0 \neq a \in \reals$ be arbitrary. We distinguish two cases
+        	\begin{itemize}
+        		\item $a \in \rationals$
+        		
+        		Let $x_n$ be a sequence in $\reals \backslash \rationals$ (i.e. irrational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
+        		
+        		Now $f(x_n) = 0$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} 0 \neq a = f(a)$. This means $f$ is not continuous in $a$.
+        		
+        		\item $a \in \reals \backslash \rationals$
+        		
+        		Let $x_n$ be a sequence in $\rationals$ (i.e. rational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
+        		
+        		Now $f(x_n) = x_n$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} a \neq 0 = f(a)$. This means $f$ is not continuous in $a$. 
+        	\end{itemize}
+	        
+	        However, for $x = 0$ we see that every sequence in $\reals$ converges to $f(0) = 0$, which means that $f$ is continuous in $x = 0$ and possibly also differentiable.
+	        
+	        However, we have
+	        \[
+		        \lim_{h\to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,,
+	        \]
+	        which does not exists, as $f(h)$ can be either $h$ or $0$, which is to say the limit is either $1$ or $0$.
+	        
+	        \part
+	        We can use the same argument as in \ref{5:b} and create sequences to show that $f$ is not continuous in $a \neq 0$, only now if $a \in \rationals$ then $f(a) = a^2 \neq 0$ and if $a \in \rationals$ then $f(a) = 0 \neq a^2$.
+	        
+	        For $a = 0$, we have
+	        \begin{align*}
+	        	\lim_{h\to 0} \frac{f(0+h)-f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,.
+	        \end{align*}
+	        Now either $f(h) = 0$, such that the limit is $0$ or $f(h) = h^2$, such that we find $\lim_{h\to 0} h = 0$. Therefore, $f$ is differentiable in $0$.
+        \end{parts}
+        
         \question
         Let $I \subset \reals$ be an interval. Let $f,g \colon I \to \reals$ be two $n$-times differentiable functions.
         \begin{toprove}
