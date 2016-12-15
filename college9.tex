@@ -194,7 +194,11 @@
 	    			f'(x) = (q \circ r)'(x) &= q'(r(x))r'(x) \\
 		    			&= e^{-1/x^2}\cdot\frac{2}{x^3}\,.
 	    		\end{align*}
-	    		Now as $x=0$, then $f(x) = 0$, and $f'(x) = 0$. Then
+	    		Now as $x=0$, then $f(x) = 0$, and $f'(x) = 0$ since
+	    		\[
+		    		f'(0) = \lim_{h \to 0} \frac{f(h) - f(0)}{h} = \lim_{h \to 0} \frac{e^{-1/h^2}}{h} = 0\,.
+	    		\]
+	    		Then
 	    		\[
 		    		f'(x) = \begin{cases} 2/x^3e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,. \end{cases}
 	    		\]
@@ -234,6 +238,20 @@
 		    	\]
 		    	which concludes our proof by induction.
 	    	\end{proof}
+    	
+	    	\part
+	    	Give the Taylor polynomial for $f$ of degree $n \in \naturals$ around $x = 0$. For what $x \in \reals$ is de Taylor series around $0$ convergent? Does it converge to $f(x)$?
+	    	
+	    	For the Taylor polynomial $T_n$ around $x=a$ we have
+	    	\[
+		    	T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k\,.
+	    	\]
+	    	
+	    	For the derivatives of $f$, we have
+	    	\[
+			    f^{(k)}(x) = \begin{cases} p_k(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,. \end{cases}
+	    	\]
+	    	As $a = 0$, we have $f^{(k)}(a) = 0$ and therefore $T_n(x) = 0$ for all $x \in \reals$, which means it is convergent for all $x \in \reals$. But $f(x) = 0$ if and only if $x=0$, which means that $T_n$ converges to $f$ only for $x=0$.
 	    \end{parts}
      \end{questions}
 \end{document}
