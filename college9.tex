@@ -216,16 +216,15 @@
 		    		&= (p_k' \circ s)s' (q\circ r) + (p_k \circ s)(q\circ r)r' & \mbox{(using \ref{5:a:qprime})} \\
 		    		&= (q\circ r)\left[ (p_k' \circ s)s'  + (p_k \circ s)r' \right]\\
 		    	\end{align*}
-		    	Since $p_k$, $s$ and $r$ are polynomial functions, $p_k'$, $s'$ and $r'$ are again polynomials, hence; both $(p_k' \circ s)s'$ and $(p_k \circ s)r'$ are polynomials.
 		    	
-		    	Calculating the derivatives of $s$, we find that $s'(x) = -(s(x))^2 = (t \circ s)(x)$, where $t(x) = -x^2$. Doing the same for $r$, we find that $r'(x) = (u \circ s)(x)$, where $u(x) = 2x^3$, then
+		    	Calculating the derivatives of $s$, we find that $s'(x) = -(s(x))^2 = (t \circ s)(x)$, where $t(x) = -x^2$. Doing the same for $r$, we find that $r'(x) = (u \circ s)(x)$, where $u(x) = 2x^3$. Then
 		    	\begin{align*}
 			    	(p_k' \circ s)s'  + (p_k \circ s)r' &= (p_k' \circ s)(t \circ s)  + (p_k \circ s)(u \circ s) \\
 			    	&= (p_k't \circ s)  + (p_ku \circ s) \\
 			    	&= (p_k't + p_ku)\circ s\,.
 		    	\end{align*}
-		    	Now let $p_{k+1} = p_k't + p_ku$
-		    	then we have
+		    	Now let $p_{k+1} = p_k't + p_ku$, then since  $p_k$, $p_k'$, $t$ and $u$ are polynomial functions, both $p_k't$ and $p_ku'$ are again polynomials, such that $p_{k+1}$ is a polynomial.
+		    	Then we have
 		    	\[
 			    	f^{(k+1)} = (q\circ r)(p_{k+1}\circ s)= p_{k+1}(1/x)e^{-1/x^2}
 			    \]
