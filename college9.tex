@@ -1,0 +1,324 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        Let $f \colon \reals \backslash \{0\}$, $g,h \colon \reals \to \reals$ be given by
+        \[
+	        f(x) = 1/x\,, \qquad g(x) =
+	        \begin{cases}
+	        x & x \in \rationals \\
+	        0 & x \not\in \rationals
+	        \end{cases}\,, \qquad
+	        h(x) = 
+	        \begin{cases}
+	        x^2 & x \in \rationals \\
+	        0 & x \in \rationals
+	        \end{cases}\,.
+        \]
+        Determine in what points the given functions are differentiable and calculate the derivative in these points.
+        
+        \begin{parts}
+        	\part We know $f$ is differentiable in $x = a$ if and only if $\lim_{h\to 0} \frac{f(x+h)-f(x)}{h}$ exists. Let $x \in \reals \backslash \{0\}$ be arbitrary, then
+        	\begin{align*}
+        		\lim_{h\to 0} \frac{f(x+h)-f(x)}{h} &= \lim_{h\to 0} \frac{1/(x+h)-1/x}{h} \\
+        		&= \lim_{h\to 0} \frac{1}{h}\left( \frac{-h/x}{x+h} \right) \\
+        		&= \lim_{h\to 0} -\frac{1}{x(x+h)} = -\frac{1}{x^2}.
+        	\end{align*}
+        	
+        	This implies the derivative exists for all $x \in \reals \backslash \{0\}$.
+        	
+        	\part \label{5:b} We know
+        	\begin{align*}
+        		f \text{ differentiable in } a &\implies f \text{ continuous in } a\,, \\
+        		\therefore f \text{ not continuous in } a &\implies f \text{ not differentiable in } a\,.
+        	\end{align*}
+        	
+        	If $f$ is not continuous in $a$ then
+        	\[
+	        	\forall_{\text{sequences } x_n \text{ in } \reals}: x_n \xrightarrow{n\to\infty} a \implies \neg\left[ f(x_n) \xrightarrow{n\to\infty} f(a)\right]
+        	\]
+        	Let $0 \neq a \in \reals$ be arbitrary. We distinguish two cases
+        	\begin{itemize}
+        		\item $a \in \rationals$
+        		
+        		Let $x_n$ be a sequence in $\reals \backslash \rationals$ (i.e. irrational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
+        		
+        		Now $f(x_n) = 0$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} 0 \neq a = f(a)$. This means $f$ is not continuous in $a$.
+        		
+        		\item $a \in \reals \backslash \rationals$
+        		
+        		Let $x_n$ be a sequence in $\rationals$ (i.e. rational numbers) with $x_n \xrightarrow{n\to\infty} a$. This is possible because for every proper interval in the real number there exists at least one rational and irrational number.
+        		
+        		Now $f(x_n) = x_n$ for all $n \in \naturals$ and $f(x_n) \xrightarrow{n\to\infty} a \neq 0 = f(a)$. This means $f$ is not continuous in $a$. 
+        	\end{itemize}
+	        
+	        However, for $x = 0$ we see that every sequence in $\reals$ converges to $f(0) = 0$, which means that $f$ is continuous in $x = 0$ and possibly also differentiable.
+	        
+	        However, we have
+	        \[
+		        \lim_{h\to 0} \frac{f(0+h) - f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,,
+	        \]
+	        which does not exists, as $f(h)$ can be either $h$ or $0$, which is to say the limit is either $1$ or $0$.
+	        
+	        \part
+	        We can use the same argument as in \ref{5:b} and create sequences to show that $f$ is not continuous in $a \neq 0$, only now if $a \in \rationals$ then $f(a) = a^2 \neq 0$ and if $a \in \rationals$ then $f(a) = 0 \neq a^2$.
+	        
+	        For $a = 0$, we have
+	        \begin{align*}
+	        	\lim_{h\to 0} \frac{f(0+h)-f(0)}{h} = \lim_{h\to 0} \frac{f(h)}{h}\,.
+	        \end{align*}
+	        Now either $f(h) = 0$, such that the limit is $0$ or $f(h) = h^2$, such that we find $\lim_{h\to 0} h = 0$. Therefore, $f$ is differentiable in $0$.
+        \end{parts}
+        
+        \question
+        Let $I \subset \reals$ be an interval. Let $f,g \colon I \to \reals$ be two $n$-times differentiable functions.
+        \begin{toprove}
+        	The pointwise defined product $f\cdot g$ is $n$-times differentiable and
+        	\[
+	        	(fg)^{(n)} = \sum_{k=0}^{n} {n\choose k} f^{(k)}g^{(n-k)}\,.
+        	\]
+        \end{toprove}
+	    \begin{proof}
+	    	We prove by induction.
+	    	
+	    	\textbf{Induction basis:}
+	    	For $n=1$ we have
+	    	\begin{align*}
+	    		\lim_{x\to a} \frac{(fg)(x)-(fg)(a)}{x-a} &= \lim_{x\to a} \frac{f(x)g(x)-f(a)g(x)+f(a)g(x)-f(a)g(a)}{x-a} \\
+	    		&= \left[ \lim_{x\to a}g(x) \right] \left[ \lim_{x\to a} \frac{f(x)-f(a)}{x-a} \right] + f(a) \left[ \lim_{x\to a} \frac{g(x)-g(a)}{x-a} \right] \\
+	    		&= g(a)f'(a)+f(a)g'(a)\,,
+	    	\end{align*}
+	    	known as the product rule.
+	    	
+	    	\textbf{Induction hypothesis:}
+	    	Assume true for some $n=q$, hence
+	    	\[
+		    	(fg)^{(q)} = \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k)}\,.
+	    	\]
+	    	
+	    	\textbf{Induction step:}
+	    	We show the equality holds for $n=q+1$. We have
+	    	\begin{align*}
+		    	(fg)^{(q+1)}(x) &= \diff{}\left[ (fg)^{(q)}(x) \right] \\
+		    	&= \diff{} \left[ \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k)} \right] \qquad \mbox{(using the IH)} \\
+		    	&= \sum_{k=0}^{q} {q\choose k} \diff{} \left[ f^{(k)}g^{(q-k)} \right] \\
+		    	&= \sum_{k=0}^{q} {q\choose k} \left[f^{(k)}g^{(q-k+1)} + f^{(k+1)}g^{(q-k)}\right] \\
+		    	&= \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=0}^{q} {q\choose k} f^{(k+1)}g^{(q-k)} \\
+		    	&= \sum_{k=0}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=1}^{q+1} {q\choose k-1} f^{(k)}g^{(q-k+1)} \\
+		    	&= fg^{(q+1)} + f^{(q+1)}g + \sum_{k=1}^{q} {q\choose k} f^{(k)}g^{(q-k+1)} + \sum_{k=1}^{q} {q\choose k-1} f^{(k)}g^{(q-k+1)} \\
+		    	&= fg^{(q+1)} + f^{(q+1)}g + \sum_{k=1}^{q} {q+ 1 \choose k} f^{(k)}g^{(q-k+1)} \\
+		    	&= \sum_{k=0}^{q+1} {q+ 1 \choose k} f^{(k)}g^{(q-k+1)}\,,
+	    	\end{align*}
+	    	using some properties of the binomial coefficients, namely;
+	    	\begin{gather*}
+	    		{n \choose k} + {n \choose k-1} = {n+1 \choose k} \,, \\
+	    		{n \choose 0} = 1 \,, \qquad {n \choose n} = 1\,.
+	    	\end{gather*}
+	    	This completes the proof.
+	    \end{proof}
+	    
+	    \question
+	    Prove the following inequalities.
+	    \begin{enumerate}[label=(\alph*)]
+	    	\addtocounter{enumi}{2}
+	    	\item
+	    	\begin{inlinetoprove}
+	    		$ \displaystyle 1-x \leq e^{-x}$ for $x \in \reals$. Equality for $x=0$.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $f(x) = e^{-x}$, then $f'(x) = -e^{-x}$. For $x=0$ we have that $1-x = 1 = e^{-x}$, such that equality holds.
+	    		
+	    		Now apply the mean value theorem to the interval $[0,q]$, for arbitrary $q>0$. Then
+	    		\begin{align*}
+	    			\exists_{c \in (0,q)}: f'(c) &= \frac{f(q)-f(0)}{q} \\
+	    			\therefore -e^{-c} &= \frac{e^{-q} - 1}{q} \\
+	    			\therefore -1 &< \frac{e^{-q} - 1}{q} \\
+	    			\therefore 1-q &< e^{-q}\,,
+	    		\end{align*}
+	    		using $q > 0$ and $e^{-c} < 1$ for $c > 0$, which is true for $c \in (0,q)$. As $q$ is arbitrary, for $x \geq 0$ we have
+	    		\[
+		    		 1-x \leq e^{-x}\,.
+	    		\]
+	    		
+	    		Now apply the mean value theorem to the interval $[q,0]$, for arbitrary $q<0$. Then
+	    		\begin{align*}
+		    		\exists_{c \in (q,0)}: f'(c) &= \frac{f(q)-f(0)}{q} \\
+		    		\therefore -e^{-c} &= \frac{e^{-q} - 1}{q} \\
+		    		\therefore -1 &> \frac{e^{-q} - 1}{q} \\
+		    		\therefore 1-q &< e^{-q}\,,
+	    		\end{align*}
+	    		using $q < 0$ and $e^{-c} > 1$ for $c < 0$, which is true for $c \in (q,0)$. As $q$ is arbitrary, we now have
+	    		\[
+		    		\forall_{x \in \reals}: 1-x \leq e^{-x}\,.
+	    		\]
+	    	\end{proof}
+	    	
+	    	\item
+	    	\begin{inlinetoprove}
+	    		$ \displaystyle \frac{x}{1 + x^2} < \arctan x < x$ for all $x>0$.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $f(x) = \arctan x$, then $f'(x) = 1/(1+x^2)$. Then applying the mean value theorem on the interval $[0,q]$ for arbitrary $q > 0$ yields
+	    		\begin{align*}
+	    			\exists_{c \in (0,q)}: f'(c) &= \frac{f(q)-f(0)}{q} \\
+		    		\therefore \frac{1}{1+c^2} &= \frac{\arctan q}{q} \\
+		    		\therefore \frac{q}{1+c^2} &= \arctan q\,.
+	    		\end{align*}
+	    		Since $c \in (0,q)$ we have $0 < c < q$, such that $1 + c^2 > 1$ and 
+	    		\begin{alignat*}{2}
+		    		\frac{q}{1+q^2} &< \hspace{2pt} \frac{q}{1+c^2} &&< q \\
+			    	 \therefore	\frac{q}{1+q^2} &< \arctan q &&< q\,. 
+	    		\end{alignat*}
+	    		As $q > 0$ is arbitrary, we can substitute $q$ for $x$, which yields the required result.
+	    	\end{proof}
+	    	
+	    	\addtocounter{enumi}{1}
+	    	\item
+	    	\begin{inlinetoprove}
+	    		$ \displaystyle \frac{x}{x+1} \le \ln(x+1) \le x$ for all $x>0$ and equality for $x=0$.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		Let $f(x) = \ln(x+1)$, then $f'(x) = 1/(x+1)$. For $x=0$ we have $0/(0+1) = \ln 1 = 0$, such that equality holds for $x = 0$.
+	    		Applying the mean value theorem on the interval $[0,q]$ for arbitrary $q > 0$ yields
+	    		\begin{align*}
+	    			\exists_{c \in (0,q)}: f'(c) &= \frac{f(q)-f(0)}{q} \\
+	    			\therefore \frac{1}{c+1} &= \frac{\ln(q+1)}{q} \\
+	    			\therefore \frac{q}{c+1} &= \ln(q+1)\,.
+	    		\end{align*}
+	    		As $c \in (0,q)$, we have $0 < c < q$ and
+	    		\begin{alignat*}{2}
+		    		\frac{q}{q+1} &< \hspace{7pt} \frac{q}{c+1} &&< q \\
+		    		\therefore	\frac{q}{q+1} &< \ln(q+1) &&< q\,. 
+	    		\end{alignat*}
+	    		As $q > 0$ is arbitrary, we can substitute $q$ for $x$. Combining this with the equality for $x=0$, we have the required result.
+	    	\end{proof}
+	    \end{enumerate}
+    
+	    \question
+	    Let $I \subset \reals$ denote an interval. A differentiable function $F \colon I \to \reals$ is called a \textit{primitive} function (or \textit{antiderivative}) of $f \colon I \to \reals$ if $F'(x) = f(x)$ for all $x \in I$.
+	    
+	    \begin{toprove}
+	    	If $F_1$ and $F_2$ are two primitives of the fuction $f$ defined on the domain $I$, then there exists some constant $C \in \reals$ such that $F_2(x) = F_1(x) + C$ for all $x \in I$.
+	    \end{toprove}
+	    \begin{proof}
+	    	By definition we find
+	    	\[
+		    	f(x) = \lim_{x\to a}\frac{F_1(x)-F_1(a)}{x-a}\,,\qquad f(x) = \lim_{x\to a}\frac{F_2(x)-F_2(a)}{x-a}\,.
+	    	\]
+	    	Consider the function $P(x) = F_1(x)-F_2(x)$, then $F_2(x) = F_1(x) - P(x)$ and
+	    	\begin{align*}
+			   	f(x) &= \lim_{x\to a}\frac{F_2(x)-F_2(a)}{x-a} \\
+				   	&= \lim_{x\to a}\frac{F_1(x)  - F_1(a) - P(x) + P(a)}{x-a} \\
+				   	&= \lim_{x\to a}\left[\frac{F_1(x)  - F_1(a)}{x-a} - \frac{P(x) + P(a)}{x-a}\right] \\
+				   	&= \lim_{x\to a}\frac{F_1(x)  - F_1(a)}{x-a} - \lim_{x\to a}\frac{P(x) + P(a)}{x-a} \\
+				   	&= f(x) - \lim_{x\to a}\frac{P(x) + P(a)}{x-a}\,.
+	    	\end{align*}
+	    	This implies
+	    	\[
+		    	\lim_{x\to a}\frac{P(x) + P(a)}{x-a} = 0\,,
+	    	\]
+	    	id est $P'(x) = 0$ for all $x$, which is to say $P \equiv C$ for some $C \in \reals$. 
+	    \end{proof}
+	    
+	    \question
+	    Let $f \colon \reals \to \reals$ be given by
+	    \[
+		    f(x) = \begin{cases} e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,. \end{cases}
+	    \]
+	    \begin{parts}
+	    	\part
+	    	\begin{inlinetoprove}
+	    		Using induction, show that $f$ is $k$ times differentiable and
+	    		\[
+		    		f^{(k)}(x) = \begin{cases} p_k(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,, \end{cases}
+	    		\]
+	    		for some polynomial $p_k$.
+	    	\end{inlinetoprove}
+	    	\begin{proof}
+	    		We first note that $f$ is continuous for all $x \in \reals$, as $\lim_{x \downarrow 0} f(x) = \lim_{x \uparrow 0} f(x) = 0$ and $e^{-1/x^2}$ is a continuous function.
+	    		
+	    		Let $x \neq 0$ be arbitrary, then $f(x) = e^{-1/x^2}$. To show that $f'(x)$ exists, we write $f(x) = (q\circ r)(x)$, where $q(x) = e^x$ and $r(x) = -1/x^2$.
+	    		For $q$ we know that 
+	    		\begin{equation} \label{5:a:qprime} \tag{$\star$}
+		    		\diff[x][n]{}q(x) = q(x)\,,
+	    		\end{equation}
+	    		and for $r$ we find
+	    		\[
+		    		r'(x) = \lim_{h\to 0} \frac{-\frac{1}{(x+h)^2} + \frac{1}{x^2}}{h} = \lim_{h\to 0} \frac{h+2x}{x^2 (h+x)^2} = \frac{2}{x^3}\,.
+	    		\]
+	    		Using the chain rule we find
+	    		\begin{align*}
+	    			f'(x) = (q \circ r)'(x) &= q'(r(x))r'(x) \\
+		    			&= e^{-1/x^2}\cdot\frac{2}{x^3}\,.
+	    		\end{align*}
+	    		Now as $x=0$, then $f(x) = 0$, and $f'(x) = 0$ since
+	    		\[
+		    		f'(0) = \lim_{h \to 0} \frac{f(h) - f(0)}{h} = \lim_{h \to 0} \frac{e^{-1/h^2}}{h} = 0\,.
+	    		\]
+	    		Then
+	    		\[
+		    		f'(x) = \begin{cases} 2/x^3e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,. \end{cases}
+	    		\]
+	    		
+	    		Assume that $f$ is $k$ times differentiable and
+	    		\[
+		    		f^{(k)}(x) = \begin{cases} p_k(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,, \end{cases}
+	    		\]
+	    		
+	    		we show that $f$ is $k+1$ times differentiable. To this end we let $s(x) = 1/x$ such that
+	    		\[
+		    		f^{(k)} = (p_k \circ r)(x)(p\circ q)(x)\,,
+		    	\]
+		    	such that
+		    	\begin{align*}
+		    		f^{(k+1)} &= \diff{} \left[(p_k \circ s)\cdot(q\circ r)\right] \\
+		    		&= (p_k \circ s)'(q\circ r) + (p_k \circ s)(q\circ r)' & \mbox{(applying the product rule)} \\
+		    		&= (p_k' \circ s)s' (q\circ r) + (p_k \circ s)(q' \circ r)r' & \mbox{(applying the chain rule)} \\
+		    		&= (p_k' \circ s)s' (q\circ r) + (p_k \circ s)(q\circ r)r' & \mbox{(using \ref{5:a:qprime})} \\
+		    		&= (q\circ r)\left[ (p_k' \circ s)s'  + (p_k \circ s)r' \right]\\
+		    	\end{align*}
+		    	
+		    	Calculating the derivatives of $s$, we find that $s'(x) = -(s(x))^2 = (t \circ s)(x)$, where $t(x) = -x^2$. Doing the same for $r$, we find that $r'(x) = (u \circ s)(x)$, where $u(x) = 2x^3$. Then
+		    	\begin{align*}
+			    	(p_k' \circ s)s'  + (p_k \circ s)r' &= (p_k' \circ s)(t \circ s)  + (p_k \circ s)(u \circ s) \\
+			    	&= (p_k't \circ s)  + (p_ku \circ s) \\
+			    	&= (p_k't + p_ku)\circ s\,.
+		    	\end{align*}
+		    	Now let $p_{k+1} = p_k't + p_ku$, then since  $p_k$, $p_k'$, $t$ and $u$ are polynomial functions, both $p_k't$ and $p_ku'$ are again polynomials, such that $p_{k+1}$ is a polynomial.
+		    	Then we have
+		    	\[
+			    	f^{(k+1)} = (q\circ r)(p_{k+1}\circ s)= p_{k+1}(1/x)e^{-1/x^2}
+			    \]
+			    for $x \neq 0$. Furthermore, for $x = 0$ we have $f^{k+1}(x) = 0$ and therefore
+		    	\[
+		    	f^{(k+1)}(x) = \begin{cases} p_{k+1}(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,, \end{cases}
+		    	\]
+		    	which concludes our proof by induction.
+	    	\end{proof}
+    	
+	    	\part
+	    	Give the Taylor polynomial for $f$ of degree $n \in \naturals$ around $x = 0$. For what $x \in \reals$ is de Taylor series around $0$ convergent? Does it converge to $f(x)$?
+	    	
+	    	For the Taylor polynomial $T_n$ around $x=a$ we have
+	    	\[
+		    	T_n(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!}(x-a)^k\,.
+	    	\]
+	    	
+	    	For the derivatives of $f$, we have
+	    	\[
+			    f^{(k)}(x) = \begin{cases} p_k(1/x)e^{-1/x^2} & x\neq 0\,, \\ 0 & x = 0\,. \end{cases}
+	    	\]
+	    	As $a = 0$, we have $f^{(k)}(a) = 0$ and therefore $T_n(x) = 0$ for all $x \in \reals$, which means it is convergent for all $x \in \reals$. But $f(x) = 0$ if and only if $x=0$, which means that $T_n$ converges to $f$ only for $x=0$.
+	    \end{parts}
+     \end{questions}
+\end{document}

@@ -53,6 +53,7 @@
 \RequirePackage{mathtools}
 \RequirePackage{mathrsfs}
 \RequirePackage{calc}
+\RequirePackage{xparse}
 \RequirePackage[deletedmarkup=xout]{changes}
 
 \footer{}{}{}
@@ -271,6 +272,22 @@
 		} {
 			\makebox[\the\overeqboxlen]{\resizebox{\the\eqlen}{3.9pt}{=}}
 		}
+	}
+}
+
+% Fast derivative shortcuts
+\DeclareDocumentCommand{\pdiff}{ O{x} O{1} m }{
+	\ifthenelse{\equal{#2}{1}}{
+		\frac{\partial #3}{\partial #1}
+	}{
+		\frac{\partial^{#2} #3}{\partial #1^{#2}}
+	}
+}
+\DeclareDocumentCommand{\diff}{ O{x} O{1} m }{
+	\ifthenelse{\equal{#2}{1}}{
+		\frac{\d #3}{\d #1}
+	}{
+		\frac{\d^{#2} #3}{\d #1^{#2}}
 	}
 }
 
