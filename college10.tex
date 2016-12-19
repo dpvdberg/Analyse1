@@ -1,0 +1,84 @@
+% !TeX spellcheck = en_US
+\documentclass[week=5]{homework}
+
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+
+        \firstquestion
+		If possible, find the pointwise limit for the sequence $\{f_n \}$, where:
+		\begin{parts}
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
+			\part $f_n : [1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+		\end{parts}
+
+		\question
+		Let $D \subset \reals$, $f, g \to \reals$ two bounded functions, $a \in \reals$. 
+		
+		\begin{toprove}
+			$\|f+g\|_\infty \le \|f\|_\infty + \|g\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			%proof
+		\end{proof}
+		
+		\begin{toprove}
+			$\left| \|f\|_\infty - \|g\|_\infty \right| \le \|f-g\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			%proof
+		\end{proof}
+		
+		\begin{toprove}
+			$\|af\|_\infty = |a|  \|f\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			%proof
+		\end{proof}
+		
+		\begin{toprove}
+			$\| f \|_\infty = 0 \Rightarrow (f \equiv 0)$
+		\end{toprove}
+		\begin{proof}
+			%proof
+		\end{proof}
+		
+		\question
+		\begin{parts}
+			\part Give an example of a funtionsequence $(f_n)$ on $[0,1]$ that converges pointwise to an unbounded function $f^*$ where all functions $f_n$ are bounded. 
+			\part Let $(f_n)$ be a funcitonsequence on $D \subset \reals$ with $f_n \to f^*$ uniform on $D$. Assume $f_n$ bounded for all $n$. Show that then $f^*$ is also bounded and 
+			\[
+				\| f_n \|_\infty \to \| f^* \|_\infty, \quad \sup_{x \in D} f_n(x) \to \sup_{x \in D} f^*(x) \quad \text{ as } x \to \infty
+			\]
+		\end{parts}
+		
+		\question
+		Determine whether or not the following functions converge uniformly. Explain clearly:
+		\begin{parts}
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
+			\part $f_n : [1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+		\end{parts}
+		
+		\question
+		If sequences $\{f_n \}$ and $\{g_n \}$ converge uniformly on $D$ to functions $f$ and $g$, respectively, prove that the wequences $\{f_n \pm g_n \}$ converge uniformly to $f \pm g$ on $D$.
+     \end{questions}
+\end{document}
