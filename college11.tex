@@ -1,0 +1,52 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        % INSERT Q1
+        
+        \question
+        % NAH..
+        
+        \question
+        % INSERT Q3
+        
+        \question
+        Determine whether or not the given series converges uniformly on the indicated interval.
+        \begin{parts}
+        	\part $\displaystyle \sum \frac{x^k}{k^2}$ with $x \in [0,1]$.
+        	
+        	\part $\displaystyle \sum x^ke^{-kx}$ with $x \in [0,\infty)$.
+        	
+        	\part $\displaystyle \sum k^re^{-kx}$ with $x \in [a,\infty)$, where $a > 0$ and $r \in \reals$ a constant.
+        	
+        	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (0,1]$.
+        	
+        	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (1,\infty)$.
+        \end{parts}
+	    
+	    \question
+	    % INSERT Q5
+	    
+	    \question
+	    Let $[a,b]$ be a bounded and closed interval. Let $(f_n)$ be a sequence of non-negative continuous functions on $[a,b]$ such that $\sum f_n$ converges pointwise to a limiting continuous function $s$, given by
+	    \[
+		    s(x) = \sum_n f_n(x)\,.
+	    \]
+	    \begin{toprove}
+	    	The function series $\sum f_n$ is uniformly convergent.
+	    \end{toprove}
+	    \begin{proof}
+	    	%INSERT 6
+	    \end{proof}
+     \end{questions}
+\end{document}
