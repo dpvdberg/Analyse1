@@ -46,7 +46,28 @@
 	    	The function series $\sum f_n$ is uniformly convergent.
 	    \end{toprove}
 	    \begin{proof}
-	    	%INSERT 6
+	    	Let $s_n$ denote the partial sums of $s$, i.e.
+	    	\[
+	    	s_n(x) = \sum_{k=1}^{n} f_k(x)\,.
+	    	\]
+	    	To apply Dini's theorem, we need
+	    	\begin{enumerate}
+	    		\item \label{Q6:interval} $s_n$ and $s$ are defined on a closed interval.
+	    		\item \label{Q6:pointwise} $s_n$ converges pointwise to $s$
+	    		\item \label{Q6:continuous} $s_n$ is continuous for all $n$, as well is the limiting function $s$.
+	    		\item \label{Q6:increasing} $s_n$ is an increasing sequence.
+	    	\end{enumerate}
+	    	We have that \ref{Q6:interval} and \ref{Q6:pointwise} are satisfied by the antecedent of what is to be proven.
+	    	
+	    	As $f_n$ is continuous for all $n$, by definition of $s_n$ and the fact that summation maintains continuity, we find that $s_n$ is continuous. Note that we already have continuity of $s$. Hence, \ref{Q6:continuous} is satisfied.
+	    	
+	    	As $f_n$ is non-negative, for all $n$ and $x \in [a,b]$ we have $f_n(x) \geq 0$. But then for all $n$ and $x$ we find
+	    	\begin{align*}
+	    	s_n(x) &= \sum_{k=1}^{n} f_n(x) \\
+	    	&\leq f_{n+1}(x) + \sum_{k=1}^{n} f_n(x) \\
+	    	&= \sum_{k=1}^{n+1} f_n(x) = s_{n+1}(x)\,.
+	    	\end{align*}
+	    	Which means \ref{Q6:increasing} is satisfied as well and by Dini's theorem we find that $s_n$ converges uniformly to $s$.
 	    \end{proof}
      \end{questions}
 \end{document}
