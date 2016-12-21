@@ -49,5 +49,49 @@
 			\end{align*}
 		\end{proof}
 		
+		\question 
+		Use $\frac{1}{1 - x} = 1 + x + x^2 + x^3 + ...$ if $|x| < 1$ to find a series representation for 
+		\begin{parts}
+			\part \label{5a}$f(x) = \frac{1}{1 - 2x}$			
+			\[
+				f(x) = \frac{1}{1 - 2x} = \sum (2x)^k
+			\]
+			
+			\part $f(x) = \frac{1}{x}$			
+			Take $x = 1-u$. Now:
+			\[
+				f(x) = \frac{1}{x} = \frac{1}{1-u} = \sum (u)^k = \sum (1-x)^k
+			\]
+			
+			\part $f(x) = \frac{a}{x - b}$ with $a$ and $b$ positive real constants. 			
+			\begin{align*}
+				f(x) &= \frac{a}{x - b} \\
+				&= a \cdot \frac{1}{x - b} \\
+				&= \frac{a}{b} \cdot \frac{1}{\frac{x}{b} - 1} \\
+				&= -\frac{a}{b} \cdot \frac{1}{1 - \frac{x}{b}} \\
+				&= - \frac{a}{b} \cdot \sum \left(\frac{x}{b} \right)^k 
+			\end{align*}
+			
+			\part $f(x) = \frac{5x - 1}{x^2 - x - 2}$
+			\begin{align*}
+				f(x) &= \frac{5x -1}{x^2 - x - 2} \\
+				&= \frac{5x-1}{(x+1)(x-2)} \\
+				&= \frac{2}{x+1} + \frac{3}{x-2} \\
+				&= 2 \cdot \sum (-x)^k + 3 \cdot \sum (x+1)^k
+			\end{align*}
+			
+			\part $f(x) = \frac{2}{(1 - 2x)^2}$
+			We know that:
+			\[
+				\frac{2}{(1 - 2x)^2} = \frac{d}{dx} \frac{1}{1-2x}
+			\]
+			Now, because of \ref{5a}: 
+			\[
+				f(x) = \frac{d}{dx} = \sum 2k(2x)^k
+			\]
+			This only converges if $|x| < \frac{1}{2}$.
+			
+			
+		\end{parts} 
 	\end{questions}
 \end{document}
