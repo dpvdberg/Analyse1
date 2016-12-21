@@ -25,13 +25,59 @@
         \begin{parts}
         	\part $\displaystyle \sum \frac{x^k}{k^2}$ with $x \in [0,1]$.
         	
+        	Because $x \in [0,1]$, we have $x^k \leq 1^k = 1$ for all $k \in \naturals$. Now we have
+        	\[
+	        	\sum \left|\frac{x^k}{k^2}\right| = \sum \frac{x^k}{k^2} \leq \frac{1}{k^2}\,.
+        	\]
+        	But $\sum 1/k^2$ is a $p$-series with $p = 2 > 1$, hence it is convergent and by Weierstrass' M-test we have uniform convergence of the original series.
+        	
         	\part $\displaystyle \sum x^ke^{-kx}$ with $x \in [0,\infty)$.
+        	
+        	Let $f_k(x) = x^ke^{-kx}$, then
+        	\[
+	        	f_k'(x) = kx^{k-1}e^{-kx} -kx^ke^{-kx} = ke^{-kx}(x^{k-1} - x^k)\,.
+        	\]
+        	But then $f_k'(x) = 0$ if $x^{k-1} = x^k$ and therefor $x = 0 \vee x = 1$. For $x=0$ the function sequence is zero, hence its maximum is attained at $x=1$ and therefore
+        	\[
+	        	|f_n(x)| = \left|x^ke^{-kx}\right| \leq \frac{1}{e^n}\,.
+        	\]
+        	Since $\sum 1/e^n$ is a geometric series with ratio $|1/e| < 1$ which implies convergence. By Weierstrass' M-test we have uniform convergence of the original series.
         	
         	\part $\displaystyle \sum k^re^{-kx}$ with $x \in [a,\infty)$, where $a > 0$ and $r \in \reals$ a constant.
         	
+        	Since $x \in [a,\infty)$, we have $e^{-kx} \geq e^{-ka}$ for all $k \in \naturals$ and therefore
+        	\[
+	        	\sum \left|\frac{k^r}{e^{kx}}\right| \leq \sum \frac{k^r}{e^{kr}} \leq \sum \frac{k^r}{e^ka}\,.
+        	\]
+        	
+        	Now apply the ratio test to find
+        	\[
+	        	\left| \frac{(k+1)^re^{ka}}{e^{(k+1)a}k^r} \right| = \frac{1}{e^a}\left( 1 + \frac{1}{k}\right)^r \xrightarrow{k\to \infty} \frac{1}{e^a} < 1\,,
+        	\]
+        	for all $a > 0$. This implies convergence of $\sum k^re^{-ka}$. By Weierstrass' M-test we have uniform convergence of the original series.
+        	
         	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (0,1]$.
+        	Let $f_k(x) = \frac{1}{x^k + 1}$ and let $x \in (0,1)$ be arbitrary, then
+        	\[
+	        	\frac{1}{x^k + 1} \xrightarrow{k \to \infty} 1\,.
+        	\]
+        	For $x=1$ we find that $f_k(x) \xrightarrow{k\to\infty} 1/2$. As the terms do not tend to zero, the series diverges and hence; it does not (uniformly) converge.
         	
         	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (1,\infty)$.
+        	
+        	Define a sequence $x_k$ by
+        	\[
+	        	x_k = 1 + \frac{1}{k}\,,
+        	\]
+        	then $x_k \in (1,\infty)$ for all $k$ and let
+        	\[
+	        	f_k(x) = \frac{1}{x^k + 1}\,.
+        	\]
+        	We now have 
+        	\[
+	        	|f_n(x_n)| = \frac{1}{(1 + 1/k)^k + 1} \xrightarrow{k\to\infty} \frac{1}{e+1} \neq 0\,,
+        	\]
+        	therefore the original sum does not converge uniformly.
         \end{parts}
 	    
 	    \question
