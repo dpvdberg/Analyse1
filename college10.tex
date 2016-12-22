@@ -186,28 +186,93 @@
 			$\|f+g\|_\infty \le \|f\|_\infty + \|g\|_\infty$
 		\end{toprove}
 		\begin{proof}
-			%proof
+			Fist of all, by definition: 
+			\[
+				\| f + g \|_\infty = \sup_{x \in D} ( |f(x) + g(x)| )
+			\]
+			Now, using the triangle inequality:
+			\[
+				\sup_{x \in D} ( |f(x) + g(x)| ) \le \sup_{x \in D} ( |f(x)| + |g(x)| )
+			\]
+			Now define 
+			\begin{align}
+				A &= \{|f(x)| + |g(x)|:  x \in D \} \\
+				A_f &= \{|f(x)|: x \in D \} \\
+				A_g &= \{|g(x)|: x \in D \}
+			\end{align}
+			Now: 
+			\[
+				A_f + A_g = \{a + b : a \in A_f, b \in A_g \}
+			\]
+			For sets we know: 
+			\[
+				\sup(A_f + A_g) = \sup(A_f) + sup(A_g)
+			\]
+			And since $A \subset (A_f + A_g)$, we know:
+			\[
+				\sup(A) \le \sup(A_f + A_g) = \sup(A_f) + \sup(A_g)
+			\]
+			We can use this to conclude:
+			\begin{align*}
+				\sup_{x \in D} ( |f(x)| + |g(x)| ) &\le \sup_{x \in D} |f(x)| + \sup_{x \in D} |g(x)| \\
+				&= \|f \|_\infty + \| g \|_\infty
+			\end{align*}
+			This completes the proof. 
 		\end{proof}
 		
 		\begin{toprove}
 			$\left| \|f\|_\infty - \|g\|_\infty \right| \le \|f-g\|_\infty$
 		\end{toprove}
 		\begin{proof}
-			%proof
+			By definition:
+			\[
+				\left| \|f\|_\infty - \|g\|_\infty \right| = | \sup_{x \in D} |f(x)| - \sup_{x \in D} |g(x)| \, \, |	
+			\]
+			Define:
+			\begin{align*}
+				A_f &= \{|f(x)| : x \in D \} \\
+				A_g &= \{|g(x)| : x \in D \} \\
+				A &= \{|f(x)| - |g(x)| : x \in D \}
+			\end{align*}
+			
+			?????? CONFUSED HELP
 		\end{proof}
 		
 		\begin{toprove}
 			$\|af\|_\infty = |a|  \|f\|_\infty$
 		\end{toprove}
 		\begin{proof}
-			%proof
+			First of all, we know:
+			\begin{align*}
+				\|af\|_\infty &= \sup_{x \in D} |a f(x)| \\
+				&= \sup_{x \in D} |a| |f(x)|
+			\end{align*}
+			Now define:
+			\begin{align*}
+				A &= \{|a| \cdot |f(x)|: x \in D \} \\
+				A_f &= \{|f(x)|: x \in D \}
+			\end{align*}
+			Now for sets we know:
+			\[
+				sup A = |a| \cdot \sup A_f
+			\]
+			We can use this knowledge to conclude:
+			\begin{align*}
+				\sup_{x \in D} |a| |f(x)| &= |a| \cdot \sup_{x \in D} |f(x)| \\
+				&= |a| \cdot \|f\|_\infty
+			\end{align*}
+			This is what we needed to prove. 
 		\end{proof}
 		
 		\begin{toprove}
 			$\| f \|_\infty = 0 \Rightarrow (f \equiv 0)$
 		\end{toprove}
 		\begin{proof}
-			%proof
+			We know $\| f \|_\infty = 0 $, and this means $\sup_{x \in D} |f(x)| = 0$. Now we know:
+			\[
+				0 \le |f(x)| \le \sup_{x \in D} |f(x)| = 0
+			\]
+			And this means $f(x) = 0 \quad \forall_{x \in D}$. We can conclude that $f \equiv 0$.
 		\end{proof}
 		
 		\question
