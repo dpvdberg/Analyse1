@@ -12,7 +12,41 @@
 		\let\firstquestion\question
 		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
         \firstquestion
-        % INSERT Q1
+        	Let $D \subset \reals$ unbounded above and let $(f_n)$ be a function sequence on $D$ that converges uniform to a function $f^*$. Assume that 
+		\[
+			\lim_{x \to \infty} f_n(x) = L_n \quad and \quad \lim_{n \to \infty} L_n = L^* 
+		\]
+		\begin{toprove}
+			$\lim_{x \to \infty} f^*(x) = L^*$
+		\end{toprove}
+		\begin{proof}
+			We know three things:
+			\begin{itemize}
+				\item $f_n \to f^*$ uniform
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0} \forall_{x \in D}: |f_x - f^*| < \frac{\epsilon}{3}
+				\]
+				
+				\item  $\lim_{x \to \infty} f_n(x) = L_n$
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{x_0} \forall_{x \in D} : x \ge x_0 \Rightarrow |f_n(x) - L_n| < \frac{\epsilon}{3}
+				\]
+				\item  $\lim_{n \to \infty} L_n = L^*$
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{n_1} \forall_{n \ge n_1} : |L_n - L^*| < \frac{\epsilon}{3}
+				\] 
+			\end{itemize}
+			
+			Let $\epsilon > 0$ be given. Define $n^* = \max\{n_0, n_1\}$. Now let $n \ge n^*$ and $x \ge x_0$. Then:
+			\begin{align*}
+				|f^*(x) - L^*| &\le |f_n - f^*| + |f_n - L^*|  \\
+				&\le |f_n - f^*| + |f_n - f^*| + |L_n - L^*| \\
+				&< \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon
+			\end{align*}
+		\end{proof}
         
         \question
         % NAH..
