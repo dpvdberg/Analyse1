@@ -1,0 +1,220 @@
+% !TeX spellcheck = en_US
+\documentclass[week=6]{homework}
+\usepackage{scrextend}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        \firstquestion
+        	Let $D \subset \reals$ unbounded above and let $(f_n)$ be a function sequence on $D$ that converges uniform to a function $f^*$. Assume that 
+		\[
+			\lim_{x \to \infty} f_n(x) = L_n \quad and \quad \lim_{n \to \infty} L_n = L^* 
+		\]
+		\begin{toprove}
+			$\lim_{x \to \infty} f^*(x) = L^*$
+		\end{toprove}
+		\begin{proof}
+			We know three things:
+			\begin{itemize}
+				\item $f_n \to f^*$ uniform
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{n_0} \forall_{n \ge n_0} \forall_{x \in D}: |f_x - f^*| < \frac{\epsilon}{3}
+				\]
+				
+				\item  $\lim_{x \to \infty} f_n(x) = L_n$
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{x_0} \forall_{x \in D} : x \ge x_0 \Rightarrow |f_n(x) - L_n| < \frac{\epsilon}{3}
+				\]
+				\item  $\lim_{n \to \infty} L_n = L^*$
+				
+				\[
+					\forall_{\epsilon > 0} \exists_{n_1} \forall_{n \ge n_1} : |L_n - L^*| < \frac{\epsilon}{3}
+				\] 
+			\end{itemize}
+			
+			Let $\epsilon > 0$ be given. Define $n^* = \max\{n_0, n_1\}$. Now let $n \ge n^*$ and $x \ge x_0$. Then:
+			\begin{align*}
+				|f^*(x) - L^*| &\le |f_n - f^*| + |f_n - L^*|  \\
+				&\le |f_n - f^*| + |f_n - f^*| + |L_n - L^*| \\
+				&< \frac{\epsilon}{3} + \frac{\epsilon}{3} + \frac{\epsilon}{3} = \epsilon
+			\end{align*}
+		\end{proof}
+        
+        
+        \nquestion{3}
+        	\begin{inlinetoprove}
+				The function series $\sum \frac{x^k}{k!}$ converges uniform on every bounded interval in $\reals$. 
+			\end{inlinetoprove}
+			\begin{proof}
+				Define:
+				\[
+					S_n(x) = \sum_{k = 0}^{n} \frac{x^k}{k!} \quad S(x) = \sum_{k = 0}^{\infty} \frac{x^k}{k!}
+				\]
+				Then $S_n(x)$ converges pointwise to $S(x)$. Define $D$ as a random bounded interval and $a = \sup D$. This exists because $D$ is bounded. We now evaluate the following:
+				\begin{align*}
+					|S(x) - S_n(x)| &= |\sum_{k = n + 1}^{\infty} \frac{x^k}{k!}| \\
+					&\le \sum_{k = n + 1}^{\infty} \frac{|x|^k}{k!} \\
+					&\le \sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}
+				\end{align*}
+				We know that $\sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}$ is convergent, because of the quotient criterium:
+				\[
+					\lim_{k \to \infty} \frac{\frac{|a|^{k+1}}{(k+1)!}}{\frac{|a|^k}{k!}} = \lim_{k \to \infty} \frac{|a|^{k+1}}{(k+1)!} \cdot \frac{k!}{|a|^k} = \lim_{k \to \infty} \frac{|a|}{k+1} = 0 < 1
+				\]
+				But then it also holds that:
+				\[
+					\lim_{n \to \infty} \frac{|a|^k}{k!} \to 0
+				\]
+				Now $\sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}$ is an upperbound for $|S(x) - S_n(x)|$ and $\sup_{x \in D} |S(x) - S_n(x)|$ is the smallest upperbound, so:
+				\[
+					\sup_{x \in D} |S(x) - S_n(x)| = \| S - S_n \|_\infty \le \sum_{k = n}^{\infty} \frac{|a|^k}{k!} \xrightarrow{n \to \infty} 0
+				\]
+				So the function series $\sum \frac{x^k}{k!}$ converges uniform on every bouned interval of $\reals$.
+		\end{proof}
+        
+        \question
+        Determine whether or not the given series converges uniformly on the indicated interval.
+        \begin{parts}
+        	\part $\displaystyle \sum \frac{x^k}{k^2}$ with $x \in [0,1]$.
+        	
+        	Because $x \in [0,1]$, we have $x^k \leq 1^k = 1$ for all $k \in \naturals$. Now we have
+        	\[
+	        	\sum \left|\frac{x^k}{k^2}\right| = \sum \frac{x^k}{k^2} \leq \frac{1}{k^2}\,.
+        	\]
+        	But $\sum 1/k^2$ is a $p$-series with $p = 2 > 1$, hence it is convergent and by Weierstrass' M-test we have uniform convergence of the original series.
+        	
+        	\part $\displaystyle \sum x^ke^{-kx}$ with $x \in [0,\infty)$.
+        	
+        	Let $f_k(x) = x^ke^{-kx}$, then
+        	\[
+	        	f_k'(x) = kx^{k-1}e^{-kx} -kx^ke^{-kx} = ke^{-kx}(x^{k-1} - x^k)\,.
+        	\]
+        	But then $f_k'(x) = 0$ if $x^{k-1} = x^k$ and therefor $x = 0 \vee x = 1$. For $x=0$ the function sequence is zero, hence its maximum is attained at $x=1$ and therefore
+        	\[
+	        	|f_n(x)| = \left|x^ke^{-kx}\right| \leq \frac{1}{e^n}\,.
+        	\]
+        	Since $\sum 1/e^n$ is a geometric series with ratio $|1/e| < 1$ which implies convergence. By Weierstrass' M-test we have uniform convergence of the original series.
+        	
+        	\part $\displaystyle \sum k^re^{-kx}$ with $x \in [a,\infty)$, where $a > 0$ and $r \in \reals$ a constant.
+        	
+        	Since $x \in [a,\infty)$, we have $e^{-kx} \geq e^{-ka}$ for all $k \in \naturals$ and therefore
+        	\[
+	        	\sum \left|\frac{k^r}{e^{kx}}\right| \leq \sum \frac{k^r}{e^{kr}} \leq \sum \frac{k^r}{e^ka}\,.
+        	\]
+        	
+        	Now apply the ratio test to find
+        	\[
+	        	\left| \frac{(k+1)^re^{ka}}{e^{(k+1)a}k^r} \right| = \frac{1}{e^a}\left( 1 + \frac{1}{k}\right)^r \xrightarrow{k\to \infty} \frac{1}{e^a} < 1\,,
+        	\]
+        	for all $a > 0$. This implies convergence of $\sum k^re^{-ka}$. By Weierstrass' M-test we have uniform convergence of the original series.
+        	
+        	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (0,1]$.
+        	Let $f_k(x) = \frac{1}{x^k + 1}$ and let $x \in (0,1)$ be arbitrary, then
+        	\[
+	        	\frac{1}{x^k + 1} \xrightarrow{k \to \infty} 1\,.
+        	\]
+        	For $x=1$ we find that $f_k(x) \xrightarrow{k\to\infty} 1/2$. As the terms do not tend to zero, the series diverges and hence; it does not (uniformly) converge.
+        	
+        	\part $\displaystyle \sum \frac{1}{x^k + 1}$ with $x \in (1,\infty)$.
+        	
+        	Define a sequence $x_k$ by
+        	\[
+	        	x_k = 1 + \frac{1}{k}\,,
+        	\]
+        	then $x_k \in (1,\infty)$ for all $k$ and let
+        	\[
+	        	f_k(x) = \frac{1}{x^k + 1}\,.
+        	\]
+        	We now have 
+        	\[
+	        	|f_n(x_n)| = \frac{1}{(1 + 1/k)^k + 1} \xrightarrow{k\to\infty} \frac{1}{e+1} \neq 0\,,
+        	\]
+        	therefore the original sum does not converge uniformly.
+        \end{parts}
+	    
+	    \question
+	    Use $\frac{1}{1 - x} = 1 + x + x^2 + x^3 + ...$ if $|x| < 1$ to find a series representation for 
+		\begin{parts}
+			\part \label{5a}$f(x) = \frac{1}{1 - 2x}$			
+			\[
+				f(x) = \frac{1}{1 - 2x} = \sum (2x)^k
+			\]
+			
+			\part $f(x) = \frac{1}{x}$			
+			Take $x = 1-u$. Now:
+			\[
+				f(x) = \frac{1}{x} = \frac{1}{1-u} = \sum (u)^k = \sum (1-x)^k
+			\]
+			
+			\part $f(x) = \frac{a}{x - b}$ with $a$ and $b$ positive real constants. 			
+			\begin{align*}
+				f(x) &= \frac{a}{x - b} \\
+				&= a \cdot \frac{1}{x - b} \\
+				&= \frac{a}{b} \cdot \frac{1}{\frac{x}{b} - 1} \\
+				&= -\frac{a}{b} \cdot \frac{1}{1 - \frac{x}{b}} \\
+				&= - \frac{a}{b} \cdot \sum \left(\frac{x}{b} \right)^k 
+			\end{align*}
+			
+			\part $f(x) = \frac{5x - 1}{x^2 - x - 2}$
+			\begin{align*}
+				f(x) &= \frac{5x -1}{x^2 - x - 2} \\
+				&= \frac{5x-1}{(x+1)(x-2)} \\
+				&= \frac{2}{x+1} + \frac{3}{x-2} \\
+				&= 2 \cdot \sum (-x)^k + 3 \cdot \sum (x+1)^k
+			\end{align*}
+			
+			\part $f(x) = \frac{2}{(1 - 2x)^2}$
+			We know that:
+			\[
+				\frac{2}{(1 - 2x)^2} = \frac{d}{dx} \frac{1}{1-2x}
+			\]
+			Now, because of \ref{5a}: 
+			\[
+				f(x) = \frac{d}{dx} = \sum 2k(2x)^k
+			\]
+			This only converges if $|x| < \frac{1}{2}$.
+			
+			
+		\end{parts}
+	    
+	    \question
+	    Let $[a,b]$ be a bounded and closed interval. Let $(f_n)$ be a sequence of non-negative continuous functions on $[a,b]$ such that $\sum f_n$ converges pointwise to a limiting continuous function $s$, given by
+	    \[
+		    s(x) = \sum_n f_n(x)\,.
+	    \]
+	    \begin{toprove}
+	    	The function series $\sum f_n$ is uniformly convergent.
+	    \end{toprove}
+	    \begin{proof}
+	    	Let $s_n$ denote the partial sums of $s$, i.e.
+	    	\[
+	    	s_n(x) = \sum_{k=1}^{n} f_k(x)\,.
+	    	\]
+	    	To apply Dini's theorem, we need
+	    	\begin{enumerate}
+	    		\item \label{Q6:interval} $s_n$ and $s$ are defined on a closed interval.
+	    		\item \label{Q6:pointwise} $s_n$ converges pointwise to $s$
+	    		\item \label{Q6:continuous} $s_n$ is continuous for all $n$, as well is the limiting function $s$.
+	    		\item \label{Q6:increasing} $s_n$ is an increasing sequence.
+	    	\end{enumerate}
+	    	We have that \ref{Q6:interval} and \ref{Q6:pointwise} are satisfied by the antecedent of what is to be proven.
+	    	
+	    	As $f_n$ is continuous for all $n$, by definition of $s_n$ and the fact that summation maintains continuity, we find that $s_n$ is continuous. Note that we already have continuity of $s$. Hence, \ref{Q6:continuous} is satisfied.
+	    	
+	    	As $f_n$ is non-negative, for all $n$ and $x \in [a,b]$ we have $f_n(x) \geq 0$. But then for all $n$ and $x$ we find
+	    	\begin{align*}
+	    	s_n(x) &= \sum_{k=1}^{n} f_n(x) \\
+	    	&\leq f_{n+1}(x) + \sum_{k=1}^{n} f_n(x) \\
+	    	&= \sum_{k=1}^{n+1} f_n(x) = s_{n+1}(x)\,.
+	    	\end{align*}
+	    	Which means \ref{Q6:increasing} is satisfied as well and by Dini's theorem we find that $s_n$ converges uniformly to $s$.
+	    \end{proof}
+     \end{questions}
+\end{document}
