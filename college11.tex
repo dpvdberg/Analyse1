@@ -52,7 +52,34 @@
         % NAH..
         
         \question
-        % INSERT Q3
+        	\begin{inlinetoprove}
+				The function series $\sum \frac{x^k}{k!}$ converges uniform on every bounded interval in $\reals$. 
+			\end{inlinetoprove}
+			\begin{proof}
+				Define:
+				\[
+					S_n(x) = \sum_{k = 0}^{n} \frac{x^k}{k!} \quad S(x) = \sum_{k = 0}^{\infty} \frac{x^k}{k!}
+				\]
+				Then $S_n(x)$ converges pointwise to $S(x)$. Define $D$ as a random bounded interval and $a = \sup D$. This exists because $D$ is bounded. We now evaluate the following:
+				\begin{align*}
+					|S(x) - S_n(x)| &= |\sum_{k = n + 1}^{\infty} \frac{x^k}{k!}| \\
+					&\le \sum_{k = n + 1}^{\infty} \frac{|x|^k}{k!} \\
+					&\le \sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}
+				\end{align*}
+				We know that $\sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}$ is convergent, because of the quotient criterium:
+				\[
+					\lim_{k \to \infty} \frac{\frac{|a|^{k+1}}{(k+1)!}}{\frac{|a|^k}{k!}} = \lim_{k \to \infty} \frac{|a|^{k+1}}{(k+1)!} \cdot \frac{k!}{|a|^k} = \lim_{k \to \infty} \frac{|a|}{k+1} = 0 < 1
+				\]
+				But then it also holds that:
+				\[
+					\lim_{n \to \infty} \frac{|a|^k}{k!} \to 0
+				\]
+				Now $\sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}$ is an upperbound for $|S(x) - S_n(x)|$ and $\sup_{x \in D} |S(x) - S_n(x)|$ is the smallest upperbound, so:
+				\[
+					\sup_{x \in D} |S(x) - S_n(x)| = \| S - S_n \|_\infty \le \sum_{k = n}^{\infty} \frac{|a|^k}{k!} \xrightarrow{n \to \infty} 0
+				\]
+				So the function series $\sum \frac{x^k}{k!}$ converges uniform on every bouned interval of $\reals$.
+		\end{proof}
         
         \question
         Determine whether or not the given series converges uniformly on the indicated interval.
@@ -83,4 +110,4 @@
 	    	%INSERT 6
 	    \end{proof}
      \end{questions}
-\end{document}
+\end{document}1
