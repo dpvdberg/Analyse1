@@ -480,6 +480,41 @@
 		\end{parts}
 		
 		\question
-		If sequences $\{f_n \}$ and $\{g_n \}$ converge uniformly on $D$ to functions $f$ and $g$, respectively, prove that the sequences $\{f_n \pm g_n \}$ converge uniformly to $f \pm g$ on $D$.
+		\begin{inlinetoprove}
+			If sequences $\{f_n \}$ and $\{g_n \}$ converge uniformly on $D$ to functions $f$ and $g$ respectively, prove that the sequences $\{f_n \pm g_n \}$ converge uniformly to $f \pm g$ on $D$.
+		\end{inlinetoprove}
+		\begin{proof}
+			By definition of uniform convergence, we have
+			\begin{align*}
+				\forall_{\epsilon_1 > 0}\exists_{n_1 \in \naturals}\forall_{n \geq n_1}\forall_{x\in D}: \|f_n - f\|_\infty &< \epsilon_1\,, \\
+				\forall_{\epsilon_2 > 0}\exists_{n_2 \in \naturals}\forall_{n \geq n_2}\forall_{x\in D}: \|g_n - g\|_\infty &< \epsilon_2\,.
+			\end{align*}
+			Now we need to prove
+			\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n \pm g_n) - (f \pm g)\|_\infty < \epsilon\,.
+			\]
+			To this end, let $\epsilon > 0$ be given.
+			\begin{itemize}
+				\item We prove
+				\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n + g_n) - (f + g)\|_\infty < \epsilon\,.
+				\]
+				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				\[
+					\|(f_n + g_n) - (f + g)\|_\infty = \|f_n - f + g_n - g\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
+				\]
+				choosing $\epsilon_1 = \epsilon_2 = \epsilon/2$ and using the triangle inequality proven earlier.
+				
+				\item We prove
+				\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n - g_n) - (f - g)\|_\infty < \epsilon\,.
+				\]
+				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				\[
+				\|(f_n - g_n) - (f - g)\|_\infty = \|(f_n - f )+ (g - g_n)\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
+				\]
+				choosing $\epsilon_1 = \epsilon_2 = \epsilon/2$ and using the triangle inequality proven earlier.
+			\end{itemize}
+		\end{proof}
      \end{questions}
 \end{document}
