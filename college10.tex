@@ -16,13 +16,167 @@
 		If possible, find the pointwise limit for the sequence $\{f_n \}$, where:
 		\begin{parts}
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
-			\part $f_n : [1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			
+			Define 
+			\[
+				f^* (x) = 0 \quad \forall_{x \in [0,1]}
+			\]
+			
+			Let $x_0 \in [0,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+			
+			\[
+				|f_n(x_0) - f^*(x_0) | = \left| \frac{x_0^n}{n} \right| = \frac{x_0^n}{n} \le \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+			\]
+			So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+			\[
+				|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			Therefore $f_n \to f^*$ pointwise. 
+			
+			\part $f_n : [-1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			
+			Define 
+			\[
+			f^* (x) = 0 \quad \forall_{x \in [-1,1]}
+			\]
+			
+			Let $x_0 \in [-1,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [-1,1]$:
+			
+			\[
+			|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{x_0}{\frac{1}{n} + n x_0^2} \right| \le \left| \frac{x_0}{n x_0^2} \right| \le \frac{1}{n x_0^2} < \epsilon \text{ if } n > \frac{1}{\epsilon x_0}
+			\]
+			So let $n_0 > \frac{1}{\epsilon x_0}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			Therefore $f_n \to f^*$ pointwise. 	
+			
 			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			
+			Define 
+			\[
+			f^* (x) = \begin{cases}
+				0 \quad& \text{ if } x \in [0,1) \\
+				\frac{1}{2} \quad& \text{ if } x = 1 \\
+				0 \quad& \text{ if } x \in (1, \infty)
+			\end{cases} 
+			\]
+			\begin{itemize}
+				\item Let $x_0 \in [0,1)$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+				
+				\[
+					|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x^n} + x^n} \right| \le \left| \frac{1}{\frac{1}{x^n}} \right| = \left| x^n \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+				\]
+				
+				So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+				\[
+				|f_n(x_0) - 0 | < \epsilon
+				\]
+				\item Let $x_0 = 1$. In this case:
+				\[
+					f_n(x_0) = \frac{1}{\frac{1}{1^n} + 1^n} \xrightarrow{n \to \infty} \frac{1}{2}
+				\]
+				
+				So, for $x_0 = 1$ it holds that $f_n(x_0) \to f^*(x_0)$.
+				
+				\item Let $x_0 \in (1,\infty)$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in (1,\infty)$:
+				
+				\[
+				|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x^n} + x^n} \right| \le \left| \frac{1}{x^n} \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+				\]
+				
+				So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+				\[
+				|f_n(x_0) - 0 | < \epsilon
+				\]
+			\end{itemize}
+			
+			Therefore $f_n \to f^*$ pointwise $\forall_{x \in [0,\infty)}$. 			
+			
 			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in \reals^+}
+			\]
+			
+			Let $x_0 \in \reals^+$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in \reals^+$:
+			
+			\[
+			|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{n e^{n^2x_0^2}} \right| = \frac{1}{n e^{n^2x_0^2}} < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+			\]
+			
+			So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			And so, $f_n \to f^*$ pointwise. 
+			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			
+			snap ik niet ???
+			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in [0,1]}
+			\]
+			
+			Let $x_0 \in [0,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+			
+			\[
+				|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{\sin(nx)}{\sqrt{n}} \right| \le \frac{1}{\sqrt{n}} < \epsilon \text{ if } n > \frac{1}{\epsilon^2}
+			\]
+			
+			So let $n_0 > \frac{1}{\epsilon^2}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			And so, $f_n \to f^*$ pointwise. 
+			
 			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			
+			Define 
+			\[
+				f^*(x) = \begin{cases}
+					0 \quad& \text{ if } x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi] \\
+					1 \quad& x = \frac{\pi}{2}
+				\end{cases}
+			\]
+			Now let $x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]$ be fixed. Then there is a $k$ such that:
+			\[
+				0 \le (\sin x_0) \le k < 1 \quad \forall_{x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]}
+			\]
+			But then:
+			\[
+				0 \le (\sin x_0)^n \le k^n \to 0 \text{ as } n \to \infty
+			\]
+			Now, by the squeeze theorem, $f_n(x_0) \to f^*(x_0)$ pointwise if $x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]$. 
+			
+			Now let $x_0 = \frac{\pi}{2}$. Then:
+			\[
+				(\sin x_0)^n = 1^n = n \quad \forall_{n \in \naturals} 
+			\]
+			
+			So $f_n(x_0) \to f^*$ pointwise $\forall x \in [0, \pi]$. 
+			
 			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in [0,\infty)}
+			\]
+			Now:
+			\[
+				f_n(x) = \frac{x}{n} e^{-\frac{x}{n}} = \frac{\frac{x}{n}}{e^{\frac{x}{n}}} \to 0 \text{ as } n to \infty
+			\]
+			Therefore, $f_n(x) \to f^*(x)$ pointwise. 
+			
 		\end{parts}
 
 		\question
