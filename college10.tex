@@ -367,16 +367,116 @@
 		\end{parts}
 		
 		\question
-		Determine whether or not the following functions converge uniformly. Explain clearly:
+		Determine whether or not the following functions converge uniformly. Explain clearly.
+		
+		We will be using one observation to prove a sequence converges uniformly:
+		\begin{equation} \label{Q4:unif:def}
+		\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x \in D}: |f_n(x) - f^*(x)| < \epsilon\ \iff  f_n \text{ converges uniformly to } f^*\,,
+		\end{equation}
+		
+		We will be using two observations to prove a sequence does not converge uniformly:
+		\begin{equation} \label{Q4:notunif:def}
+			\exists_{\epsilon > 0}\forall_{n^* \in \naturals}\exists_{n \geq n^*}\exists_{x \in D}: |f_n(x) - f^*(x)| \geq \epsilon\ \iff  f_n \text{ does not converge uniformly to } f^*\,,
+		\end{equation}
+		\begin{align}\label{Q4:notunif:seq}
+		\begin{split}
+		\exists_{\text{sequence } x_n \text{ in } D}\colon &|f_n(x_n) - f^*(x_n)| \xrightarrow{n\to\infty} q \in \reals\backslash\{0\} \\
+		&\implies \exists_{\text{sequence } x_n \text{ in } D}: |f_n(x_n) - f^*(x_n)| \geq \epsilon \text{ eventually} \\ 
+		&\implies f_n \text{ does not converge uniformly to } f^*\,,
+		\end{split}
+		\end{align}
+		\begin{equation} \label{Q4:notunif:cont}
+		f^* \text{ not continous } \wedge \enskip f_n \text{ continous for }n\text{ large enough } \implies f_n \text{ does not converge uniformly to } f^*\,.
+		\end{equation}
+		
 		\begin{parts}
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+					\forall_{x\in [0,1]}: x^n \leq 1 \implies \left| \frac{x^n}{n} \right| = \frac{x^n}{n} \leq \frac{1}{n} < \frac{1}{n^*} \leq \frac{1}{1/\epsilon} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
 			\part $f_n : [1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = 1/n$, then
+				\[
+					|f(x_n) - f^*(x_n)| = \frac{nx_n}{1 + n^2(x_n)^2} = \frac{1}{2} \xrightarrow{n\to\infty} \frac{1}{2} \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
+			
 			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^*$.
+			\end{toprove}
+			\begin{proof}
+				We have already shown that $f^*(x) = 0$ for $0 \leq x \neq 1$ and $f^*(1) = 1/2$, hence $f^*$ is not continuous and $f_n$ is continuous for all $n$. Using \ref{Q4:notunif:cont}, this completes our proof.
+			\end{proof}
+			
 			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+				\forall_{z\in \reals^+}: e^z \geq 1 \implies \left| \frac{1}{n} e^{-n^2x^2} \right| = \frac{1}{n} e^{-n^2x^2} \leq \frac{1}{n} < \frac{1}{n^*} \leq \frac{1}{1/\epsilon} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = 1/n$, then
+				\[
+				|f(x_n) - f^*(x_n)| = nx_ne^{-n(x_n)^2} = e^{-1/n} \xrightarrow{n\to\infty} 1 \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
+			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+				\forall_{z\in [0,1]}: |\sin z| \leq 1 \implies \left| \frac{\sin(nx)}{\sqrt{n}} \right| = \frac{1}{\sqrt{n}} < \frac{1}{\sqrt{n^*}} \leq \frac{1}{\sqrt{1/\epsilon^2}} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon^2}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
 			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^*$.
+			\end{toprove}
+			\begin{proof}
+				We have already shown that $f^*(x) = 0$ for $x \in [0,\pi]\backslash\{\pi/2\}$ and $f^*(\pi/2) = 1$, hence $f^*$ is not continuous and $f_n$ is continuous for all $n$. Using \ref{Q4:notunif:cont}, this completes our proof.
+			\end{proof}
+			
 			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = n$, then
+				\[
+					|f(x_n) - f^*(x_n)| = \frac{x_n}{n} \exp \left(- \frac{x_n}{n} \right) = \frac{1}{e} \xrightarrow{n\to\infty} \frac{1}{e} \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
 		\end{parts}
 		
 		\question
