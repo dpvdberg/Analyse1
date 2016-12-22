@@ -495,21 +495,21 @@
 			\]
 			To this end, let $\epsilon > 0$ be given.
 			\begin{itemize}
-				\item We prove
+				\item We first prove
 				\[
 				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n + g_n) - (f + g)\|_\infty < \epsilon\,.
 				\]
-				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				To this end, define $n^* = \max\{n_1,n_2\}$ and let $n \ge n^*$. Then we have
 				\[
 					\|(f_n + g_n) - (f + g)\|_\infty = \|f_n - f + g_n - g\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
 				\]
 				choosing $\epsilon_1 = \epsilon_2 = \epsilon/2$ and using the triangle inequality proven earlier.
 				
-				\item We prove
+				\item We then prove:
 				\[
 				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n - g_n) - (f - g)\|_\infty < \epsilon\,.
 				\]
-				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				To this end, define $n^* = \max\{n_1,n_2\}$ and let $n \ge n^*$, we have
 				\[
 				\|(f_n - g_n) - (f - g)\|_\infty = \|(f_n - f )+ (g - g_n)\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
 				\]
