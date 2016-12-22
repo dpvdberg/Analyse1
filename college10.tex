@@ -41,7 +41,7 @@
 			f^* (x) = 0 \quad \forall_{x \in [-1,1]}
 			\]
 			
-			Let $x_0 \in [-1,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [-1,1]$:
+			Let $x_0 \in [-1,1]$ be fixed and let $\epsilon > 0$. Then, for $x_0 \in [-1,1]\backslash\{0\}$:
 			
 			\[
 			|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{x_0}{\frac{1}{n} + n x_0^2} \right| \le \left| \frac{x_0}{n x_0^2} \right| \le \frac{1}{n x_0^2} < \epsilon \text{ if } n > \frac{1}{\epsilon x_0}
@@ -51,6 +51,7 @@
 			|f_n(x_0) - 0 | < \epsilon
 			\]
 			
+			For $x=0$, it is trivially convergent to $f^*$.			
 			Therefore $f_n \to f^*$ pointwise. 	
 			
 			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
@@ -64,10 +65,10 @@
 			\end{cases} 
 			\]
 			\begin{itemize}
-				\item Let $x_0 \in [0,1)$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+				\item Let $x_0 \in [0,1)$ be fixed and let $\epsilon > 0$. Then
 				
 				\[
-					|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x^n} + x^n} \right| \le \left| \frac{1}{\frac{1}{x^n}} \right| = \left| x^n \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+					|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x_0^n} + x_0^n} \right| \le \left| \frac{1}{\frac{1}{x_0^n}} \right| = \left| x_0^n \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
 				\]
 				
 				So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
@@ -117,7 +118,13 @@
 			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
 			
-			snap ik niet ???
+			Let $f^* = 0$. Whenever $x=0$, then $f_n(x) = 0 \xrightarrow{n\to\infty} 0$.
+			
+			Now let $\epsilon > 0$ be given and $x \in (0,1]$, then $e^{nx^2} > n^2x^2$ for some $n \geq n_1 \in \naturals$ and
+			\[
+				\left| \frac{nx}{e^{nx^2}} \right| < \frac{nx}{n^2x^2} = \frac{1}{nx} < \frac{1}{n^*x} = \epsilon\,,
+			\]
+			whenever $n \geq n^* = \max\{ n_1, \frac{1}{\epsilon x} \}$. We conclude pointwise convergence to $f^*$.
 			
 			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
 			
@@ -173,7 +180,7 @@
 			\]
 			Now:
 			\[
-				f_n(x) = \frac{x}{n} e^{-\frac{x}{n}} = \frac{\frac{x}{n}}{e^{\frac{x}{n}}} \to 0 \text{ as } n to \infty
+				f_n(x) = \frac{x}{n} e^{-\frac{x}{n}} = \frac{\frac{x}{n}}{e^{\frac{x}{n}}} \xrightarrow{n \to \infty} 0
 			\]
 			Therefore, $f_n(x) \to f^*(x)$ pointwise. 
 			
