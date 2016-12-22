@@ -224,18 +224,27 @@
 			$\left| \|f\|_\infty - \|g\|_\infty \right| \le \|f-g\|_\infty$
 		\end{toprove}
 		\begin{proof}
-			By definition:
-			\[
-				\left| \|f\|_\infty - \|g\|_\infty \right| = | \sup_{x \in D} |f(x)| - \sup_{x \in D} |g(x)| \, \, |	
-			\]
-			Define:
+			We know the following:
 			\begin{align*}
-				A_f &= \{|f(x)| : x \in D \} \\
-				A_g &= \{|g(x)| : x \in D \} \\
-				A &= \{|f(x)| - |g(x)| : x \in D \}
+				\|f\|_{\infty} &= \|f-g=g\|_{\infty} \le \|f - g\|_{\infty} + \|g\|_{\infty} \\
+				\|g\|_{\infty} &= \|f - f + g\|_{\infty} \le \|f - g\|_{\infty} + \|f\|_{\infty}
 			\end{align*}
-			
-			?????? CONFUSED HELP
+			But now we know
+			\[
+				\|f\|_{\infty} - \|g\|_{\infty} \le \|f-g\|_{\infty} + \|g\|_{\infty} - \|g\|_{\infty} = \|f-g\|_{\infty}
+			\]
+			And also:
+			\[
+				\|g\|_{\infty} - \|f\|_{\infty} \le \|f-g\|_{\infty} + \|f\|_{\infty} - \|f\|_{\infty} = \|f-g\|_{\infty}
+			\]
+			However
+			\[
+				\left| \|f\|_\infty - \|g\|_\infty \right| = \|f\|_{\infty} - \|g\|_{\infty}  \vee \left| \|f\|_\infty - \|g\|_\infty \right| = \|g\|_{\infty} - \|f\|_{\infty}
+			\]
+			And so:
+			\[
+				\left| \|f\|_\infty - \|g\|_\infty \right| \le \|f-g\|_{\infty}
+			\]
 		\end{proof}
 		
 		\begin{toprove}
