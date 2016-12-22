@@ -86,9 +86,9 @@
         	
         	Because $x \in [0,1]$, we have $x^k \leq 1^k = 1$ for all $k \in \naturals$. Now we have
         	\[
-	        	\sum \left|\frac{x^k}{k^2}\right| = \sum \frac{x^k}{k^2} \leq \frac{1}{k^2}\,.
+	        	\sum \left|\frac{x^k}{k^2}\right| = \sum \frac{x^k}{k^2} \leq \sum \frac{1}{k^2}\,.
         	\]
-        	But $\sum 1/k^2$ is a $p$-series with $p = 2 > 1$, hence it is convergent and by Weierstrass' M-test we have uniform convergence of the original series.
+        	But $\sum 1/k^2$ is a harmonic series with $2 > 1$, hence it is convergent and by Weierstrass' M-test we have uniform convergence of the original series.
         	
         	\part $\displaystyle \sum x^ke^{-kx}$ with $x \in [0,\infty)$.
         	
@@ -96,7 +96,7 @@
         	\[
 	        	f_k'(x) = kx^{k-1}e^{-kx} -kx^ke^{-kx} = ke^{-kx}(x^{k-1} - x^k)\,.
         	\]
-        	But then $f_k'(x) = 0$ if $x^{k-1} = x^k$ and therefor $x = 0 \vee x = 1$. For $x=0$ the function sequence is zero, hence its maximum is attained at $x=1$ and therefore
+        	But then $f_k'(x) = 0$ if $x^{k-1} = x^k$ and therefore $x = 0 \vee x = 1$. For $x=0$ the function sequence is zero, hence its maximum is attained at $x=1$ and therefore
         	\[
 	        	|f_n(x)| = \left|x^ke^{-kx}\right| \leq \frac{1}{e^n}\,.
         	\]
@@ -106,7 +106,7 @@
         	
         	Since $x \in [a,\infty)$, we have $e^{-kx} \geq e^{-ka}$ for all $k \in \naturals$ and therefore
         	\[
-	        	\sum \left|\frac{k^r}{e^{kx}}\right| \leq \sum \frac{k^r}{e^{kr}} \leq \sum \frac{k^r}{e^ka}\,.
+	        	\sum \left|\frac{k^r}{e^{kx}}\right| \leq \sum \frac{k^r}{e^{ka}}\,.
         	\]
         	
         	Now apply the ratio test to find
@@ -206,7 +206,7 @@
 	    	\end{enumerate}
 	    	We have that \ref{Q6:interval} and \ref{Q6:pointwise} are satisfied by the antecedent of what is to be proven.
 	    	
-	    	As $f_n$ is continuous for all $n$, by definition of $s_n$ and the fact that summation maintains continuity, we find that $s_n$ is continuous. Note that we already have continuity of $s$. Hence, \ref{Q6:continuous} is satisfied.
+	    	As $f_n$ is continuous for all $n$, then by the -definition of $s_n$ and the fact that summation maintains continuity, we find that $s_n$ is continuous. Note that we already have continuity of $s$. Hence, \ref{Q6:continuous} is satisfied.
 	    	
 	    	As $f_n$ is non-negative, for all $n$ and $x \in [a,b]$ we have $f_n(x) \geq 0$. But then for all $n$ and $x$ we find
 	    	\begin{align*}
