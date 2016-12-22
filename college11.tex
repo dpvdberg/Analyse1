@@ -60,7 +60,7 @@
 				\]
 				Then $S_n(x)$ converges pointwise to $S(x)$. Define $D$ as a random bounded interval and $a = \sup D$. This exists because $D$ is bounded. We now evaluate the following:
 				\begin{align*}
-					|S(x) - S_n(x)| &= |\sum_{k = n + 1}^{\infty} \frac{x^k}{k!}| \\
+					|S(x) - S_n(x)| &= \left|\sum_{k = n + 1}^{\infty} \frac{x^k}{k!} \right| \\
 					&\le \sum_{k = n + 1}^{\infty} \frac{|x|^k}{k!} \\
 					&\le \sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}
 				\end{align*}
@@ -70,11 +70,11 @@
 				\]
 				But then it also holds that:
 				\[
-					\lim_{n \to \infty} \frac{|a|^k}{k!} \to 0
+					\lim_{n \to \infty} \sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!} = 0
 				\]
 				Now $\sum_{k = n + 1}^{\infty} \frac{|a|^k}{k!}$ is an upperbound for $|S(x) - S_n(x)|$ and $\sup_{x \in D} |S(x) - S_n(x)|$ is the smallest upperbound, so:
 				\[
-					\sup_{x \in D} |S(x) - S_n(x)| = \| S - S_n \|_\infty \le \sum_{k = n}^{\infty} \frac{|a|^k}{k!} \xrightarrow{n \to \infty} 0
+					\sup_{x \in D} |S(x) - S_n(x)| = \| S - S_n \|_\infty \le \sum_{k = n+1}^{\infty} \frac{|a|^k}{k!} \xrightarrow{n \to \infty} 0
 				\]
 				So the function series $\sum \frac{x^k}{k!}$ converges uniform on every bouned interval of $\reals$.
 		\end{proof}
@@ -146,12 +146,14 @@
 			\[
 				f(x) = \frac{1}{1 - 2x} = \sum (2x)^k
 			\]
+			whenever $|2x| < 1$, thus $|x| < 1/2$.
 			
 			\part $f(x) = \frac{1}{x}$			
 			Take $x = 1-u$. Now:
 			\[
 				f(x) = \frac{1}{x} = \frac{1}{1-u} = \sum (u)^k = \sum (1-x)^k
 			\]
+			whenever $|u| < 1 \implies |1-x| < 1$.
 			
 			\part $f(x) = \frac{a}{x - b}$ with $a$ and $b$ positive real constants. 			
 			\begin{align*}
@@ -161,6 +163,7 @@
 				&= -\frac{a}{b} \cdot \frac{1}{1 - \frac{x}{b}} \\
 				&= - \frac{a}{b} \cdot \sum \left(\frac{x}{b} \right)^k 
 			\end{align*}
+			whenever $|x/b| < 1 \implies |x| < b$.
 			
 			\part $f(x) = \frac{5x - 1}{x^2 - x - 2}$
 			\begin{align*}
@@ -169,6 +172,7 @@
 				&= \frac{2}{x+1} + \frac{3}{x-2} \\
 				&= 2 \cdot \sum (-x)^k + 3 \cdot \sum (x+1)^k
 			\end{align*}
+			whenever $|x| < 1 \wedge |x+1| < 1$.
 			
 			\part $f(x) = \frac{2}{(1 - 2x)^2}$
 			We know that:
@@ -177,9 +181,9 @@
 			\]
 			Now, because of \ref{5a}: 
 			\[
-				f(x) = \frac{d}{dx} = \sum 2k(2x)^k
+				f(x) = \frac{d}{dx}\frac{1}{1-2x} = \sum 2k(2x)^{k-1}
 			\]
-			This only converges if $|x| < \frac{1}{2}$.
+			This only holds if $|x| < 1/2$.
 			
 			
 		\end{parts}
