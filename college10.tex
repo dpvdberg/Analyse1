@@ -1,0 +1,520 @@
+% !TeX spellcheck = en_US
+\documentclass[week=5]{homework}
+\date{\today}
+\newcommand*\centermathcell[1]{\omit\hfil$\displaystyle#1$\hfil\ignorespaces}
+
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+
+        \firstquestion
+		If possible, find the pointwise limit for the sequence $\{f_n \}$, where:
+		\begin{parts}
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
+			
+			Define 
+			\[
+				f^* (x) = 0 \quad \forall_{x \in [0,1]}
+			\]
+			
+			Let $x_0 \in [0,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+			
+			\[
+				|f_n(x_0) - f^*(x_0) | = \left| \frac{x_0^n}{n} \right| = \frac{x_0^n}{n} \le \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+			\]
+			So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+			\[
+				|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			Therefore $f_n \to f^*$ pointwise. 
+			
+			\part $f_n : [-1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			
+			Define 
+			\[
+			f^* (x) = 0 \quad \forall_{x \in [-1,1]}
+			\]
+			
+			Let $x_0 \in [-1,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [-1,1]$:
+			
+			\[
+			|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{x_0}{\frac{1}{n} + n x_0^2} \right| \le \left| \frac{x_0}{n x_0^2} \right| \le \frac{1}{n x_0^2} < \epsilon \text{ if } n > \frac{1}{\epsilon x_0}
+			\]
+			So let $n_0 > \frac{1}{\epsilon x_0}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			Therefore $f_n \to f^*$ pointwise. 	
+			
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			
+			Define 
+			\[
+			f^* (x) = \begin{cases}
+				0 \quad& \text{ if } x \in [0,1) \\
+				\frac{1}{2} \quad& \text{ if } x = 1 \\
+				0 \quad& \text{ if } x \in (1, \infty)
+			\end{cases} 
+			\]
+			\begin{itemize}
+				\item Let $x_0 \in [0,1)$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+				
+				\[
+					|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x^n} + x^n} \right| \le \left| \frac{1}{\frac{1}{x^n}} \right| = \left| x^n \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+				\]
+				
+				So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+				\[
+				|f_n(x_0) - 0 | < \epsilon
+				\]
+				\item Let $x_0 = 1$. In this case:
+				\[
+					f_n(x_0) = \frac{1}{\frac{1}{1^n} + 1^n} \xrightarrow{n \to \infty} \frac{1}{2}
+				\]
+				
+				So, for $x_0 = 1$ it holds that $f_n(x_0) \to f^*(x_0)$.
+				
+				\item Let $x_0 \in (1,\infty)$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in (1,\infty)$:
+				
+				\[
+				|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{\frac{1}{x^n} + x^n} \right| \le \left| \frac{1}{x^n} \right| < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+				\]
+				
+				So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+				\[
+				|f_n(x_0) - 0 | < \epsilon
+				\]
+			\end{itemize}
+			
+			Therefore $f_n \to f^*$ pointwise $\forall_{x \in [0,\infty)}$. 			
+			
+			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in \reals^+}
+			\]
+			
+			Let $x_0 \in \reals^+$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in \reals^+$:
+			
+			\[
+			|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{1}{n e^{n^2x_0^2}} \right| = \frac{1}{n e^{n^2x_0^2}} < \frac{1}{n} < \epsilon \text{ if } n > \frac{1}{\epsilon}
+			\]
+			
+			So let $n_0 > \frac{1}{\epsilon}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			And so, $f_n \to f^*$ pointwise. 
+			
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			
+			snap ik niet ???
+			
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in [0,1]}
+			\]
+			
+			Let $x_0 \in [0,1]$ be fixed and let $\epsilon > 0$. Then, since $x_0 \in [0,1]$:
+			
+			\[
+				|f_n(x_0) - f^*(x_0) | = |f_n(x_0)| = \left| \frac{\sin(nx)}{\sqrt{n}} \right| \le \frac{1}{\sqrt{n}} < \epsilon \text{ if } n > \frac{1}{\epsilon^2}
+			\]
+			
+			So let $n_0 > \frac{1}{\epsilon^2}$. Then $\forall_{n \ge n_0}$: 
+			\[
+			|f_n(x_0) - 0 | < \epsilon
+			\]
+			
+			And so, $f_n \to f^*$ pointwise. 
+			
+			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			
+			Define 
+			\[
+				f^*(x) = \begin{cases}
+					0 \quad& \text{ if } x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi] \\
+					1 \quad& x = \frac{\pi}{2}
+				\end{cases}
+			\]
+			Now let $x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]$ be fixed. Then there is a $k$ such that:
+			\[
+				0 \le (\sin x_0) \le k < 1 \quad \forall_{x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]}
+			\]
+			But then:
+			\[
+				0 \le (\sin x_0)^n \le k^n \to 0 \text{ as } n \to \infty
+			\]
+			Now, by the squeeze theorem, $f_n(x_0) \to f^*(x_0)$ pointwise if $x \in [0,\frac{\pi}{2}) \cap (\frac{\pi}{2}, \pi]$. 
+			
+			Now let $x_0 = \frac{\pi}{2}$. Then:
+			\[
+				(\sin x_0)^n = 1^n = n \quad \forall_{n \in \naturals} 
+			\]
+			
+			So $f_n(x_0) \to f^*$ pointwise $\forall x \in [0, \pi]$. 
+			
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+			
+			Define 
+			\[
+				f^*(x) = 0 \quad \forall_{x \in [0,\infty)}
+			\]
+			Now:
+			\[
+				f_n(x) = \frac{x}{n} e^{-\frac{x}{n}} = \frac{\frac{x}{n}}{e^{\frac{x}{n}}} \to 0 \text{ as } n to \infty
+			\]
+			Therefore, $f_n(x) \to f^*(x)$ pointwise. 
+			
+		\end{parts}
+
+		\question
+		Let $D \subset \reals$, $f, g \to \reals$ two bounded functions, $a \in \reals$. 
+		
+		\begin{toprove}
+			$\|f+g\|_\infty \le \|f\|_\infty + \|g\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			Fist of all, by definition: 
+			\[
+				\| f + g \|_\infty = \sup_{x \in D} ( |f(x) + g(x)| )
+			\]
+			Now, using the triangle inequality:
+			\[
+				\sup_{x \in D} ( |f(x) + g(x)| ) \le \sup_{x \in D} ( |f(x)| + |g(x)| )
+			\]
+			Now define 
+			\begin{align}
+				A &= \{|f(x)| + |g(x)|:  x \in D \} \\
+				A_f &= \{|f(x)|: x \in D \} \\
+				A_g &= \{|g(x)|: x \in D \}
+			\end{align}
+			Now: 
+			\[
+				A_f + A_g = \{a + b : a \in A_f, b \in A_g \}
+			\]
+			For sets we know: 
+			\[
+				\sup(A_f + A_g) = \sup(A_f) + sup(A_g)
+			\]
+			And since $A \subset (A_f + A_g)$, we know:
+			\[
+				\sup(A) \le \sup(A_f + A_g) = \sup(A_f) + \sup(A_g)
+			\]
+			We can use this to conclude:
+			\begin{align*}
+				\sup_{x \in D} ( |f(x)| + |g(x)| ) &\le \sup_{x \in D} |f(x)| + \sup_{x \in D} |g(x)| \\
+				&= \|f \|_\infty + \| g \|_\infty
+			\end{align*}
+			This completes the proof. 
+		\end{proof}
+		
+		\begin{toprove}
+			$\left| \|f\|_\infty - \|g\|_\infty \right| \le \|f-g\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			By definition:
+			\[
+				\left| \|f\|_\infty - \|g\|_\infty \right| = | \sup_{x \in D} |f(x)| - \sup_{x \in D} |g(x)| \, \, |	
+			\]
+			Define:
+			\begin{align*}
+				A_f &= \{|f(x)| : x \in D \} \\
+				A_g &= \{|g(x)| : x \in D \} \\
+				A &= \{|f(x)| - |g(x)| : x \in D \}
+			\end{align*}
+			
+			?????? CONFUSED HELP
+		\end{proof}
+		
+		\begin{toprove}
+			$\|af\|_\infty = |a|  \|f\|_\infty$
+		\end{toprove}
+		\begin{proof}
+			First of all, we know:
+			\begin{align*}
+				\|af\|_\infty &= \sup_{x \in D} |a f(x)| \\
+				&= \sup_{x \in D} |a| |f(x)|
+			\end{align*}
+			Now define:
+			\begin{align*}
+				A &= \{|a| \cdot |f(x)|: x \in D \} \\
+				A_f &= \{|f(x)|: x \in D \}
+			\end{align*}
+			Now for sets we know:
+			\[
+				sup A = |a| \cdot \sup A_f
+			\]
+			We can use this knowledge to conclude:
+			\begin{align*}
+				\sup_{x \in D} |a| |f(x)| &= |a| \cdot \sup_{x \in D} |f(x)| \\
+				&= |a| \cdot \|f\|_\infty
+			\end{align*}
+			This is what we needed to prove. 
+		\end{proof}
+		
+		\begin{toprove}
+			$\| f \|_\infty = 0 \Rightarrow (f \equiv 0)$
+		\end{toprove}
+		\begin{proof}
+			We know $\| f \|_\infty = 0 $, and this means $\sup_{x \in D} |f(x)| = 0$. Now we know:
+			\[
+				0 \le |f(x)| \le \sup_{x \in D} |f(x)| = 0
+			\]
+			And this means $f(x) = 0 \quad \forall_{x \in D}$. We can conclude that $f \equiv 0$.
+		\end{proof}
+		
+		\question
+		\begin{parts}
+			\part Give an example of a function sequence $(f_n)$ on $[0,1]$ that converges pointwise to an unbounded function $f^*$ where all functions $f_n$ are bounded.
+			
+			Let us define the function sequence $f_n \colon [0,1] \to \reals$ by
+			\[
+				f_n(x) =
+				\begin{cases}
+					\frac{1}{x+1/n} & x \neq 0\,, \\
+					0 & x = 0\,.
+				\end{cases}
+			\]
+			
+			If $x = 0$, then trivially we see that $f_n(x) = 0 \xrightarrow{n\to\infty} 0$.
+			
+			We now show that for $x \neq 0$ we have $f_n \to f^*$, where $f^*(x) = 1/x$. Therefore we need to prove
+			\[
+				\forall_{x \in (0,1]}\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}: |f_n(x) - f^*(x)| < \epsilon\,.
+			\]
+			
+			To this end, let $\epsilon > 0$ be arbitrary and let $x\neq 0$ be in the domain of $f_n(x)$, i.e. $x \in (0,1]$. We write
+			\begin{align*}
+				\left| \frac{1}{x + 1/n} - \frac{1}{x} \right| &= \left| \frac{1}{x + 1/n} - \frac{1 + \frac{1}{nx}}{x + 1/n} \right| \\
+				&= \left| -\frac{1}{nx(x+1/n)} \right| \\
+				&= \frac{1}{nx^2 + x} \\
+				&\leq \frac{1}{nx^2}\,.
+			\end{align*}
+			Now let $n^* = \ceil{\frac{1}{\epsilon x^2}}$, then for $n \geq n^*$ we have
+			\[
+				\left| \frac{1}{x + 1/n} - \frac{1}{x} \right| < \frac{1}{n^*x^2} \leq \frac{1}{1/\epsilon} = \epsilon\,.
+			\]
+			
+			This means that $f_n$ converges pointwise to $f^* \colon [0,1] \to \reals$, where
+			\[
+				f^*(x) =
+				\begin{cases}
+				\frac{1}{x} & x \neq 0\,, \\
+				0 & x = 0\,.
+				\end{cases}
+			\]
+			
+			We see that $f^*$ is unbounded, namely $\lim_{x \downarrow 0} f^*(x) = \infty$ and $f_n(x)$ is bounded for each $n \in \naturals$. To prove this, let $n \in \naturals$ be arbitrary, then
+			\[
+			\forall_{x \in [0,1]}: |f_n(x)| =  \left| \frac{1}{x + 1/n} \right| = \frac{1}{x + 1/n} < \frac{1}{1/n} = n\,.
+			\]
+			Therefore $f_n(x)$ is bounded by $n$.
+			
+			\part Let $(f_n)$ be a function sequence on $D \subset \reals$ with $f_n \to f^*$ uniform on $D$. Assume $f_n$ bounded for all $n$. 
+			\begin{toprove}
+				$f^*$ is bounded and 
+				\[
+				\| f_n \|_\infty \to \| f^* \|_\infty, \quad \sup_{x \in D} f_n(x) \xrightarrow{n\to\infty} \sup_{x \in D} f^*(x)\,.
+				\]
+			\end{toprove}
+			\begin{proof}
+				We have that $f_n(x)$ is bounded for each $n \in \naturals$. Therefore, for all $n \in \naturals$ we can find a $M \in \reals$ (possibly depending on $n$) such that for all $x \in D$ we have
+				\[
+					|f_n(x)| < M_n\,.
+				\]
+				
+				As $f_n$ converges uniformly to $f^*$ on $D$, we have
+				\[
+					\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n\geq n^*}\forall_{x\in D}: |f_n(x) - f^*(x)| < \epsilon\,.
+				\]
+				
+				We shall first show that $f^*$ is bounded, therefore we need to prove that there exists an $M^* \in \reals$ such that for all $x \in D$ we have
+				\[
+					|f^*(x)| < M^*\,.
+				\]
+				
+				To this end, take $\epsilon = 1$, then for $n \geq n^*$ we have that for all $x \in D$
+				\begin{alignat*}{2}
+					|f_n(x) - f^*(x)| < 1 \implies&{}&\centermathcell{|f^*(x) - f_{n^*}(x)|} &< 1\\
+					\implies&{}& \centermathcell{|f^*(x)|}&< 1 + |f_{n^*}(x)|\,,
+				\end{alignat*} 
+				but $|f_n(x)| < M_n$, hence
+				\[	|f^*(x)| < 1 + M_{n^*}\,, \]
+				which is to say $f^*$ is bounded (taking $M^* = 1 + M_{n^*}$).
+				
+				We now prove $\| f_n \|_\infty \to \| f^* \|_\infty$, therefore we prove that
+				\[
+					\forall_{\epsilon > 0}\exists_{\bar n^* \in \naturals}\forall_{n\geq \bar n^*}: |\|f_n\|_\infty - \|f^*\|_\infty| < \epsilon\,.
+				\]
+				Let $\epsilon > 0$ be given. We know that $f_n$ converges uniformly to $f^*$, hence, we can find $\widetilde n \in \naturals$ such that for $n \geq \widetilde n$ we have $\| f_n - f^* \|_\infty < \epsilon$. But then, using the inverse triangle inequality proven earlier, for $n \geq \bar n^* = \widetilde n$ we have
+				\[
+				|\|f_n\|_\infty - \|f^*\|_\infty| \leq \| f_n - f^* \|_\infty < \epsilon\,.
+				\]
+				
+			\end{proof}
+		\end{parts}
+		
+		\question
+		Determine whether or not the following functions converge uniformly. Explain clearly.
+		
+		We will be using one observation to prove a sequence converges uniformly:
+		\begin{equation} \label{Q4:unif:def}
+		\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x \in D}: |f_n(x) - f^*(x)| < \epsilon\ \iff  f_n \text{ converges uniformly to } f^*\,,
+		\end{equation}
+		
+		We will be using two observations to prove a sequence does not converge uniformly:
+		\begin{equation} \label{Q4:notunif:def}
+			\exists_{\epsilon > 0}\forall_{n^* \in \naturals}\exists_{n \geq n^*}\exists_{x \in D}: |f_n(x) - f^*(x)| \geq \epsilon\ \iff  f_n \text{ does not converge uniformly to } f^*\,,
+		\end{equation}
+		\begin{align}\label{Q4:notunif:seq}
+		\begin{split}
+		\exists_{\text{sequence } x_n \text{ in } D}\colon &|f_n(x_n) - f^*(x_n)| \xrightarrow{n\to\infty} q \in \reals\backslash\{0\} \\
+		&\implies \exists_{\text{sequence } x_n \text{ in } D}: |f_n(x_n) - f^*(x_n)| \geq \epsilon \text{ eventually} \\ 
+		&\implies f_n \text{ does not converge uniformly to } f^*\,,
+		\end{split}
+		\end{align}
+		\begin{equation} \label{Q4:notunif:cont}
+		f^* \text{ not continous } \wedge \enskip f_n \text{ continous for }n\text{ large enough } \implies f_n \text{ does not converge uniformly to } f^*\,.
+		\end{equation}
+		
+		\begin{parts}
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{x^n}{n}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+					\forall_{x\in [0,1]}: x^n \leq 1 \implies \left| \frac{x^n}{n} \right| = \frac{x^n}{n} \leq \frac{1}{n} < \frac{1}{n^*} \leq \frac{1}{1/\epsilon} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
+			\part $f_n : [1,1] \to \reals$ with $f_n(x) = \frac{nx}{1 + n^2x^2}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = 1/n$, then
+				\[
+					|f(x_n) - f^*(x_n)| = \frac{nx_n}{1 + n^2(x_n)^2} = \frac{1}{2} \xrightarrow{n\to\infty} \frac{1}{2} \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
+			
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x^n}{1 + x^{2n}}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^*$.
+			\end{toprove}
+			\begin{proof}
+				We have already shown that $f^*(x) = 0$ for $0 \leq x \neq 1$ and $f^*(1) = 1/2$, hence $f^*$ is not continuous and $f_n$ is continuous for all $n$. Using \ref{Q4:notunif:cont}, this completes our proof.
+			\end{proof}
+			
+			\part $f_n : \reals^+ \to \reals$ with $f_n(x) = \frac{1}{n} e^{-n^2x^2}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+				\forall_{z\in \reals^+}: e^z \geq 1 \implies \left| \frac{1}{n} e^{-n^2x^2} \right| = \frac{1}{n} e^{-n^2x^2} \leq \frac{1}{n} < \frac{1}{n^*} \leq \frac{1}{1/\epsilon} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = nxe^{-nx^2}$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = 1/n$, then
+				\[
+				|f(x_n) - f^*(x_n)| = nx_ne^{-n(x_n)^2} = e^{-1/n} \xrightarrow{n\to\infty} 1 \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
+			
+			\part $f_n : [0,1] \to \reals$ with $f_n(x) = \frac{\sin(nx)}{\sqrt{n}}$
+			\begin{toprove}
+				$f_n$ converges uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $\epsilon > 0$ be given. We know
+				\[
+				\forall_{z\in [0,1]}: |\sin z| \leq 1 \implies \left| \frac{\sin(nx)}{\sqrt{n}} \right| = \frac{1}{\sqrt{n}} < \frac{1}{\sqrt{n^*}} \leq \frac{1}{\sqrt{1/\epsilon^2}} = \epsilon\,,
+				\]
+				whenever $n \geq n^* = \ceil{1/\epsilon^2}$. Using \ref{Q4:unif:def}, this completes our proof.
+			\end{proof}
+			
+			\part $f_n : [0,\pi] \to \reals$ with $f_n(x) = (\sin x)^n$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^*$.
+			\end{toprove}
+			\begin{proof}
+				We have already shown that $f^*(x) = 0$ for $x \in [0,\pi]\backslash\{\pi/2\}$ and $f^*(\pi/2) = 1$, hence $f^*$ is not continuous and $f_n$ is continuous for all $n$. Using \ref{Q4:notunif:cont}, this completes our proof.
+			\end{proof}
+			
+			\part $f_n : [0,\infty) \to \reals$ with $f_n(x) = \frac{x}{n} \exp \left(- \frac{x}{n} \right)$
+			\begin{toprove}
+				$f_n$ does not converge uniformly to $f^* = 0$.
+			\end{toprove}
+			\begin{proof}
+				Let $x_n = n$, then
+				\[
+					|f(x_n) - f^*(x_n)| = \frac{x_n}{n} \exp \left(- \frac{x_n}{n} \right) = \frac{1}{e} \xrightarrow{n\to\infty} \frac{1}{e} \neq 0\,,
+				\]
+				which completes our proof using \ref{Q4:notunif:seq}.
+			\end{proof}
+		\end{parts}
+		
+		\question
+		\begin{inlinetoprove}
+			If sequences $\{f_n \}$ and $\{g_n \}$ converge uniformly on $D$ to functions $f$ and $g$ respectively, prove that the sequences $\{f_n \pm g_n \}$ converge uniformly to $f \pm g$ on $D$.
+		\end{inlinetoprove}
+		\begin{proof}
+			By definition of uniform convergence, we have
+			\begin{align*}
+				\forall_{\epsilon_1 > 0}\exists_{n_1 \in \naturals}\forall_{n \geq n_1}\forall_{x\in D}: \|f_n - f\|_\infty &< \epsilon_1\,, \\
+				\forall_{\epsilon_2 > 0}\exists_{n_2 \in \naturals}\forall_{n \geq n_2}\forall_{x\in D}: \|g_n - g\|_\infty &< \epsilon_2\,.
+			\end{align*}
+			Now we need to prove
+			\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n \pm g_n) - (f \pm g)\|_\infty < \epsilon\,.
+			\]
+			To this end, let $\epsilon > 0$ be given.
+			\begin{itemize}
+				\item We prove
+				\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n + g_n) - (f + g)\|_\infty < \epsilon\,.
+				\]
+				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				\[
+					\|(f_n + g_n) - (f + g)\|_\infty = \|f_n - f + g_n - g\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
+				\]
+				choosing $\epsilon_1 = \epsilon_2 = \epsilon/2$ and using the triangle inequality proven earlier.
+				
+				\item We prove
+				\[
+				\forall_{\epsilon > 0}\exists_{n^* \in \naturals}\forall_{n \geq n^*}\forall_{x\in D}: \|(f_n - g_n) - (f - g)\|_\infty < \epsilon\,.
+				\]
+				But then for $n \geq n^* = \max\{n_1,n_2\}$, we have
+				\[
+				\|(f_n - g_n) - (f - g)\|_\infty = \|(f_n - f )+ (g - g_n)\|_\infty \leq \| f_n - f\|_\infty + \| g_n - g \|_\infty < \epsilon_1 + \epsilon_2 = \epsilon\,,
+				\]
+				choosing $\epsilon_1 = \epsilon_2 = \epsilon/2$ and using the triangle inequality proven earlier.
+			\end{itemize}
+		\end{proof}
+     \end{questions}
+\end{document}
