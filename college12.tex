@@ -1,0 +1,78 @@
+% !TeX spellcheck = en_US
+\documentclass[week=12]{homework}
+
+\date{\today}
+
+\begin{document}
+    \maketitle
+    \thispagestyle{empty}
+    \newpage
+    \begin{questions}
+		\let\firstquestion\question
+		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
+        %%%%%%%%%%%%
+        % QUESTION 1
+        %%%%%%%%%%%%
+        \firstquestion
+		Prove that the zeta function given by the series $\zeta(x) = \sum_{k=1}^{\infty} \frac{\ln k}{k^x}$ converges uniformly on $[a,\infty)$ with $a > 1$. Then show that $\zeta$ is differentiable and that 
+		\[
+			\zeta'(x) = - \sum_{k=1}^{\infty} \frac{\ln k}{k^x}
+		\]
+		for $x > 1$.
+		
+		\question
+		Let the function sequence $(f_n)$, $n \in \naturals_+$, op $\reals$ be given by:
+		\[
+			f_n(x) = \begin{cases}
+				0 		\qquad \quad \; \text{ if } |x| > 1/n, \\
+				nx+1 	\quad \text{ if } x \in [-1/n,0), \\
+				1 - nx 	\quad \text{ if } x \in [0,1/n]
+			\end{cases}
+		\]
+		\begin{parts}
+			\part Determine the pointwise limitfunction $f^* : \reals \to \reals$. 
+			\part Does the function sequence $(f_n)$ converge uniformly to $f^*$?
+			\part Show that the function series 
+			\[
+				\sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n})
+			\]
+			converges pointwise on $\reals$. 
+			\part 
+			\begin{inlinetoprove}
+				The function $s: \reals \to \reals$ given by 
+				\[
+					s(x) := \sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n}), \quad x \in \reals
+				\]
+				is continuous. 
+			\end{inlinetoprove}
+		\end{parts}
+		
+		\question
+		$(\star)$ Let $m \in \reals$ and $(a_k)$ a number sequence such that 
+		\[
+			\sum_{k=0}^{\infty} |a_k|e^{-m}
+		\]
+		converges. Show that the function $s : [m,\infty) \to \reals$ defined by 
+		\[
+			s(x) = \sum_{k=0}^{\infty} a_k e^{-m}
+		\] 
+		is arbitrarily often differentiable on $(m,\infty)$. 
+
+	     \question
+	     Examine for all of the following power series for which $x \in \reals$ they converge:
+	     \[
+	     \sum_{k=1}^{\infty} \frac{x^k}{2^k k}, \quad 
+	     \sum_{k=1}^{\infty} \frac{x^k}{k^2}, \quad
+	     \sum_{k=1}^{\infty} k 3^k x^k, \quad 
+	     \sum_{k=1}^{\infty} \frac{(-1)^k}{k} x^k.
+	     \]
+     \end{questions}
+\end{document}
+
+
+
+
+
+
+
+
