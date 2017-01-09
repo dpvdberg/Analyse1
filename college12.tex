@@ -66,6 +66,106 @@
 	     \sum_{k=1}^{\infty} k 3^k x^k, \quad 
 	     \sum_{k=1}^{\infty} \frac{(-1)^k}{k} x^k.
 	     \]
+	     
+	     \[
+			 \sum_{k=1}^{\infty} \frac{x^k}{2^k k}    
+	     \]
+	     \begin{itemize}
+	     	\item If $x = 0$, the series clearly converges. 
+	     	\item If $x \not = 0$, we use the root theorem to evaluate the convergence of this series:
+	     	\[
+		     	\sqrt[k]{\left| \frac{x^k}{2^k k} \right|} = \frac{\sqrt[k]{|x|^k}}{2 \cdot \sqrt[k]{k}} \xrightarrow{k \to \infty} \frac{1}{2} |x|
+	     	\]
+	     	\begin{itemize}
+	     		\item This converges if $|x| < 2$.
+	     		\item This diverges if $|x| > 2$.
+	     		\item If $x = 2$ then the series is of the form 
+	     		\[
+		     		\sum_{k=1}^{\infty} \frac{1}{k}.
+	     		\]
+	     		This diverges. 
+	     		\item If $x = -2$ then the series is of the form 
+	     		\[
+		     		\sum_{k=1}^{\infty} (-1)^k \frac{1}{k}.
+	     		\]
+	     		This converges, by the theorem of Leibniz. 
+	     	\end{itemize}
+	     \end{itemize}
+	     
+	     \[
+	     \sum_{k=1}^{\infty} \frac{x^k}{k^2}   
+	     \]
+	     \begin{itemize}
+	     	\item If $x = 0$, the series clearly converges. 
+	     	\item If $x \not = 0$, we use the root theorem to evaluate the convergence of this series:
+	     	\[
+		     	\sqrt[k]{\left| \frac{x^k}{k^2} \right|} = \frac{|x|}{\sqrt[k]{k^2}} \xrightarrow{k \to \infty} |x|
+	     	\]
+	     	\begin{itemize}
+	     		\item This converges if $|x| < 1$.
+	     		\item This diverges if $|x| > 1$.
+	     		\item If $x = 1$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} \frac{1}{k^2}.
+	     		\]
+	     		This is a harmonic series which converges. 
+	     		\item If $x = -1$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} (-1)^k \frac{1}{k^2}.
+	     		\]
+	     		This converges, by the theorem of Leibniz. 
+	     	\end{itemize}
+	     \end{itemize}
+	     
+	     \[
+	     \sum_{k=1}^{\infty} k 3^k x^k  
+	     \]
+	     \begin{itemize}
+	     	\item If $x = 0$, the series clearly converges. 
+	     	\item If $x \not = 0$, we use the root theorem to evaluate the convergence of this series:
+	     	\[
+	     	\sqrt[k]{|k 3^k x^k |} = \sqrt[k]{k} \cdot 3 \cdot |x| \xrightarrow{k \to infty} 3|x|
+	     	\]
+	     	\begin{itemize}
+	     		\item This converges if $|x| < \frac{1}{3}$.
+	     		\item This diverges if $|x| > \frac{1}{3}$.
+	     		\item If $x = \frac{1}{3}$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} k.
+	     		\]
+	     		This diverges. 
+	     		\item If $x = -\frac{1}{3}$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} (-1)^k k.
+	     		\]
+	     		This diverges. 
+	     	\end{itemize}
+	     \end{itemize}
+	     
+	     \[
+	     \sum_{k=1}^{\infty} \frac{(-1)^k}{k} x^k 
+	     \]
+	     \begin{itemize}
+	     	\item If $x = 0$, the series clearly converges. 
+	     	\item If $x \not = 0$, we use the root theorem to evaluate the convergence of this series:
+	     	\[
+	     	\sqrt[k]{\left| \frac{x^k}{k} \right|} = \frac{|x|}{\sqrt[k]{k}}\xrightarrow{k \to infty} |x|
+	     	\]
+	     	\begin{itemize}
+	     		\item This converges if $|x| < 1$.
+	     		\item This diverges if $|x| > 1$.
+	     		\item If $x = 1$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} (-1)^k \cdot \frac{1}{k}
+	     		\]
+	     		This converges according to the theorem of Leibniz.
+	     		\item If $x = -1$ then the series is of the form 
+	     		\[
+	     		\sum_{k=1}^{\infty} \frac{1}{k}
+	     		\]
+	     		This diverges. 
+	     	\end{itemize}
+	     \end{itemize}
      \end{questions}
 \end{document}
 
