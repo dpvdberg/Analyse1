@@ -31,12 +31,47 @@
 		\]
 		\begin{parts}
 			\part Determine the pointwise limitfunction $f^* : \reals \to \reals$. 
+			Let $x$ be fixed. 
+			
+			If $x \not = 0$, then 
+			\[
+				\lim_{n \to \infty}  f_n(x) = 1
+			\]
+			
+			However, if $x = 0$, then
+			\[
+				\lim_{n \to infty}
+			\]
+			Therefore:
+			\[
+				f^*(x) = \begin{cases}
+					1 	\quad \text{ if } x \not = 0 \\
+					0 	\quad \text{ if } x = 0
+				\end{cases}
+			\]
+			
 			\part Does the function sequence $(f_n)$ converge uniformly to $f^*$?
+			
+			On the points $|x| > \frac{1}{n}$ and $x \in (-\frac{1}{n},0)$ and $x \in (0,\frac{1}{n})$ it is clear that $f_n(x)$ is continuous. We now prove that it is also continuous on $x = \frac{1}{n}$, $x = - \frac{1}{n}$ and $x = 0$:
+			\begin{itemize}
+				\item $ \lim_{x \uparrow \frac{1}{n}} f_n(x) = \lim_{x \downarrow \frac{1}{n}} 1 - nx = 0 = \lim_{x \downarrow \frac{1}{n}} f_n(x)$  
+				\item $\lim_{x \downarrow -\frac{1}{n}} f_n(x) = \lim_{x \downarrow -\frac{1}{n}} nx + 1 = 0 = \lim_{x \uparrow -\frac{1}{n}}$
+				\item $ \lim_{x \uparrow 0 } f_n(x) = \lim_{x \uparrow 0 } nx + 1 = 0 = \lim_{x \downarrow 0} 1 - nx = \lim_{x \downarrow 0} f_n(x)$
+			\end{itemize}
+			So, $f_n(x)$ is continuous $\forall x \in \reals$. However, $f^*(x)$ is not continuous $\forall x \in \reals$ and therefore, $f_n$ does not converge uniformly to $f^*$. 
+			
 			\part Show that the function series 
 			\[
 				\sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n})
 			\]
 			converges pointwise on $\reals$. 
+			
+			Clearly:
+			\[
+			\left| \frac{1}{2^n} f_n(x - \frac{1}{n})\right| = \frac{1}{2^n} \cdot \left| f_n(x - \frac{1}{n}) \right| < \frac{1}{2^n} \cdot 1 = \frac{1}{2^n}
+			\]
+			
+			We know that $\sum_{n = 1}^{\infty} \frac{1}{2^n}$ converges, because this is a standard geometric series. Now, because of the M-criterium of Weierstrass, $\sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n})$ converges uniformly, and therefore also converges pointwise. 
 			\part 
 			\begin{inlinetoprove}
 				The function $s: \reals \to \reals$ given by 
@@ -45,6 +80,9 @@
 				\]
 				is continuous. 
 			\end{inlinetoprove}
+			\begin{proof}
+				We have already proven that $s(x)$ converges uniformly on $\reals$. We have also already proven that $f_n$ is continuous. This means that $s(x)$ is also continuous on $\reals$.
+			\end{proof}
 		\end{parts}
 		
 		\question
