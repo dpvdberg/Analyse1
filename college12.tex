@@ -14,11 +14,49 @@
         % QUESTION 1
         %%%%%%%%%%%%
         \firstquestion
-		Prove that the zeta function given by the series $\zeta(x) = \sum_{k=1}^{\infty} \frac{\ln k}{k^x}$ converges uniformly on $[a,\infty)$ with $a > 1$. Then show that $\zeta$ is differentiable and that 
-		\[
-			\zeta'(x) = - \sum_{k=1}^{\infty} \frac{\ln k}{k^x}
-		\]
-		for $x > 1$.
+        \begin{inlinetoprove}
+        	The zeta function given by the series $\zeta(x) = \sum_{k=1}^{\infty} \frac{1}{k^x}$ converges uniformly on $[a,\infty)$ with $a > 1$. Also show that $\zeta$ is differentiable and that 
+        	\[
+        	\zeta'(x) = - \sum_{k=1}^{\infty} \frac{\ln k}{k^x}
+        	\]
+        	for $x > 1$.
+        \end{inlinetoprove}
+		
+		\begin{proof}
+			Let $f_k(x) = \frac{1}{k^x} $ such that $\zeta(x)  = \sum f_k(x)$ and let $x \in [a,\infty)$ be arbitrary ($a>1$). Then
+			\[
+				\frac{1}{k^x} \leq \frac{1}{k^a}\,.
+			\]
+			But then for all $k \in \naturals_+$
+			\[
+				\left| f_k(x) \right| = \left| \frac{1}{k^x} \right| \leq \left| \frac{1}{k^a} \right| = \frac{1}{k^a}\,.
+			\]
+			Now since $a > 1$ we know that $\sum 1/k^a$ is a converging $p$-series. Using Weierstrass' M-test with $M_k = 1/k^a$, we have that $\zeta(x)$ is uniformly convergent.
+		
+			For the derivative of $f_k$ we find
+			\begin{align*}
+				f_k'(x) = \left[k^{-x}\right]' &= \left[ e^{-x\ln k} \right]' \\
+				&= -\ln k \cdot e^{-x\ln k} \\
+				&= -\frac{\ln k}{k^x}\,.
+			\end{align*}
+			
+			We know that
+			\[
+				\forall_{\delta > 0}\exists_{k_0 \in \naturals}\forall_{k \geq k_0}: \ln k < k^\delta\,.
+			\]
+			
+			Define $\delta = \frac{1}{2}(a-1)$ and note that in this case $\delta > 0$. We find that for $k \geq k_0$
+			\[
+				\left| \frac{\ln k}{k^x} \right| < \left| \frac{k^\delta}{k^a} \right| = \frac{1}{k^{1/2(a+1)}}\,.
+			\]
+			Now since $a > 1$ we have $1/2(a+1) > 1$ and hence $\sum \frac{1}{k^{1/2(a+1)}}$ is a convergent $p$-series. Using Weierstrass' M-test, we have that $\sum f_k'(x)$ is uniformly convergent.
+			
+			We have already proven uniform convergence of the $\zeta$ function series, which implies pointwise convergence. Using this, the fact that $f_k$ is differentiable for all $k$ and that $\sum f_k'$ converges uniformly, we find that $\zeta$ is differentiable and
+			\[
+			\zeta'(x) = - \sum_{k=1}^{\infty} \frac{\ln k}{k^x}\,,
+			\]
+			as described in theorem 8.4.18.
+		\end{proof}
 		
 		\question
 		Let the function sequence $(f_n)$, $n \in \naturals_+$, op $\reals$ be given by:
