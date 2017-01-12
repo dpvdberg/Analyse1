@@ -19,7 +19,28 @@
 				\limsup b_n = \lim_{n \to \infty} b_n.
 			\]
 		\end{inlinetoprove}
-		
+		\begin{proof}
+			First of all, we know that $b_n$ converges. Therefore:
+			\[
+				\exists_{b^*}: b_n \to b^*
+			\]
+			Now, because $b_n$ converges, this sequence only has one accumulation point, namely $b^*$. Therefore, the set of all accumulation points of $b_n$, which we call V, only consists of one point: 
+			\[
+				V = \{b^*\}
+			\]
+			Now, we can find $\limsup b_n$:
+			\[
+				\limsup b_n = \sup V = b^*
+			\]
+			We also know that:
+			\[
+				\lim_{n \to \infty} b_n = b^*
+			\]
+			Now, we have proven that:
+			\[
+				\limsup b_n = \lim_{n \to \infty} b_n
+			\]
+		\end{proof}
 		\question
 		Let $\{b_n \}$ and $\{c_n \}$ be a sequences of numbers with $c_n \to 1$. 
 		\begin{inlinetoprove}
