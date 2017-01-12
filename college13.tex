@@ -13,12 +13,12 @@
 		\renewcommand*{\question}{\vspace{7mm}\firstquestion}
         \firstquestion
 		Let $\{b_n \}$ be a sequence of numbers. 
-		\begin{inlinetoprove}
+		\begin{toprove}
 			If $\{b_n \}$ converges, then 
 			\[
 				\limsup b_n = \lim_{n \to \infty} b_n.
 			\]
-		\end{inlinetoprove}
+		\end{toprove}
 		\begin{proof}
 			First of all, we know that $b_n$ converges. Therefore:
 			\[
@@ -43,18 +43,80 @@
 		\end{proof}
 		\question
 		Let $\{b_n \}$ and $\{c_n \}$ be a sequences of numbers with $c_n \to 1$. 
-		\begin{inlinetoprove}
+		\begin{toprove}
 			\[
-				\limsup (c_n b_n) = \limsup b_n, \quad \limsup (b_n^{c_n}) = \limsup b_n
+				\limsup (c_n b_n) = \limsup b_n, \quad \limsup (b_n^{c_n}) = \limsup b_n\,.
 			\]
-		\end{inlinetoprove}
+		\end{toprove}
+		\begin{proof}
+			We have proven that (college 4, question 3) if a sequence is divergent, we can find a subsequence that also diverges to the same limit. Also, if a sequence has a accumulation point, then we can also find a subsequence that converges to this same point.
+			
+			By definition of limes superior;
+			\[
+				\limsup b_n = 
+				\begin{cases}
+					+\infty & b_n \text{ unbounded above,} \\
+					\sup V & V \neq \emptyset \text{ and } b_n \text{ bounded above,} \\
+					-\infty & V = \emptyset \text{ and } b_n \text{ bounded above.} \\
+				\end{cases}
+			\]
+			Using what we stated above, in any case we can find a subsequence $b_{n_k}$ such that
+			\begin{equation} \label{subsequence_to_limsup} \tag{$\star$}
+				b_{n_k} \xrightarrow{k\to\infty} \limsup b_n\,.
+			\end{equation}
+			
+			Note that $\sup V$ might not be an element of $V$, but we can still find a subsequence that converges to $\limsup b_n$ in this case, as proven in the lectures.
+			
+			We shall now prove $\limsup (c_n b_n) = \limsup b_n$.
+			\begin{parts}
+				\part $\limsup b_n = \infty$.
+				
+				In this case $b_n$ is unbounded from above. We know $c_n$ is convergent, whence it is also bounded. Therefore $c_n b_n$ is unbounded from above and by definition $\limsup (c_n b_n) = \infty$.
+				
+				\part $\limsup b_n = L \in \reals$.
+				
+				Now $L = \sup V$, where $V$ is the supremum over the set of accumulation points of $b_n$. Using \ref{subsequence_to_limsup}, we can find a subsequence $b_{n_k}$ that converges to $L$. As $c_n$ is convergent, every subsequence converges to the same limit, hence $c_{n_k} \xrightarrow{k \to \infty} 1$ and $c_{n_k} b_{n_k} \xrightarrow{k \to \infty} L$. Note that this must be the $\limsup$ of $c_n b_n$, for we know $c_n b_n$ is bounded above, hence $\limsup c_n b_n \in (-\infty, \sup V']$, where $V'$ is the set of accumulation points of $c_n b_n$. Now suppose that $\sup V' = L' > L$, then using \ref{subsequence_to_limsup} we can find a index sequence $(n_l)$ such that $c_{n_l} b_{n_l} \xrightarrow{l \to \infty} L'$. As $c_{n_l} \xrightarrow{l \to\infty} 1$ we have $b_{n_l} \xrightarrow{l \to \infty} L'$. But then $L = \sup V < L' \in V \quad \lightning$.
+				
+				In conclusion, in this case $\limsup c_n b_n = \limsup b_n = L$.
+				
+				\part $\limsup b_n = -\infty$.
+				
+				In this case $V = \emptyset$ and $b_n$ is bounded above, i.e. $b_n$ is unbounded from below and $b_n \to -\infty$. Now suppose that $V'$ of $c_n b_n$ is not empty. Let $q \in V'$. Then there exists a subsequence $c_{n_k} b_{n_k} \xrightarrow{k \to \infty} q$. Now $c_{n_k} \xrightarrow{k\to\infty} 1$, hence $b_{n_k} \xrightarrow{k \to \infty} q$, which is not possible, as $b_n$ goes to minus infinity $\lightning$. Hence $V' = \emptyset$ and since $b_n$ and $c_n$ are bounded above, so is $c_n b_n$ and therefore $\limsup (c_n b_n) = -\infty$.
+			\end{parts}
+		\end{proof}
 		
 		\question
 		Let R be the radius of convergence for $\sum_{k=0}^{\infty} a_k (x - a)^k$ and suppose that $\lim_{n \to \infty} \left| \frac{a_{n+1}}{a_n} \right| = L$. Then:
 		\begin{parts}
-			\part if $L$ is a nonzero finite real number, $R = \frac{1}{L}$
-			\part if $L=0$, $R = \infty$
+			\part if $L$ is a nonzero finite real number, $R = \frac{1}{L}$. 
+			\begin{proof}
+			Let $z_k := a_k (x-a)^k$. Then
+			\[
+				\left| \frac{z_{k+1}}{z_k} \right| = \left| \frac{a_{k+1}}{a_k} \right| |x-a| \xrightarrow{k \to \infty} L \cdot |x-a|\,.
+			\]
+			In this case, by Cauchy's root test, we know that $\sum z_k$ is convergent if $L \cdot |x-a| < 1 \implies |x-a| < 1/L$ and divergent if $L \cdot |x-a| > 1 \implies |x-a| > 1/L$. Hence, the radius of convergence is $1/L$.
+			\end{proof}
+	
+			\part if $L=0$, $R = \infty$.
+			
+			\begin{proof}	
+			Let $z_k := a_k (x-a)^k$. Then
+			\[
+				\left| \frac{z_{k+1}}{z_k} \right| = \left| \frac{a_{k+1}}{a_k} \right| |x-a| \xrightarrow{k \to \infty} 0 \cdot |x-a| = 0 < 1\,.
+			\]
+			
+			By Cauchy's root test, $\sum z_k$ is convergent for all $x$, hence the radius of convergence is infinity.
+			\end{proof}	
+			
 			\part if $L = \infty$, $R = 0$. 
+			\begin{proof}
+		
+			Let $z_k := a_k (x-a)^k$. Then for $x \neq a$
+			\[
+				\left| \frac{z_{k+1}}{z_k} \right| = \left| \frac{a_{k+1}}{a_k} \right| |x-a| \xrightarrow{k \to \infty} \infty\,.
+			\]
+			By Cauchy's root test, $\sum z_k$ is divergent for all $x \neq a$, hence the radius of convergence is zero.
+			\end{proof}
 		\end{parts}
 		
 		\question
