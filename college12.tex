@@ -33,20 +33,20 @@
 			\part Determine the pointwise limitfunction $f^* : \reals \to \reals$. 
 			Let $x$ be fixed. 
 			
-			If $x \not = 0$, then 
+			If $x \not = 0$, then there exits an $n_0$ such that for $n \geq n_0$ we have $1/n < |x|$ and therefore
 			\[
-				\lim_{n \to \infty}  f_n(x) = 1
+				\lim_{n \to \infty} f_n(x) = 0
 			\]
 			
 			However, if $x = 0$, then
 			\[
-				\lim_{n \to infty}
+				\lim_{n \to \infty} f_n(x) = 1
 			\]
 			Therefore:
 			\[
 				f^*(x) = \begin{cases}
-					1 	\quad \text{ if } x \not = 0 \\
-					0 	\quad \text{ if } x = 0
+					0 	\quad \text{ if } x \not = 0 \\
+					1 	\quad \text{ if } x = 0
 				\end{cases}
 			\]
 			
@@ -54,11 +54,11 @@
 			
 			On the points $|x| > \frac{1}{n}$ and $x \in (-\frac{1}{n},0)$ and $x \in (0,\frac{1}{n})$ it is clear that $f_n(x)$ is continuous. We now prove that it is also continuous on $x = \frac{1}{n}$, $x = - \frac{1}{n}$ and $x = 0$:
 			\begin{itemize}
-				\item $ \lim_{x \uparrow \frac{1}{n}} f_n(x) = \lim_{x \downarrow \frac{1}{n}} 1 - nx = 0 = \lim_{x \downarrow \frac{1}{n}} f_n(x)$  
+				\item $ \lim_{x \uparrow \frac{1}{n}} f_n(x) = \lim_{x \uparrow \frac{1}{n}} 1 - nx = 0 = \lim_{x \downarrow \frac{1}{n}} f_n(x)$  
 				\item $\lim_{x \downarrow -\frac{1}{n}} f_n(x) = \lim_{x \downarrow -\frac{1}{n}} nx + 1 = 0 = \lim_{x \uparrow -\frac{1}{n}}$
 				\item $ \lim_{x \uparrow 0 } f_n(x) = \lim_{x \uparrow 0 } nx + 1 = 0 = \lim_{x \downarrow 0} 1 - nx = \lim_{x \downarrow 0} f_n(x)$
 			\end{itemize}
-			So, $f_n(x)$ is continuous $\forall x \in \reals$. However, $f^*(x)$ is not continuous $\forall x \in \reals$ and therefore, $f_n$ does not converge uniformly to $f^*$. 
+			So, as $1-nx$ and $nx +1$ are also continuous, $f_n(x)$ is continuous for all $x \in \reals$. However, $f^*(x)$ is not continuous for all $x \in \reals$ and therefore, $f_n$ does not converge uniformly to $f^*$. 
 			
 			\part Show that the function series 
 			\[
@@ -66,22 +66,22 @@
 			\]
 			converges pointwise on $\reals$. 
 			
-			Clearly:
+			Clearly $f_n$ is bounded above by $1$ for all $n$ and $x$, therefore
 			\[
-			\left| \frac{1}{2^n} f_n(x - \frac{1}{n})\right| = \frac{1}{2^n} \cdot \left| f_n(x - \frac{1}{n}) \right| < \frac{1}{2^n} \cdot 1 = \frac{1}{2^n}
+			\left| \frac{1}{2^n} f_n \left(x - \frac{1}{n} \right)\right| = \frac{1}{2^n} \cdot \left| f_n \left(x - \frac{1}{n} \right) \right| < \frac{1}{2^n} \cdot 1 = \frac{1}{2^n}
 			\]
 			
-			We know that $\sum_{n = 1}^{\infty} \frac{1}{2^n}$ converges, because this is a standard geometric series. Now, because of the M-criterium of Weierstrass, $\sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n})$ converges uniformly, and therefore also converges pointwise. 
+			We know that $\sum_{n = 1}^{\infty} \frac{1}{2^n}$ converges, because this is a standard geometric series. Now, because of Weierstrass' M-criterium, $\sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n})$ converges uniformly, and therefore also converges pointwise. 
 			\part 
 			\begin{inlinetoprove}
 				The function $s: \reals \to \reals$ given by 
 				\[
-					s(x) := \sum_{n=1}^{\infty} 2^{-n} f_n(x - \frac{1}{n}), \quad x \in \reals
+					s(x) := \sum_{n=1}^{\infty} 2^{-n} f_n \left(x - \frac{1}{n} \right), \quad x \in \reals
 				\]
 				is continuous. 
 			\end{inlinetoprove}
 			\begin{proof}
-				We have already proven that $s(x)$ converges uniformly on $\reals$. We have also already proven that $f_n$ is continuous. This means that $s(x)$ is also continuous on $\reals$.
+				We have already proven that $s(x)$ converges uniformly on $\reals$. We have also already proven that $f_n$ is continuous. This means that $s(x)$ is also continuous on $\reals$ (theorem 8.3.4).
 			\end{proof}
 		\end{parts}
 		
