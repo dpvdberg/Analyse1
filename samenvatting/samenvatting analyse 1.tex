@@ -1,0 +1,649 @@
+\documentclass[week=1]{homework}
+
+\begin{document}
+	\maketitle
+	\newpage
+	
+	\section*{College 1}
+	\subsection*{Geordende verzamelingen}
+	\Def[Geordende verzamelingen] Een verzameling heet (totaal) geordend als er op $m$ een relatie "$<$" gedefinieerd is ($< \, \subset \, m \times m$) met de eigenschappen:
+	\begin{itemize}
+		\item voor twee elementen $a,b \in M$ geldt precies één van de beweringen: 
+		\begin{itemize}
+			\item $a<b$
+			\item $b<a$
+			\item $a=b$
+		\end{itemize}
+		\item $\forall a,b,c\in M: a<b \, \wedge \, b<c \Rightarrow a<c$ 
+	\end{itemize}
+	\Vb $\naturals \quad \complex \quad \rationals \quad \reals$
+	
+	\Not \begin{itemize}
+		\item $a\le b \Leftrightarrow a < b \, \vee \, a=b$ 
+		\item $a>b \Leftrightarrow b<a$
+		\item $a\ge b \Leftrightarrow a > b \, \vee \, a=b$ 
+	\end{itemize}
+	
+	\Not \ul{intervallen}  
+	
+	Stel $a,b \in M, \, a<b$
+	\begin{itemize}
+		\item open $\rightarrow (a,b):= \{x\in M | a < x < b \} $
+		\item half-open $\rightarrow [a,b):= \{x\in M | a \le x < b \}$
+		\item gesloten $\rightarrow [a,b]:= \{x\in M|a \le x \le b\}$
+	\end{itemize}
+	
+	\Def[Begrensd] Een niet lege deelverzameling $A \in M$ heet "begrensd" naar boven/beneden als er een $g \in M$ is met $a \le g$/$a \ge g \forall a \in A$. G heet dan een bovengrens/ondergrens voor A. 
+	
+	\Def[Maximum en minimum] Zij $A \subset M$. Een element $m \in A$ heet "maximum/minimum" van A of grootste/kleinste element van A als $m$ ook bovengrens/ondergrens is. 
+	
+	\Not $\max A$,  $\min A$
+	
+	\Stel Elke verzameling $A \subset M$ heeft hooguit \'e\'en maximum/minimum.
+	
+	\Letop Er hoeft geen maximum van een begrensde verzameling te bestaan! (zie open intervallen)
+	
+	\Stel De verzameling $A = (0,1)$ heeft geen maximum. 
+	
+	\vspace{5mm}
+	\Def[Supremum en infimum] Zij $A \subset M$ een niet lege, naar boven/beneden begrensde verzameling. De kleinste bovengrens/grootste ondergrens heten supremum/infimum. 
+	
+	\Stel Als $A \subset M$ een maximum/minimum heeft dan is $\sup A = \max A$/$\inf A = \min A$.
+	
+	\Stel Zij $A \subset B \subset M$. Stel dat $\sup A$ en $\sup B$ bestaan. Dan $\sup A \subseteq \sup B$.
+	
+	\subsection*{Geordende lichamen}
+	\Stel 12 axiomas (zie boek)
+	
+	\Def[Dicht liggen] Een verzameling getallen $M$ ligt dicht als in elk interval $(a,b)$ met $a<b$, $a,b \in M$ liggen oneindig veel getallen uit $M$.
+	
+	\Stel De rationale getallen liggen dicht. 
+	
+	\Stel $\rationals$ is niet volledig geordend! 
+	
+	
+	\newpage
+	\section*{College 2}
+	\Stel $\reals$ is een volledig geordend lichaam. 
+	
+	\Def[Axioma 13] Iedere niet lege naar boven begrensde deelverzameling $S$ van $\reals$ heeft een supremum, en dit $\sup \in \reals$. 
+	
+	\Stel Elke naar beneden begrensde niet lege verzameling heeft een infimum. 
+	
+	\Stel[1.7.8] $\naturals$ is niet begrensd naar boven als deelverzameling van $\reals$.  
+	
+	\Stel $\forall \epsilon > 0$ is er een $n \in \naturals$ zo dat $\frac{1}{n} < \epsilon$. 
+	
+	\Stel Zij $a,b \in \reals$ met $a < b$. Er is in het interval $(a,b)$ zowel een rationaal getal als een irrationaal getal. 
+	
+	\Gevolg Er zijn oneindig veel rationele en irrationele getallen. 
+	
+	\subsection*{Afstand}
+	\Def $d(a,b) = |a-b|$. Eigenschappen:
+	\begin{itemize}
+		\item $\forall a,b \in \reals$ geldt $d(a,b) = d(b,a) \ge 0$. 
+		\item $d(a,b) = 0 \Leftrightarrow a = b$.
+	\end{itemize}
+	
+	\Stel[Driehoeksongelijkheid] $|a+b| \le |a| + |b|$
+	
+	\Stel[Inverse driehoeksongelijkheid] $| |a| - |b| | \le |a-b|$
+	
+	\Stel $|a-b| \le |a-c| + |c-b|$
+	
+	\subsection*{Rij}
+	\Def[Rij] Zij $M$ een niet lege deelverzameling. Een afbeelding van $\naturals$ of $\naturals_+$ naar $M$ heet een rij in $M$. 
+	
+	\Not \begin{itemize}
+		\item $a_n$
+		\item $(a_0, a_1, a_2, ...)$
+		\item $(a_n)$
+		\item $(a_n)n \in \naturals$
+		\item $(a_n)_{n=0}^\infty$
+	\end{itemize}
+	
+	\Def \begin{itemize}
+		\item Een rij $(a_k)$ heet naar boven/beneden begrensd als de verzameling ${(a_k)|k \in \naturals}$ naar boven/beneden begrensd is. 
+		\item Een rij $(a_k)$ heet stijgend als $a_k \le a_{k+1}$ voor alle $k \in \naturals$. 
+		\item Een rij $(a_k)$ heet strikt stijgend als $a_k < a_{k+1}$ voor alle $k \in \naturals$. 
+		\item Een rij $(a_k)$ heet dalend als $a_k \ge a_{k+1}$ voor alle $k \in \naturals$. 
+		\item Een rij $(a_k)$ heet strikt dalend als $a_k > a_{k+1}$ voor alle $k \in \naturals$.
+		\item Een rij is periodiek met periode $p \in \naturals_+$ als $a_{k+p} = a_k$ voor alle $k \in \naturals$.
+	\end{itemize}
+	
+	\Def[Limietdefinitie] $\forall \epsilon > 0 \exists n_0 \in \naturals: \forall n \ge n_0: |x_n - x^*|< \epsilon$
+	
+	\Not \begin{itemize}
+		\item $(a_k)$ convergeert naar $a^*$ 
+		\item $(a_k)$ heeft limiet $a^*$
+		\item $\lim_{n \rightarrow \infty} a_k = a^*$
+		\item $a_k \rightarrow a^*$ als $k \rightarrow \infty$
+		\item $a_k \xrightarrow{ k \rightarrow \infty} a^*$ 
+	\end{itemize}
+	
+	\Stel Elke rij heeft hooguit \'e\'en limiet. 
+	
+	\newpage
+	\section*{College 3}
+	\subsection*{Eigenschappen van convergente rijen}
+	\Stel[2.1.11] Elke convergente rij is begrensd. 
+	
+	\Stel[2.4.4] Zij $(a_n)$ stijgend en begrensd (naar boven). Dan is $(a_n)$ convergent, en $\lim_{n \rightarrow \infty} \{a_n \mid n \in \naturals \}$.
+	
+	\Stel[Limietstellingen] Zij $(a_n) (b_n) $ rijen met $a_n \rightarrow a^*, b_n \rightarrow b^*, c \in \reals$. Dan: 
+	\begin{itemize}
+		\item $a_n + b_n \rightarrow a^* + b^*$
+		\item $a_n b_n \rightarrow a^* b^*$ 
+		\item Als $a^* \neq 0$, $a_n \neq 0 \forall n$ dan: $\frac{1}{n} \rightarrow \frac{1}{a^*}$
+		\item Als $\exists n_0 \in \naturals \forall n \ge n_0: a_n \le b_n$ dan $a^* \le b^*$. 
+	\end{itemize}
+	
+	\Stel[Insluitstelling] Zij $(a_n), (b_n), (c_n)$ rijen met $a_n \le b_n \le c_n$ voor $n$ voldoende groot. Veronderstel $a_n \rightarrow L$, $c_n \rightarrow L$. Dan ook $b_n \rightarrow L$.
+	
+	\Stel Zij $(a_n), (b_n)$ rijen met $a_n \rightarrow 0$ en $(b_n)$ begrensd. Dan $a_n b_n \rightarrow 0$. 
+	
+	\subsection*{Oneigenlijke limieten}
+	\Def $\lim_{n \rightarrow \infty} a_n = \infty$: 
+	\[
+		\forall M \in \reals: \exists n_0 = n_0(M): a_n > M \forall n > n_0
+	\]
+	
+	Analoog voor $\lim_{n \rightarrow \infty} a_n = - \infty$
+	
+	\Stel[2.3.3, 2.3.6] Zij $(a_n), (b_n)$ rijen met $a_n \rightarrow \pm \infty$, $(b_n)$ begrens. Dan:
+	\begin{itemize}
+		\item $a_n + b_n \rightarrow \pm \infty$ 
+		\item $\frac{1}{a_n} \rightarrow 0$
+	\end{itemize}
+	
+	\Stel[Standaardlimieten] Zij $a \in \reals$
+	\begin{itemize}
+		\item $\lim_{n \rightarrow \infty} a^n \begin{cases}
+			0 &\text{als } \mid a \mid < 1\\
+			+\infty &\text{als } a > 1
+		\end{cases}$
+		\item Zij $a \in \reals$, $\mid a \mid > 1$, $k \in \naturals$ vast. Dan $\lim_{n \rightarrow \infty} \frac{n^k}{a^n} = 0$.
+		\item $\sqrt[n]{n} \rightarrow 1$
+	\end{itemize}
+	 
+	\newpage
+	\section*{College 4}
+	\subsection*{Het getal $e$}
+		\Def $e_n = (1 + \frac{1}{n})^n$
+		
+		\Stel De rij $(e_n)$ is convergent. De limiet heet $e$. 
+		
+		\Stel[Ongelijheid van Bernoulli] Zij $n \in \naturals$, $x > -1$, dan $(1 + x)^n \ge 1 + nx$.	
+	
+	\subsection*{Deelrijen}
+	\Def Zij $(a_n)$ een rij. Zij $(n_0, n_1, n_2, ...)$ een strikt stijgende rij in $\naturals$. De rij $(a_{n_k})$ heet een deelrij van de rij $(a_n)$ (met indexrij $(n_k)$). 
+	
+	\Letop Als de rij begrensd is, is de deelrij dat ook, maar dat betekend niet dat de deelrijen ook een limiet hebben. 
+	
+	\Stel[Bolzano-Weierstrass] Elke begrensde rij bevat een convergente deelrij. 
+	
+	\Def Zij $(a_n)$ een rij. Een getal $y^*$ heet verdichtingspunt als $(a_n)$ een deelrij $(a_{n_l})$ heeft met $a_{n_l} \rightarrow y^*$. 
+	
+	\Letop Convergente rijen hebben precies één verdichtingspunt. 
+	
+	\subsection*{Cauchyrijen}
+	\Def Een rij $(a_n)$ heet Cauchyrij als: 
+	\[
+		\forall \epsilon > 0: \exists n_0 = n_0(\epsilon): \forall m,n \ge n_0: \mid a_m - a_n \mid < \epsilon 
+	\]
+	
+	\Letop Er is in de definitie geen sprake van een limiet, maar elke convergente rij is cauchyrij (zie beneden).
+	
+	\Stel Elke cauchyrij is begrensd. 
+	
+	\Stel Elke cauchyrij die een convergente deelrij heeft is convergent. 
+	
+	\Stel $(a_n)$ cauchyrij $\Leftrightarrow (a_n)$ convergent
+	
+	\Letop Dit geldt alleen voor rijen in $\reals$.
+	
+	\newpage
+	\section*{College 5}
+	\subsection*{Reeksen in $\reals$}
+	\Def Zij $(a_0, a_1, a_2, ...)$ een rij in $\reals$. \begin{align*}
+		s_1 &= a_1 \\
+		s_2 &= a_1 + a_2 \\
+		&... \\
+		s_n &= \sum_{k=1}^{n} a_k \text{partiële sommen}
+	\end{align*}
+	$(s_n)$ is een rij van partiële sommen. Eigenschappen:
+	\begin{itemize}
+		\item Als $(s_n)$ convergent naar $s \in \reals$, dan zeggen we dat de reeks $s = \sum_{k=1}^{n} a_k$ convergeert naar waarde $s = \lim_{n \rightarrow \infty} \sum_{k=1}^{n} a_k$. We schrijven dan ook $s = \sum_{k=1}^{\infty} a_k$. 
+		\item Als $(s_n)$ divergeert dan heet $\lim_{n \rightarrow \infty} \sum_{k=1}^{n} a_k$ divergent. Als $s_n \xrightarrow{n \rightarrow \infty} \pm \infty$, dan schrijven we $\sum_{k=1}^{\infty} a_k = \pm \infty$.
+		\item Een reeks kan ook alterneren. 
+	\end{itemize}
+	
+	\Letop Rekenen met divergente reeksen kan tot tegenspraken leiden! Niet doen dus!
+	
+	\Stel[7.1.9] Als $\sum_{k=1}^{\infty} a_k$ convergeert dan $a_k \xrightarrow{k \rightarrow \infty} 0$. 
+	
+	\Letop Uit $a_k \rightarrow 0$ volgt niet $\sum_{k=1}^{\infty} a_k$ convergent!
+	
+	\Stel Zij $\sum_{k=1}^{\infty} a_k$ convergent, en $k_0 \in \naturals_+$. Dan ook $\sum_{k=k_0}^{\infty} a_k$ convergent en 	
+	\[
+		\sum_{k=k_0}^{\infty} a_k = \sum_{k=1}^{\infty} a_k - \sum_{k=1}^{k_0 - 1} a_k
+	\] 
+	
+	\Stel Zij $\sum_{k=1}^{\infty} a_k$ convergent. Dan $\lim_{n \rightarrow \infty} \sum_{k=n}^{\infty} a_k = 0$.
+	
+	\subsection*{Convergentie criteria voor reeksen}
+	\Def De reeks $\sum_{k=1}^{\infty} a_k$ heet absoluut convergent als $\sum_{k=1}^{\infty} \mid a_k \mid $ convergent. 
+	
+	\Stel Elke absoluut convergente reeks is convergent (in $\reals $). 
+	
+	\subsection*{Reeksen met niet negatieve termen}
+	\Stel Zij $\sum_{k=1}^{\infty} a_k$ een reeks met $\forall k: a_k \ge 0 $, $s_n = \sum_{k=1}^{n} a_k$. Dan $(s_n)$ stijgend. Ook zijn de volgende beweringen equivalent:
+	\begin{itemize}
+		\item $(s_n)$ convergent
+		\item $(s_n)$ begrensd naar boven
+		\item $(s_n)$ heeft een naar boven begrensde deelrij
+	\end{itemize}
+	\Stel[Majorantencriterium] Zij $\forall k \in \naturals_+: 0 \le a_k \le b_k$. Stel $\sum_{k=1}^{\infty} b_k$ convergent. Dan $\sum_{k=1}^{\infty} a_k$ convergent, en $\sum_{k=1}^{\infty} a_k \le \sum_{k=1}^{\infty} b_k$. 
+	
+	\Def $\sum_{k=1}^{\infty} b_k$ heet de convergente majorante voor $\sum_{k=1}^{\infty} a_k$. 
+	
+	\Stel[Minorantencriterium] Zij $\forall k \in \naturals_+: 0 \le a_k \le b_k$. Stel $\sum_{k=1}^{\infty} a_k$ divergent, dan $\sum_{k=1}^{\infty} b_k$ divergent. 
+	
+	\Def $\sum_{k=1}^{\infty} a_k$ heet een divergente minorante voor $\sum_{k=1}^{\infty} b_k$.
+	
+	\subsection*{Standaardreeksen}
+	\Def[Meetkundige reeksen] 
+	\[
+		\sum_{k=0}^{\infty} q^k = 1 + q + q^2 + ... = \begin{cases}
+			\frac{1}{1-q} &(\mid q \mid < 1) \\
+			\text{divergent} &(\mid q \mid ge 1)
+		\end{cases}
+	\]
+	\Def[Hyperharmonische reeksen] Zij $\alpha > 0$ vast. De reeks $\sum_{k=1}^{\infty} \frac{1}{k^{\alpha}}$ heet hyperharmonische reeks. Zij is convergent voor $\alpha > 1$ en divergent voor $\alpha \le 1$. 
+	
+	\newpage
+	\section*{College 6}
+	
+	\subsection*{Convergentiecriteria}
+	\Stel[Quoti\"entcriterium] 
+	\begin{itemize}
+		\item $\exists q \in [0,1): \exists n_0 \in \naturals: \forall n \ge n_0: \frac{a_{n+1}}{a_n} \le q$. 
+		\item Als $\exists n_0 \in \naturals: \forall n \ge \frac{a_{n+1}}{a_n} \ge 1$, dan $\sum_{k=1}^{\infty} a_k$ divergent. 
+	\end{itemize}
+	
+	\Gevolg \begin{itemize}
+		\item Als $\lim_{n \rightarrow \infty \frac{a_{n+1}}{a_n}} = r$, $r < 1$ dan $\sum_{k=1}^{\infty} a_k$ convergent. 
+		\item Als $\lim_{n \rightarrow \infty \frac{a_{n+1}}{a_n}} = r$, $r > 1$ dan $\sum_{k=1}^{\infty} a_k$ divergent. 
+	\end{itemize}
+	
+	\Letop $\frac{a_{n+1}}{a_n} < 1$ niet voldoende voor convergentie! Het limiet echter wel. 
+	
+	\Stel[Wortelcriterium] \begin{itemize}
+		\item Als $\exists q \in [0,1): \exists n_0 \in \naturals: \forall n \ge n_0: \sqrt[n]{a_n} \le q$ 
+		\item Als $\exists n_0 \in \naturals \forall n \ge n_0: \sqrt[n]{a_n} \ge 1$ dan $\sum_{k=1}^{\infty} a_k$ divergent. 
+	\end{itemize}
+	
+	\Gevolg \begin{itemize}
+		\item Als $\sqrt[n]{a_n} \xrightarrow{n \rightarrow \infty} r$, $r < 1$ dan $\sum_{k=1}^{\infty} a_k$ convergent. 
+		\item Als $\sqrt[n]{a_n} \xrightarrow{n \rightarrow \infty} r$, $r > 1$ dan $\sum_{k=1}^{\infty} a_k$
+	\end{itemize}
+	
+	\subsection*{Alternerende reeksen}
+	\Def Een reeks $\sum_{k=1}^{\infty} b_k$ heet alternerend als $b_k = (-1)^k a_n$ of $b_k = (-1)^{k+1} a_n$ met $a_n \ge 0$. Zonder verlies van algemeenheid: we beschouwen $\sum_{k=0}^{\infty} (-1)^k a_k = a_0 - a_1 + a_2 - a_3 + ...$
+	
+	\Stel[Criterium van Leibniz] Neem aan: \begin{itemize}
+		\item $a_{k+1} \le a_k$ 
+		\item $\lim_{n \rightarrow \infty} a_k = 0$
+		\item $\sum_{k=1}^{\infty} (-1)^k a_k$ alternerend $(a_ \ge 0)$.
+	\end{itemize}
+	Dan $s =  \sum_{k=1}^{\infty} (-1)^k a_k$ convergent en 
+	\[
+		\mid s - \sum_{k=0}^{l} (-1)^k a_k \mid \le a_{l+1}
+	\]
+	
+	\Letop $\sum_{k=1}^{\infty} (-1)^k a_k = 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{4} + \frac{1}{8} - \frac{1}{5} + ...$ Hierbij kan je Leibniz niet toepassen!
+	
+	\subsection*{Herordening van reeksen:}
+	\Def $\pi: \naturals \rightarrow \naturals$ permutatie. De reeks $\sum_{k=0}^{\infty} a_{\pi(k)}$ heet een herordening van de reeks $\sum_{k=0}^{\infty} a_k$. 
+	
+	\Letop Voor een voorwaardelijke convergente reeks zijn er herordeningen die: 
+	\begin{itemize}
+		\item niet convergeren 
+		\item convergeren naar een willekeurig voorgegeven waarde
+		\item divergeren naar $+ \infty$ en naar $- \infty$
+	\end{itemize}
+	
+	\Def Voor een voorwaardelijk convergente reeks geldt: $\sum_{k=1}^{\infty} a_k^+ = \infty$, $\sum_{k=1}^{\infty} a_k^- = - \infty$
+	\begin{align*}
+		a^+ = \begin{cases}
+			a &a>0 \\
+			0 &a\le 0
+		\end{cases} \\
+		a^- = \begin{cases}
+			0 &a>0 \\
+			a &a\le0
+		\end{cases}
+	\end{align*}
+	
+	\Stel[7.4.15] $f: \naturals \rightarrow \naturals$ bijectief, $\sum_{k=1}^{\infty} a_{f()}$ herordening. Zij $\sum_{k=0}^{\infty} a_k$ absoluut convergent. Dan convergeert ook $\sum_{k=0}^{\infty} a_{f(k)}$ en $\sum_{k=0}^{\infty} a_{f(k)} = \sum_{k=0}^{\infty} a_k$. 
+	
+	\newpage
+	\section*{College 7}
+	
+	\subsection*{Producten van absoluut convergente reeksen}
+	\Def[Cauchieproduct] zie pp
+	
+	\Stel Veronderstel $\sum_{k=0}^{\infty} a_k = A$, $\sum_{l=0}^{\infty} b_l = B$ absoluut convergente reeksen. Dan $c = \sum_{n=1}^{\infty} (\sum_{k+l=n} a_k b_l)$ absoluut convergent. Ofwel $c_n = \sum_{k=0}^{n} a_k b_{n-k}$ en $c_n$ convergeert met waarde $A \cdot B$.
+	
+	\subsection*{De exponentiaalfunctie}
+	\Stel Voor $x \in \reals$ is de reeks $\sum_{k=0}^{\infty} \frac{x^k}{k!}$ absoluut convergent. 
+	
+	\Def Voor $x \in \reals$ zij $\exp(x) = \sum_{k=0}^{\infty} \frac{x^k}{k!}$. Eigenschappen:
+	\begin{itemize}
+		\item $\exp: \reals \rightarrow (0, \infty)$ strikt stijgend, continu
+		\item Inverse: $\ln(0,\infty) \rightarrow \reals $
+	\end{itemize}
+	
+	\Stel \begin{itemize}
+		\item $\exp(1) = e$ 
+		\item $\exp(x+y) = \exp(x) \cdot \exp(y)$
+	\end{itemize}
+	
+	\Gevolg 
+	\[
+		\forall a \in \rationals: \exp(ax) = \exp(x)^a
+	\]
+	
+	\Letop Algemene machten: $x > 0, y \in \reals, x^y = e^{y \cdot \ln(x)}$
+	
+	\newpage
+	\section*{College 8}
+	
+	\subsection*{Herhaling en verdieping limieten van functies}
+	\Def Zij $D \subset \reals$, $a \in \reals$ heet verdichtingspunt van $D$ als: $\forall \delta > 0 \exists x \in D: 0 < \mid x-a \mid < \delta$. 
+	
+	\Not $a \in D'$ verzameling van alle verdichtingspunten
+	
+	\Stel Zij $D \subset \reals$, $a \in \reals$. Dan:
+	\[
+		a \in \reals' \Leftrightarrow \exists \text{rij } (x_n) \text{in } D \backslash \{a\} \text{met } x_n \rightarrow a
+	\]
+	
+	\Def Zij $f: D \rightarrow \reals$, $a \in D'$. 
+	\[
+		\lim_{x \rightarrow a} f(x) = L \Leftrightarrow \forall \epsilon > 0: \exists \delta: \forall x \in D: 0 < \mid x - a \mid < \delta \Rightarrow \mid f(x) - L \mid < \epsilon
+	\]
+	
+	\Stel 
+	\[
+		\lim_{x \rightarrow a} f(x) = L \Leftrightarrow \forall \text{ rijen } (x_n) \text{ in } D \backslash \{ a \} \text{ met } x_n \rightarrow a \text{ geldt } f(x_n) \rightarrow L. 
+	\]
+	
+	\Stel[verdere limieten] 
+	\[
+		\lim_{x \rightarrow \infty} f(x) = L \Leftrightarrow \forall \delta > 0: \exists x_0 \in \reals: x \ge x_0 \Rightarrow \mid f(x) - L \mid < \epsilon 
+	\]
+	Analoog voor $x \rightarrow -\infty$
+	
+	\Stel[Eenzijdige limieten]
+	\[
+		\lim_{x \downarrow a} f(x) = L \Leftrightarrow \lim_{x \rightarrow a} (f \mid_{D \cap [a,\infty]}) = L
+	\]
+	
+	\Stel[Oneigenlijke limieten]
+	\[
+		\lim_{x \rightarrow a} f(x) = \pm \infty \Leftrightarrow 
+	\]
+	
+	\subsection*{Limietstellingen voor functies}
+	\Vb $g,f: D \rightarrow \reals$, $a \in (D \cap [a,\infty))'$
+	\[
+		\lim_{x \downarrow a} f(x) = L > 0, \lim_{x \downarrow a} g(x) = - \infty \Rightarrow \lim_{x \downarrow a f(x) \cdot g(x) = - \infty}
+	\]
+	
+	\subsection*{Continue functies}
+	\Def Zij $f: D \rightarrow \reals$, $a \in D' \cap D$. f heet continu bij a d.e.s.d.a:
+	\begin{itemize}
+		\item $\lim_{x \rightarrow a} f(x) = f(a) \Leftrightarrow $
+		\item $\forall \epsilon > 0: \exists \delta > 0: \forall x \in D: \mid x-a \mid < \delta \Rightarrow \mid f(x) - f(a) < \epsilon$
+	\end{itemize}
+	
+	\Stel f continu bij a $\Leftrightarrow \forall \text{ rijen } (x_n) in D: x_n \rightarrow a \Rightarrow f(x_n) \rightarrow f(a) $ ofwel $\lim_{n \rightarrow \infty} f(x_n) = f( \lim_{n \rightarrow \infty} x_n)$
+	
+	\Def Zij $D \subset \reals$ met $D \subset D'$, $f: D \rightarrow \reals$. f heet continu op $D$ als f continu is in alle punten van $D$. 
+	
+	\subsection*{Eigenschappen van continue functies}
+	\Stel[Tussenwaardestelling] Zij $a,b \in \reals$, $a<b$, $f: [a,b] \rightarrow \reals$ continu. Zij $f(a) < y < f(b)$. Dan $\exists c \in (a,b): f(c) = y$. 
+	
+	\Stel[Maximaaleigenschap] Zij $a,b \in \reals$, $f:[a,b] \rightarrow \reals$ continue. Dan $\exists x^* \in [a,b]: f(x^*) = \sup \{f(x) \mid x \in [a,b] \} = \max \{f(x) \mid x \in [a,b] \}$
+	
+	\Stel[Minimaaleigenschap] Analoog
+	
+	\newpage
+	\section*{College 9}
+		
+	\subsection*{Differentieerbare functies}
+	
+	\Def[Differentieerbaarheid] $f : D \to \reals$, $a \in D \cap D'$ met $D \subset \reals$.
+	$f$ heet differentieerbaar bij $a$ als 
+	\[
+		\lim_{x \to a} \frac{f(x) - f(a)}{x-a} = \lim_{h \to 0} \frac{f(a+h) - f(a)}{h}
+	\]
+	bestaat. Deze heet dan afgeleide van $f$ in $a$. 
+	
+	\Not $f'(a)$, $\frac{df}{dx}(a)$
+	
+	\Stel[Eigenschappen/rekenregels] 
+	\begin{itemize}
+		\item $f$ d'baar bij a $\Rightarrow$ f continu bij a
+		\item $f,g$ d'baar bij a $\Rightarrow$ $f + g$, $f \cdot g$ d'baar bij a, en $(f+g)'(a) = f'(a) + g'(a)$ en $(f \cdot g)'(a) = f'(a) g(a) + g'(a)f(a)$. 
+	\end{itemize}
+	
+	\Stel[Kettingregel] $I, J$ intervallen., $f : I \to \reals$, $R(f) \subset J$, $g : J \to \reals$. $f$ d'baar bij $a \in I$, $g$ d'baar bij $f(a)$. Dan $g \circ f : I \to \reals$ d'baar bij $a$, en 
+	\[
+		(g \circ f)'(a) = g'(f(a)) \cdot f'(a) = ((g' \circ f) f') (a)
+	\]
+	
+	\Stel Zij $f: (a,b) \to \reals$ d'baar, $c \in (a,b)$ met $f(c) = \min f(x)$ met $x \in (a,b)$. Dan $f'(c) = 0.$ Geldt ook voor $\max$.
+	
+	\Stel[Rolle] $f:[a,b] \to \reals$ continu, $f$ op $(a,b)$ d'baar, $f(a) = f(b) = z.$ Dan 
+	\[
+		\exists_{c \in (a,b)} : f'(c) = 0.
+	\]
+	
+	\Stel[Middelwaardestelling] $f:[a,b] \to \reals$ continu, $f$ op $(a,b)$ d'baar. Dan:
+	\[
+		\exists_{c \in (a,b)} : f'(c) = \frac{f(b) - f(a)}{b-a}
+	\]
+	\subsection*{Monotoniegedrag}
+	
+	\Stel $f : [a,b] \to \reals$ continu, d'baar op $(a,b)$. 
+	\begin{enumerate}
+		\item $f$ stijgend $\Rightarrow f'(x) \ge 0 \quad \forall_{x \in (a,b)}$
+		\item $f'(x) \ge 0 \quad \forall_{x \in (0,1)} \Rightarrow f$ stijgend 
+	\end{enumerate}
+	Analoog dalend.
+	
+	\Stel[Stelling van Taylor] $I$ interval, $f$ is $n+1$ keer d'baar op $I$, $x, a \in I$. $\exists_{\epsilon \in (a,x)} \text{ of } (x,a)$. 
+	\[
+		f(x) = \sum_{k=0}^{n} \frac{f^k(a)}{k!} (x-a)^k + \frac{f^{(n+1)}(\epsilon)}{(n+1)!} (x-a)^{n+1}
+	\]
+	Ook $\exists_{\theta \in (0,1)}: R_n = \frac{f^{(n+1)} (a + \theta(x-a))}{(n+1)!}(x-a)^{n+1}$. 	
+	
+	\subsection*{Taylorreeksen}
+	
+	\Def Zij $I$ open interval in $\reals$, $f : I \to \reals$ willekeurig vaak d'baar. $a,x \in I$. 
+	Er geld dat $\forall n \in \naturals : f(x) = \sum_{k=0}^{n} \frac{f^k(a)}{k!} (x-a)^k + R_n(x)$ en $n \to \infty$
+	\[
+		f(x) = \sum_{k=0}^{\infty} \frac{f^k(a)}{k!} (x-a)^k \Leftrightarrow R_n(x) \to 0
+	\]
+	De taylorreeks voor $f$ rond $a$ is 
+	\[
+	f(x) = \sum_{k=0}^{\infty} \frac{f^k(a)}{k!} (x-a)^k
+	\]
+	
+	\newpage
+	\section*{College 10}
+
+	\subsection*{Functierijen}
+
+	\Def Zij $D \subset \reals$. Een afbeelding $f : \naturals x D \to \reals$ heet een functierij op $D$. 
+	
+	\Not $f(n,x)$, $f_n(x)$, $f_n$ op $D$
+	
+	\subsection*{Puntsgewijze convergentie}
+	
+	\Def Een functierij $(f_n)$ op $D$ heet puntsgewijs convergent als voor alle x in $D$ de rij getallen $f_n(x)$ convergent is. 
+	
+	\Not $f_n$ is rij functies, maar $(f_n(x))$ is rij getallen
+	
+	\Def Zij $(f_n)$ op $D$ puntsgewijs convergent. De functie $f^* : D \to \reals$ gegeven door $f^*(x) = \lim_{n \to \infty} f_n(x)$ heet puntsgewijze limiet van de functierij $(f_n)$.
+	
+	\Not $f_n \xrightarrow{n \to \infty} f^*$ puntsgewijs
+	
+	\subsection*{Uniforme convergentie}
+	
+	\Def Een functierij $(f_n)$ op $D$ heet uniform convergent naar een functie $f^* : D \to \reals$ als $f_n - f^*$ begrensd voor n voldoende groot en 
+	\[
+		\|f_n - f^* \|_{\infty} = \sup_{x \in D} |f_n(x) - f^*(x)| \xrightarrow{n \to \infty} 0
+	\]
+	
+	\Stel Equivalent:
+	\begin{itemize}
+		\item $\forall_{\epsilon > 0} \exists_{n_0(\epsilon) \in \naturals} \forall_{n \ge n_0} : \|f_n - f^*\|_{\infty} < \epsilon$ 
+		\item $\forall_{\epsilon > 0} \exists_{n_0(\epsilon) \in \naturals} \forall_{n \ge n_0} : \sup_{x \in D} |f_n(x) - f^*(x)| < \epsilon$ 
+		\item $\forall_{\epsilon > 0} \exists_{n_0(\epsilon) \in \naturals} \forall_{n \ge n_0} \forall_{x \in D} : |f_n(x) - f^*(x)| < \epsilon$ 
+	\end{itemize}
+	
+	\Letop puntsgewijze convergentie:
+	$\forall_{x \in D} \forall_{\epsilon > 0} \exists_{n_0(\epsilon, x) \in \naturals} \forall_{n \ge n_0} |f_n(x) - f^*(x)| < \epsilon$ 
+	
+	\newpage
+	\section*{College 11}
+	
+	\subsection*{Convergentie van functierijen}
+	
+	\Stel Zij $(f_n)$ functierij op $D$. $f_n \to f^*$ uniform. Als $f_n$ continu voor alle voldoende grote n, dan is ook $f^*$ continu. 
+	
+	\Letop Uniforme convergentie behoud niet noodzakelijk differentieerbaarheid. 
+	
+	\Stel Zij $I \subset \reals$ een interval. Zij $(f_n)$ functierij op $I$. Veronderstel:
+	\begin{itemize}
+		\item $f_n$ continu diff'baar op $I$ voor alle n. 
+		\item $(f_n)$ puntsgewijs convergent op $I$ naar $f: I \to \reals$. 
+		\item $(f_n)'$ uniform convergent naar $g : I \to \reals$.
+	\end{itemize}
+	Dan is $f$ continu d'baar op $I$ en $f' = g$. Oftewel 
+	\[
+		\left(\lim_{n \to \infty} f_n \right)' = \lim_{n \to \infty} f_n'
+	\]
+	
+	\Stel[Criterium van Cauchy] Zij $D \subset \reals$ en zij $(f_n)$ functierij op $D$ zodanig dat $\forall_{\epsilon > 0} \exists_{n_0} \forall_{n,m \ge n_0} \|f_n - f_m \|_{\infty} < \epsilon $.
+	
+	\Stel[Criterium van Dini] Zij $[a,b]$ begrensd, gesloten interval, $(f_n)$ functierij op $[a,b]$. Ook $f^* : [a,b] \to \reals$. Veronderstel:
+	\begin{enumerate}
+		\item $f_n \to f^*$ puntsgewijs
+		\item $f_n$ continu voor alle n, $f^*$ continu
+		\item $(f_n)$ stijgende rij, d.w.z. $\forall_{x \in [a,b]} \forall_{n,m \in \naturals} : n > m \Rightarrow f_n(x) \ge f_m(x)$
+	\end{enumerate}
+	Dan $f_n \to f^*$ uniform.
+	
+	\subsection*{Functiereeksen}
+
+	\Def Zij $(f_k)$ functierij op $D \subset \reals$. Zij $S_n$ op $D$ de functierij van de bijbehorende partiele sommen: $S_n(x) = \sum_{k=0}^{n} f_k(x)$, $x \in D$. Als $S_n$ puntsgewijs/uniform convergent is op $D$, dan heet de bijbehorende $\infty$-reeks $S(x) = \sum_{=0}^{\infty} f_k(x)$ een puntsgewijs/uniform convergente functiereeks op $D$. 
+
+	\newpage
+	\section*{College 12}
+		
+	\subsection*{Eigenschappen van functiereeksen}
+	
+	\Stel[Continuiteit van functiereeksen] Zij $\sum_{k=1}^{\infty} f_k$ een uniform convergente functiereeks op $D \subset \reals$. Zij $f_k : D \to \reals$ continu $\forall_{k \in \naturals}$. Dan is ook $s: D \to \reals$ gegeven door $s(x) = \sum_{k=1}^{\infty} f_k$ continu. 
+	
+	\Stel[Differentiatie van functiereeksen] Zij $I \subset \reals$ interval. $\sum_{k=1}^{\infty} f_k$ puntsgewijs convergente functiereeks op $I$. $f_k$ d'baar $\forall_{k \in \naturals}$. $\sum_{k=1}^{\infty} f_k'$ uniform convergent. Dan is ook $s: I \to \reals$ gegeven door $s(x) = \sum_{k=1}^{\infty} f_k$ d'baar, en $s' = \sum_{k=1}^{\infty} f_k'$. 
+	
+	\Stel[Convergentiecriterium van Weierstrass] Zij $\sum f_k$ functiereeks op $D \subset \reals$. Als $\sum \|f_k\|_\infty$ convergent, dan $\sum f_k$ uniform convergent. 
+	
+	\Stel[M-criterium van Weierstrass] Stel $|f_k(x)| \le M_k \quad \forall_{k \in \naturals}$, $x \in D$ en $\sum M_k$ convergent. Dan $\sum f_k$ uniform convergent. 
+	
+	\subsection*{Machtreeksen}
+	
+	\Def Een functiereeks op $\reals$ van de vorm $\sum_{k=0}^{\infty} a_k(x-x_0)^k$ met $a_k,x \in \reals$ heet machtreeks. 
+	
+	\Letop Bijzonder belangrijk, want:
+	\begin{itemize}
+		\item Taylorreeksen zijn machtreeksen. 
+		\item Taylor en machtreeksen generaliseren polynomen: 
+		\[
+			p(x) = \sum_{k=0}^{n} a_k x^k = \sum_{k=0}^{n} b_k (x-x_0)^k
+		\]
+		\item Machtreeksen zijn eenvoudig te hanteren (bijvoorbeeld product): 
+		\[
+			(\sum a_k x^k)(\sum b_l x^l) = \sum c_m x^m
+		\]
+	\end{itemize}
+	
+	\newpage
+	\section*{College 13}	
+	
+	\subsection*{Convergentiestraal van een machtreeks}
+	\Def Zij $(b_n)$ een rij getallen, V de verzameling van haar verdichtingspunten. Definieer:
+	\[
+		\limsup_{n \to \infty} b_n = \begin{cases}
+				\infty \quad &b_n \text{ onbegrensd naar boven} \\
+				sup V \quad &\text{als } V = \emptyset \text{ onbegrensd naar boven}\\
+				- \infty \quad &\text{als } V = \emptyset \text{ onbegrensd naar boven}
+		\end{cases}		
+	\]
+	
+	\Stel Als $\limsup b_n = L \in \reals$ dan 
+	\begin{itemize}
+		\item $\exists$ deelrij $b_{n_k}$ met $b_{n_k} \to L$. 
+		\item $\forall_{\epsilon > 0} \exists_{n_0 \in N} \forall_{n \ge n_0}: b_n < L + \epsilon$ 
+	\end{itemize}
+	
+	\Stel[Converentiestraal van een MR] Zij * een machtreeks. 
+	\begin{itemize}
+		\item Als $\limsup_{k \to \infty} \sqrt[k]{|ak|} = 0$ dan is * absoluut convergent voor alle $x \in \reals$. 
+		\item Als $\limsup_{k \to \infty} \sqrt[k]{|ak|} = L \in (0,\infty)$ dan is * absoluut convergent voor alle $x \in (x_0 - R, x_0 + R)$ met $R = \frac{1}{\limsup \sqrt[k]{|ak|}}$ en divergent als $|x - x_0| > R$. 
+		\item Als $\limsup_{k \to \infty} \sqrt[k]{|ak|} = \infty$ dan convergeert allen voor $x = x_0$. 
+	\end{itemize}
+	
+	\Def $R = \frac{1}{\limsup \sqrt[k]{|ak|}}$ heet de convergentiestraal van *. 
+	
+	\Stel[Alternatief voor bepalen van convergentiestraal] Zij * een machtreeks. \begin{itemize}
+		\item Als $\lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right| = 0$ dan $R = \infty$. 
+		\item Als $\lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right| = L \in (0,\infty)$ dan $R = L$. 
+		\item Als $\lim_{k \to \infty} \left| \frac{a_{k+1}}{a_k} \right| = \infty$ dan $R = 0$. 
+	\end{itemize}
+	
+	\newpage
+	\section*{College 14}
+	
+	\subsection*{Rekenen met machtreeksen}
+	\Stel[Uniforme convergentie van machtreeksen] Zij * een machtreeks met convergentie straal $R > 0$. Zij $r \in (0,R)$. Dan convergeert * uniform op $[x_0 - r, x_0 + r]$. 
+	
+	\Stel[Machtreeksen stellen continue functies voor] De machtreeks * defini\"eert een continue functie $f: (x_0 - R, x_0 + R) \to \reals$. Dan $f(x) = \sum_{k = 0}^{\infty} a_k (x - x_0)^k$. 
+	
+	\Stel De machtreeksen $\sum_{k = 0}^{\infty} a_k (x - x_0)^k$, $\sum_{k = 0}^{\infty}k \cdot  a_k (x - x_0)^{k-1}$ en $\sum_{k = 0}^{\infty} k \cdot (k-1) \cdot a_k (x - x_0)^{k-2}$ hebben dezelfde convergentiestraal. 
+	
+	\Stel Zij $\sum_{k = 0}^{\infty} a_k (x - x_0)^k$ een machtreeks met convergentiestraal $R > 0$. 
+	\begin{itemize}
+		\item De functie $f: (x_0 - R, x_0 + R) \to \reals$ gegeven door $f(x) = \sum_{k = 0}^{\infty} a_k (x - x_0)^k$ is willekeurig vaak differentieerbaar op $(x_0 - R, x_0 + R)$ en 
+		\[
+			f^{(j)} (x) = \sum_{k = 0}^{\infty} k \cdot (k-1) \cdots (k - j + 1) a_k (x - x_0)^k
+		\]
+		Deze functie heeft convergentiestraal $R$. 
+		\item De functie $F : (x_0 - R, x_0 + R) \to \reals$ gegeven door $\sum_{k = 0}^{\infty} \frac{a_k}{k+1} (x - x_0)^{k+1}$ is differentieerbaar op $(x_0 - R, x_0 + R)$ en $F'(x) = f(x)$. 
+ 	\end{itemize}
+ 	
+ 	\Stel[Identiteitsstelling] $\sum_{k = 0}^{\infty} a_k (x - x_0)^k$ en $\sum_{k = 0}^{\infty} b_k (x - x_0)^k$ zijn over machtreeksen met positieve convergentiestralen $R_1$ en $R_2$ met $R_1 \le R_2$ en 
+ 	\[
+	 	\sum_{k = 0}^{\infty} a_k (x - x_0)^k = \sum_{k = 0}^{\infty} b_k (x - x_0)^k \quad \forall_{x \in (x_0 - \epsilon, x_0 + \epsilon)}.
+ 	\]
+ 	Dan $a_k = b_k \quad \forall_{k \in \naturals}$ en $R_1 = R_2$. 
+ 	
+ 	\Stel Zij $\sum_{k = 0}^{\infty} a_k (x - x_0)^k$ een machtreeks met positieve convergentiestraal. Defini\"eer $f(x) = \sum_{k = 0}^{\infty} a_k (x - x_0)^k$. Dan is de Taylorreeks van $f$ gegeven door $\sum_{k = 0}^{\infty} a_k (x - x_0)^k$. 1
+	
+	
+	
+\end{document}
